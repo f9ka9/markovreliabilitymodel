@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/connection.cpp" "CMakeFiles/markovreliabilitymodel.dir/connection.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/connection.cpp.obj.d"
+  "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/connectiongraphics.cpp" "CMakeFiles/markovreliabilitymodel.dir/connectiongraphics.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/connectiongraphics.cpp.obj.d"
   "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/main.cpp" "CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj.d"
   "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.cpp" "CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj.d"
   "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/mocs_compilation.cpp" "CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compilation.cpp.obj.d"

@@ -44,6 +44,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //============================================================================================
     connect(this, &MainWindow::upLevelSignal, structureScene, &ReliabilityScene::onUpLevel);
+    connect(this, &MainWindow::deleteSelectedModelsNodesSignal, structureScene, &ReliabilityScene::onDeleteSelectedModelsNodes);
 
     //============================================================================================
 }
@@ -86,8 +87,8 @@ void MainWindow::setupDockWidgets()
 
 void MainWindow::createActions()
 {
-    //Можно сделать вариант с изображением-иконками на усмотрение куратора, пока оставлю так
 
+    //Можно сделать вариант с изображением-иконками на усмотрение куратора, пока оставлю так
     configNodeAction = new QAction("⚙ Конфигурация", this);
     configNodeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Q));
     configNodeAction->setStatusTip("Выбор конфигурации узла на сцене редактора структурной схемы надёжности");
@@ -102,7 +103,7 @@ void MainWindow::createActions()
     deleteItemAction = new QAction("✖ Удалить узел" , this);
     deleteItemAction->setShortcut(QKeySequence(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_X)));
     deleteItemAction->setStatusTip("Удалить выбранный узел со сцены");
-    //connect(deleteItemAction, &QAction::triggered, this, &MainWindow::deleteSelectedItem);
+    connect(deleteItemAction, &QAction::triggered, this, &MainWindow::deleteSelectedModelsNodes);
 
     selectAction = new QAction("🔲 Выделение", this);
     selectAction->setCheckable(true);
@@ -143,6 +144,7 @@ void MainWindow::createActions()
     aboutAction = new QAction("❓  О программе",this);
     aboutAction->setStatusTip("Сведения о приложении Markov Reliability Model");
     //connect(aboutAction, &QAction::triggered, this, &MainWindow::about);
+
 
 }
 
@@ -215,6 +217,7 @@ void MainWindow::toggleSelectionMode(bool checked)
         structureView->setDragMode(QGraphicsView::RubberBandDrag);
         if(addNodeAction->isChecked())
             addNodeAction->setChecked(false);
+            structureScene->setModelsAddMode(false);
     } else
     {
         structureView->setDragMode(QGraphicsView::ScrollHandDrag);
@@ -222,6 +225,8 @@ void MainWindow::toggleSelectionMode(bool checked)
 }
 
 void MainWindow::upLevel() {emit upLevelSignal();}
+
+void MainWindow::deleteSelectedModelsNodes() {emit deleteSelectedModelsNodesSignal();}
 //============================================================================================
 
 //============================================================================================

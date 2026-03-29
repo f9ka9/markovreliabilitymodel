@@ -43,7 +43,8 @@ template <> constexpr inline auto ReliabilityScene::qt_create_metaobjectdata<qt_
         "",
         "onNodeDoubleClicked",
         "Node*",
-        "node"
+        "node",
+        "onDeleteSelectedModelsNodes"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -53,6 +54,8 @@ template <> constexpr inline auto ReliabilityScene::qt_create_metaobjectdata<qt_
         QtMocHelpers::SlotData<void(Node *)>(3, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
         }}),
+        // Slot 'onDeleteSelectedModelsNodes'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -78,6 +81,7 @@ void ReliabilityScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         switch (_id) {
         case 0: _t->onUpLevel(); break;
         case 1: _t->onNodeDoubleClicked((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1]))); break;
+        case 2: _t->onDeleteSelectedModelsNodes(); break;
         default: ;
         }
     }
@@ -102,14 +106,14 @@ int ReliabilityScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

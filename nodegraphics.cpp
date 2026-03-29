@@ -12,6 +12,9 @@ NodeGraphics::NodeGraphics(Node* node, QGraphicsItem* parent):  QGraphicsObject(
 NodeGraphics::~NodeGraphics()
 {}
 
+Node* NodeGraphics::getModelNode() const {return modelNode;}
+
+void NodeGraphics::setModelNode(Node* node) {modelNode = node;}
 
 QRectF NodeGraphics::boundingRect () const
 {
@@ -20,26 +23,40 @@ QRectF NodeGraphics::boundingRect () const
 
 void NodeGraphics::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    painter->setBrush(Qt::lightGray);
+    if(isSelected())
+        painter->setBrush(QColor("#ADD8E6"));
+    else
+        painter->setBrush(Qt::lightGray);
     painter->drawRoundedRect(boundingRect(), 15.0, 15.0);
     painter->setPen(Qt::black);
     painter->drawText(boundingRect(), Qt::AlignCenter, "Node");
 }
 
-QVariant NodeGraphics::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant &value)
+void NodeGraphics::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    if(change == ItemPositionChange && scene())
-    {
-        int step = 50;
-        int x = round(value.toPointF().x()/step)*step;
-        int y = round(value.toPointF().y()/step)*step;
-        return QPointF(x,y);
-    }
-    return QGraphicsItem::itemChange(change, value);
+    modelNode->setPreviousPosition(pos());
+    QGraphicsItem::mousePressEvent(event);
 }
 
 void NodeGraphics::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
 {
     emit nodeDoubleClicked(modelNode);
     QGraphicsItem::mouseDoubleClickEvent(event);
+}
+
+void NodeGraphics::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+{
+    int step = 50;
+    QPointF newPos = QPointF(round(pos().x()/step)*step, round(pos().y()/step)*step);
+    if(!collidingItems().isEmpty())
+    {
+        setPos(modelNode->getPreviousPosition());
+        modelNode->setPosition(modelNode->getPreviousPosition());
+        return;
+    }
+    setPos(newPos);
+    modelNode->setPosition(newPos);
+    update();
+
+    QGraphicsItem::mouseReleaseEvent(event);
 }

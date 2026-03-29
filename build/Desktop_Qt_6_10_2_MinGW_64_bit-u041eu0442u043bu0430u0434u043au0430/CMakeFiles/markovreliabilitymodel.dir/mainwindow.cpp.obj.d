@@ -433,6 +433,8 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstatusbar.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\reliabilityscene.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
@@ -443,6 +445,8 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QDebug \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodegraphics.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h \

@@ -3,6 +3,7 @@
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
+#include <QDebug>
 
 #include "nodegraphics.h"
 
@@ -20,9 +21,13 @@ public:
     void addRootNode(Node* node);
     QList<Node*> getRootNodes () const;
 
+    void addNodeToScene(Node* node);
+    void clearNodes(const QList<QGraphicsItem*>& items);
+
 public slots:
     void onUpLevel();
     void onNodeDoubleClicked(Node* node);
+    void onDeleteSelectedModelsNodes();
 
 protected:
     void drawBackground(QPainter *painter, const QRectF &rect) override;

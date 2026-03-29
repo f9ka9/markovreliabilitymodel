@@ -18,6 +18,7 @@ markovreliabilitymodel_autogen/timestamp: \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.cpp \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.h \
+	D:/Qt/6.10.2/mingw_64/include/QtCore/QDebug \
 	D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
 	D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
 	D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
@@ -160,8 +161,10 @@ markovreliabilitymodel_autogen/timestamp: \
 	D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
 	D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
 	D:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
+	D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
 	D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
 	D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
+	D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
 	D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
 	D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
 	D:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \

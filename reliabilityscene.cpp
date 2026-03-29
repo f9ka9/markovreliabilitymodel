@@ -9,31 +9,27 @@ void ReliabilityScene::setModelsAddMode(bool toSwich){modelsAddMode = toSwich;}
 
 void ReliabilityScene::onUpLevel()
 {
-    clear();
 
+    clearNodes(items());
     if(selectedParentNode && selectedParentNode->getParent())
     {
         selectedParentNode = selectedParentNode->getParent();
-        QList<Node*> children = selectedParentNode->getChildren();
-        for(Node* child : children)
-        {
-            NodeGraphics* modelNode = new NodeGraphics(child);
-            connect(modelNode, &NodeGraphics::nodeDoubleClicked, this, &ReliabilityScene::onNodeDoubleClicked);
-            modelNode->setPos(child->getPosition());
-            addItem(modelNode);
-        }
+        for(Node* child : selectedParentNode->getChildren()) addNodeToScene(child);
     }
+
     else
     {
-        QList<Node*> rootNodes = getRootNodes();
-        for(Node* rootNode : rootNodes)
-        {
-            NodeGraphics* modelNode = new NodeGraphics(rootNode);
-            connect(modelNode, &NodeGraphics::nodeDoubleClicked, this, &ReliabilityScene::onNodeDoubleClicked);
-            modelNode->setPos(rootNode->getPosition());
-            addItem(modelNode);
-        }
+        selectedParentNode = nullptr;
+        for(Node* rootNode : rootNodes) addNodeToScene(rootNode);
     }
+}
+
+void ReliabilityScene::addNodeToScene(Node* node)
+{
+    NodeGraphics* modelNode = new NodeGraphics(node);
+    connect(modelNode, &NodeGraphics::nodeDoubleClicked, this, &ReliabilityScene::onNodeDoubleClicked);
+    modelNode->setPos(node->getPosition());
+    addItem(modelNode);
 }
 
 void ReliabilityScene::setSelectedParentNode(Node* node) {selectedParentNode = node;}
@@ -55,15 +51,30 @@ void ReliabilityScene::drawBackground(QPainter *painter, const QRectF &rect)
 
 void ReliabilityScene::onNodeDoubleClicked(Node* node)
 {
-    clear();
-    selectedParentNode = node;
-    QList<Node*> children = node->getChildren();
-    for(Node* child : children)
+    if (node)
     {
-        NodeGraphics* modelNode = new NodeGraphics(child);
-        connect(modelNode, &NodeGraphics::nodeDoubleClicked, this, &ReliabilityScene::onNodeDoubleClicked);
-        modelNode->setPos(child->getPosition());
-        addItem(modelNode);
+        clearNodes(items());
+        selectedParentNode = node;
+        for(Node* child : node->getChildren()) addNodeToScene(child);
+    }
+}
+
+void ReliabilityScene::onDeleteSelectedModelsNodes()
+{
+    QList<QGraphicsItem*> itemsToDelete = selectedItems();
+    if (itemsToDelete.isEmpty()) return;
+    for(QGraphicsItem* item : itemsToDelete)
+    {
+        NodeGraphics* nodeModel = dynamic_cast<NodeGraphics*>(item);
+        if (!nodeModel) continue;
+        Node* node = nodeModel->getModelNode();
+        if (!node) continue;
+        if(!node->getChildren().isEmpty()) node->deleteChildren();
+        if (node->getParent()) node->getParent()->removeChild(node);
+        else rootNodes.removeOne(node);
+        removeItem(item);
+        delete item;
+        delete node;
     }
 }
 
@@ -71,6 +82,7 @@ void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if(modelsAddMode && event->button() == Qt::LeftButton)
     {
+        if (!items(event->scenePos()).isEmpty()) return;
         int step = 50;
         int x = round(event->scenePos().x()/step)*step;
         int y = round(event->scenePos().y()/step)*step;
@@ -78,7 +90,13 @@ void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
         node->setPosition(QPointF(x,y));
 
         if (selectedParentNode == nullptr) addRootNode(node);
-        else selectedParentNode->addChild(node);
+        else
+        {
+            selectedParentNode->addChild(node);
+            node->setParent(selectedParentNode);
+        }
+
+        qDebug() << node->getParent();
 
         NodeGraphics* modelNode = new NodeGraphics(node);
         connect(modelNode, &NodeGraphics::nodeDoubleClicked, this, &ReliabilityScene::onNodeDoubleClicked);
@@ -86,4 +104,14 @@ void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
         addItem(modelNode);
     }
     QGraphicsScene::mousePressEvent(event);
+}
+
+void ReliabilityScene::clearNodes(const QList<QGraphicsItem*>& items)
+{
+
+    for(QGraphicsItem* item : items)
+    {
+        NodeGraphics* mNode = dynamic_cast<NodeGraphics*> (item);
+        removeItem(item);
+    }
 }

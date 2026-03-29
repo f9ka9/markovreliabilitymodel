@@ -12,6 +12,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20utility.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q23type_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q23utility.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qalloc.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qanystringview.h \
@@ -22,6 +23,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qatomic.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qatomic_cxx11.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qbasicatomic.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qbindingstorage.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qbytearray.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qbytearrayalgorithms.h \
@@ -39,10 +41,13 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qcontainerinfo.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qcontainertools_impl.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qcontiguouscache.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qdarwinhelpers.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qdatastream.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qendian.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qexceptionhandling.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qflags.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qfloat16.h \
@@ -157,7 +162,9 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

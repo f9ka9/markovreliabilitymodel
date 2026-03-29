@@ -12,6 +12,7 @@
 #include <QToolBar>
 #include <QMenuBar>
 #include <QStatusBar>
+#include <QActionGroup>
 
 #include "reliabilityscene.h"
 #include "statescene.h"
@@ -78,6 +79,7 @@ private slots:
     void toggleModelsAddMode(bool toSwich);
     void toggleSelectionMode(bool checked);
     void upLevel();
+    void deleteSelectedModelsNodes();
 
     //============================================================================================
 protected:
@@ -85,6 +87,7 @@ protected:
     //============================================================================================
 signals:
     void upLevelSignal();
+    void deleteSelectedModelsNodesSignal();
 
     //============================================================================================
 };

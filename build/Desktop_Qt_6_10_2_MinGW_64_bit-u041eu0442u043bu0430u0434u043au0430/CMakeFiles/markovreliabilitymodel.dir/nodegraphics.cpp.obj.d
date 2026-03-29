@@ -371,6 +371,13 @@ CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qimage.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qpainter.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h \
