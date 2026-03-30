@@ -19,14 +19,16 @@ public:
 
 
 protected:
-    QRectF boundingRect()const override;
+    QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *) override;
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
+    QVariant itemChange(GraphicsItemChange change, const QVariant &value) override;
 
 signals:
     void nodeDoubleClicked(Node* Node);
+    void positionChanged();
 
 private:
     Node* modelNode;

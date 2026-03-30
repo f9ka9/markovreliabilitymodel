@@ -325,6 +325,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h",
+			"MU",
+			"EWIEGA46WW/moc_lineconnectiongraphics.cpp",
+			null
+		],
+		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -355,15 +361,15 @@
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/\u0441onnection.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.h",
 			"MU",
-			"EWIEGA46WW/moc_\u0441onnection.cpp",
+			"EWIEGA46WW/moc_stateview.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/\u0441onnectiongraphics.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.h",
 			"MU",
-			"EWIEGA46WW/moc_\u0441onnectiongraphics.cpp",
+			"EWIEGA46WW/moc_structureview.cpp",
 			null
 		]
 	],
@@ -439,12 +445,7 @@
 	"SOURCES" : 
 	[
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/connection.cpp",
-			"MU",
-			null
-		],
-		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/connectiongraphics.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.cpp",
 			"MU",
 			null
 		],
@@ -475,6 +476,16 @@
 		],
 		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.cpp",
 			"MU",
 			null
 		]

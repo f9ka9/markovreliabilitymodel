@@ -8,8 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/connection.cpp" "CMakeFiles/markovreliabilitymodel.dir/connection.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/connection.cpp.obj.d"
-  "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/connectiongraphics.cpp" "CMakeFiles/markovreliabilitymodel.dir/connectiongraphics.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/connectiongraphics.cpp.obj.d"
+  "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.cpp" "CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj.d"
   "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/main.cpp" "CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj.d"
   "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.cpp" "CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj.d"
   "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/mocs_compilation.cpp" "CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compilation.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compilation.cpp.obj.d"
@@ -17,6 +16,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.cpp" "CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj.d"
   "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.cpp" "CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj.d"
   "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.cpp" "CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj.d"
+  "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.cpp" "CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj.d"
+  "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.cpp" "CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj" "gcc" "CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

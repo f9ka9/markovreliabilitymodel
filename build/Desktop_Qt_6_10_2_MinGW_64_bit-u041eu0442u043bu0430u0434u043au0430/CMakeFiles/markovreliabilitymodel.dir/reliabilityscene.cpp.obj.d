@@ -399,4 +399,5 @@ CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnectiongraphics.h

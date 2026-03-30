@@ -5,6 +5,7 @@
 #include <QList>
 #include <QPointF>
 
+
 class Node
 {
 public:
@@ -25,9 +26,13 @@ public:
     void deleteChildren();
     void removeChild(Node* child);
 
+    void addNeighborNodes(Node* node);
+    QList<Node*> getNeighborNodes() const;
+
 private:
     Node* parent{nullptr};
     QList<Node*> children;
+    QList<Node*> neighborNodes;
     // Пока, надеюсь, добавление position в node - это временное решение, так как я не хочу
     // замарачиваться с тем , как отрисовывать элементы на экране.
     QPointF position;

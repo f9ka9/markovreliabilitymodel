@@ -38,3 +38,6 @@ void Node::removeChild(Node* child)
 {
     children.removeOne(child);
 }
+
+QList<Node*> Node::getNeighborNodes() const {return neighborNodes;}
+void Node::addNeighborNodes(Node* node) {neighborNodes.append(node);}

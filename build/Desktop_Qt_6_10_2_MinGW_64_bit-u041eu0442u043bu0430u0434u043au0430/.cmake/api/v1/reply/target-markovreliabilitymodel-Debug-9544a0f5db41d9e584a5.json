@@ -78,13 +78,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 36,
+				"line" : 40,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 30,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
@@ -385,19 +385,20 @@
 				9,
 				10,
 				11,
-				14,
-				15
+				13,
+				16,
+				17
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"id" : "markovreliabilitymodel_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "markovreliabilitymodel_autogen::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "markovreliabilitymodel_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "markovreliabilitymodel::@6890427a1f51a3e7e1df",
@@ -508,7 +509,7 @@
 			"sourceIndexes" : 
 			[
 				0,
-				16
+				18
 			]
 		},
 		{
@@ -521,8 +522,9 @@
 				9,
 				10,
 				11,
-				14,
-				15
+				13,
+				16,
+				17
 			]
 		},
 		{
@@ -535,14 +537,15 @@
 				6,
 				7,
 				12,
-				13
+				14,
+				15
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				17
+				19
 			]
 		}
 	],
@@ -618,24 +621,35 @@
 		},
 		{
 			"backtrace" : 4,
-			"path" : "\u0441onnection.h",
-			"sourceGroupIndex" : 2
-		},
-		{
-			"backtrace" : 4,
-			"path" : "\u0441onnectiongraphics.h",
+			"path" : "lineconnectiongraphics.h",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "connection.cpp",
+			"path" : "lineconnectiongraphics.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "structureview.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "stateview.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "stateview.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
-			"path" : "connectiongraphics.cpp",
+			"path" : "structureview.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{

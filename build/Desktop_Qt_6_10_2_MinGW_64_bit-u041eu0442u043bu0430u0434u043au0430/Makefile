@@ -199,53 +199,29 @@ markovreliabilitymodel_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel_autogen.dir\build.make CMakeFiles/markovreliabilitymodel_autogen.dir/build
 .PHONY : markovreliabilitymodel_autogen/fast
 
-connection.obj: connection.cpp.obj
-.PHONY : connection.obj
+lineconnectiongraphics.obj: lineconnectiongraphics.cpp.obj
+.PHONY : lineconnectiongraphics.obj
 
 # target to build an object file
-connection.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/connection.cpp.obj
-.PHONY : connection.cpp.obj
+lineconnectiongraphics.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj
+.PHONY : lineconnectiongraphics.cpp.obj
 
-connection.i: connection.cpp.i
-.PHONY : connection.i
-
-# target to preprocess a source file
-connection.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/connection.cpp.i
-.PHONY : connection.cpp.i
-
-connection.s: connection.cpp.s
-.PHONY : connection.s
-
-# target to generate assembly for a file
-connection.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/connection.cpp.s
-.PHONY : connection.cpp.s
-
-connectiongraphics.obj: connectiongraphics.cpp.obj
-.PHONY : connectiongraphics.obj
-
-# target to build an object file
-connectiongraphics.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/connectiongraphics.cpp.obj
-.PHONY : connectiongraphics.cpp.obj
-
-connectiongraphics.i: connectiongraphics.cpp.i
-.PHONY : connectiongraphics.i
+lineconnectiongraphics.i: lineconnectiongraphics.cpp.i
+.PHONY : lineconnectiongraphics.i
 
 # target to preprocess a source file
-connectiongraphics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/connectiongraphics.cpp.i
-.PHONY : connectiongraphics.cpp.i
+lineconnectiongraphics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.i
+.PHONY : lineconnectiongraphics.cpp.i
 
-connectiongraphics.s: connectiongraphics.cpp.s
-.PHONY : connectiongraphics.s
+lineconnectiongraphics.s: lineconnectiongraphics.cpp.s
+.PHONY : lineconnectiongraphics.s
 
 # target to generate assembly for a file
-connectiongraphics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/connectiongraphics.cpp.s
-.PHONY : connectiongraphics.cpp.s
+lineconnectiongraphics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.s
+.PHONY : lineconnectiongraphics.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -415,6 +391,54 @@ statescene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.s
 .PHONY : statescene.cpp.s
 
+stateview.obj: stateview.cpp.obj
+.PHONY : stateview.obj
+
+# target to build an object file
+stateview.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj
+.PHONY : stateview.cpp.obj
+
+stateview.i: stateview.cpp.i
+.PHONY : stateview.i
+
+# target to preprocess a source file
+stateview.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.i
+.PHONY : stateview.cpp.i
+
+stateview.s: stateview.cpp.s
+.PHONY : stateview.s
+
+# target to generate assembly for a file
+stateview.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.s
+.PHONY : stateview.cpp.s
+
+structureview.obj: structureview.cpp.obj
+.PHONY : structureview.obj
+
+# target to build an object file
+structureview.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj
+.PHONY : structureview.cpp.obj
+
+structureview.i: structureview.cpp.i
+.PHONY : structureview.i
+
+# target to preprocess a source file
+structureview.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.i
+.PHONY : structureview.cpp.i
+
+structureview.s: structureview.cpp.s
+.PHONY : structureview.s
+
+# target to generate assembly for a file
+structureview.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.s
+.PHONY : structureview.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -430,12 +454,9 @@ help:
 	@echo ... markovreliabilitymodel_autogen
 	@echo ... markovreliabilitymodel_autogen_timestamp_deps
 	@echo ... markovreliabilitymodel
-	@echo ... connection.obj
-	@echo ... connection.i
-	@echo ... connection.s
-	@echo ... connectiongraphics.obj
-	@echo ... connectiongraphics.i
-	@echo ... connectiongraphics.s
+	@echo ... lineconnectiongraphics.obj
+	@echo ... lineconnectiongraphics.i
+	@echo ... lineconnectiongraphics.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
@@ -457,6 +478,12 @@ help:
 	@echo ... statescene.obj
 	@echo ... statescene.i
 	@echo ... statescene.s
+	@echo ... stateview.obj
+	@echo ... stateview.i
+	@echo ... stateview.s
+	@echo ... structureview.obj
+	@echo ... structureview.i
+	@echo ... structureview.s
 .PHONY : help
 
 

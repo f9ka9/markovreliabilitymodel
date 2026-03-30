@@ -22,6 +22,7 @@ void ReliabilityScene::onUpLevel()
         selectedParentNode = nullptr;
         for(Node* rootNode : rootNodes) addNodeToScene(rootNode);
     }
+    createConnections();
 }
 
 void ReliabilityScene::addNodeToScene(Node* node)
@@ -56,6 +57,7 @@ void ReliabilityScene::onNodeDoubleClicked(Node* node)
         clearNodes(items());
         selectedParentNode = node;
         for(Node* child : node->getChildren()) addNodeToScene(child);
+        createConnections();
     }
 }
 
@@ -76,6 +78,17 @@ void ReliabilityScene::onDeleteSelectedModelsNodes()
         delete item;
         delete node;
     }
+}
+
+void ReliabilityScene::onConnectSelectedNodes()
+{
+    if (selectedItems().size() != 2) return;
+    NodeGraphics* first = dynamic_cast<NodeGraphics*> (selectedItems()[0]);
+    NodeGraphics* second = dynamic_cast<NodeGraphics*> (selectedItems()[1]);
+    LineConnectionGraphics* line = new LineConnectionGraphics(first, second);
+    addItem(line);
+    first->getModelNode()->addNeighborNodes(second->getModelNode());
+    second->getModelNode()->addNeighborNodes(first->getModelNode());
 }
 
 void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -111,7 +124,38 @@ void ReliabilityScene::clearNodes(const QList<QGraphicsItem*>& items)
 
     for(QGraphicsItem* item : items)
     {
+        //спросить про это у куратора*
         NodeGraphics* mNode = dynamic_cast<NodeGraphics*> (item);
         removeItem(item);
+    }
+}
+
+void ReliabilityScene::createConnections()
+{
+    //это временное решение , я потом переделаю !!!!!!!!
+    QList<NodeGraphics*> nodeGraphicsList;
+
+    for (QGraphicsItem* item : items())
+        if (NodeGraphics* node = dynamic_cast<NodeGraphics*>(item))
+            nodeGraphicsList.append(node);
+
+    for (NodeGraphics* node : nodeGraphicsList)
+    {
+        Node* model = node->getModelNode();
+        for (Node* neighbor : model->getNeighborNodes())
+        {
+            for (NodeGraphics* other : nodeGraphicsList)
+            {
+                if (other->getModelNode() == neighbor)
+                {
+                    if (node < other)
+                    {
+                        LineConnectionGraphics* line = new LineConnectionGraphics(node, other);
+
+                        addItem(line);
+                    }
+                }
+            }
+        }
     }
 }

@@ -46,17 +46,32 @@ void NodeGraphics::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
 
 void NodeGraphics::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+    //есть другой вариант, отрубить коллизию линиям, но это надо обсуждать с куратором
     int step = 50;
     QPointF newPos = QPointF(round(pos().x()/step)*step, round(pos().y()/step)*step);
-    if(!collidingItems().isEmpty())
+    for (QGraphicsItem* item : collidingItems())
     {
-        setPos(modelNode->getPreviousPosition());
-        modelNode->setPosition(modelNode->getPreviousPosition());
-        return;
+        if (item == this) continue;
+        if(dynamic_cast<NodeGraphics*>(item))
+        {
+            setPos(modelNode->getPreviousPosition());
+            modelNode->setPosition(modelNode->getPreviousPosition());
+            return;
+        }
     }
     setPos(newPos);
     modelNode->setPosition(newPos);
     update();
 
     QGraphicsItem::mouseReleaseEvent(event);
+}
+
+QVariant NodeGraphics::itemChange(GraphicsItemChange change, const QVariant &value)
+{
+    if (change == QGraphicsItem::ItemPositionChange)
+    {
+        emit positionChanged();
+    }
+
+    return QGraphicsItem::itemChange(change, value);
 }

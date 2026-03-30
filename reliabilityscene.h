@@ -6,6 +6,7 @@
 #include <QDebug>
 
 #include "nodegraphics.h"
+#include "lineconnectiongraphics.h"
 
 class ReliabilityScene : public QGraphicsScene
 {
@@ -24,10 +25,13 @@ public:
     void addNodeToScene(Node* node);
     void clearNodes(const QList<QGraphicsItem*>& items);
 
+    void createConnections();
+
 public slots:
     void onUpLevel();
     void onNodeDoubleClicked(Node* node);
     void onDeleteSelectedModelsNodes();
+    void onConnectSelectedNodes();
 
 protected:
     void drawBackground(QPainter *painter, const QRectF &rect) override;

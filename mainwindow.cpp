@@ -45,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
     //============================================================================================
     connect(this, &MainWindow::upLevelSignal, structureScene, &ReliabilityScene::onUpLevel);
     connect(this, &MainWindow::deleteSelectedModelsNodesSignal, structureScene, &ReliabilityScene::onDeleteSelectedModelsNodes);
+    connect(this, &MainWindow::connectSelectedNodesSignal, structureScene, &ReliabilityScene::onConnectSelectedNodes);
 
     //============================================================================================
 }
@@ -60,6 +61,7 @@ void MainWindow::setupCentralWidgets()
     stateGraphView = new QGraphicsView(this);
     stateGraphView->setScene(stateScene);
     stateGraphView->setDragMode(QGraphicsView::ScrollHandDrag);
+
 
     splitter = new QSplitter(this);
     splitter->addWidget(structureView);
@@ -112,7 +114,7 @@ void MainWindow::createActions()
     connectAction = new QAction("🔗 Соединить",this);
     connectAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F));
     connectAction->setStatusTip("Соединение линиями между собой выбранных двух узлов на сцене редактора структурной схемы надёжности");
-    //connect(connectAction, &QAction::triggered, this, &MainWindow::connectSelectedNodes);
+    connect(connectAction, &QAction::triggered, this, &MainWindow::connectSelectedNodes);
 
     calculateAction = new QAction("∑ Расчитать",this);
     calculateAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_C));
@@ -207,6 +209,8 @@ void MainWindow::toggleModelsAddMode(bool toSwich)
 {
     if (structureScene)
         structureScene->setModelsAddMode(toSwich);
+        if(selectAction->isChecked())
+            selectAction->setChecked(false);
 }
 
 void MainWindow::toggleSelectionMode(bool checked)
@@ -227,6 +231,8 @@ void MainWindow::toggleSelectionMode(bool checked)
 void MainWindow::upLevel() {emit upLevelSignal();}
 
 void MainWindow::deleteSelectedModelsNodes() {emit deleteSelectedModelsNodesSignal();}
+
+void MainWindow::connectSelectedNodes () {emit connectSelectedNodesSignal();}
 //============================================================================================
 
 //============================================================================================

@@ -80,6 +80,7 @@ private slots:
     void toggleSelectionMode(bool checked);
     void upLevel();
     void deleteSelectedModelsNodes();
+    void connectSelectedNodes();
 
     //============================================================================================
 protected:
@@ -88,6 +89,7 @@ protected:
 signals:
     void upLevelSignal();
     void deleteSelectedModelsNodesSignal();
+    void connectSelectedNodesSignal();
 
     //============================================================================================
 };
