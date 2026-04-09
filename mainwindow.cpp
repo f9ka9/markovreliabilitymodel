@@ -112,7 +112,7 @@ void MainWindow::createActions()
     connectAction = new QAction("🔗 Соединить",this);
     connectAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F));
     connectAction->setStatusTip("Соединение линиями между собой выбранных двух узлов на сцене редактора структурной схемы надёжности");
-    connect(connectAction, &QAction::triggered, this, &MainWindow::connectSelectedNodes);
+    //connect(connectAction, &QAction::triggered, this, &MainWindow::connectSelectedNodes);
 
     calculateAction = new QAction("∑ Расчитать",this);
     calculateAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_C));
@@ -206,9 +206,10 @@ void MainWindow::setupStatusBar ()
 void MainWindow::toggleModelsAddMode(bool toSwich)
 {
     if (structureScene)
+    {
         structureScene->setModelsAddMode(toSwich);
-        if(selectAction->isChecked())
-            selectAction->setChecked(false);
+        if(selectAction->isChecked()) selectAction->setChecked(false);
+    }
 }
 
 void MainWindow::toggleSelectionMode(bool checked)
@@ -219,11 +220,9 @@ void MainWindow::toggleSelectionMode(bool checked)
         structureView->setDragMode(QGraphicsView::RubberBandDrag);
         if(addNodeAction->isChecked())
             addNodeAction->setChecked(false);
-            structureScene->setModelsAddMode(false);
-    } else
-    {
-        structureView->setDragMode(QGraphicsView::ScrollHandDrag);
+        structureScene->setModelsAddMode(false);
     }
+    else structureView->setDragMode(QGraphicsView::ScrollHandDrag);
 }
 
 void MainWindow::upLevel() {emit upLevelSignal();}

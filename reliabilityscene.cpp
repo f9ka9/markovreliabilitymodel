@@ -9,19 +9,10 @@ void ReliabilityScene::setModelsAddMode(bool toSwich){modelsAddMode = toSwich;}
 
 void ReliabilityScene::onUpLevel()
 {
-
-    clearNodes(items());
-    if(selectedParentNode && selectedParentNode->getParent())
-    {
-        selectedParentNode = selectedParentNode->getParent();
-        for(Node* child : selectedParentNode->getChildren()) addNodeToScene(child);
-    }
-
-    else
-    {
-        selectedParentNode = nullptr;
-        for(Node* rootNode : rootNodes) addNodeToScene(rootNode);
-    }
+    clearNodes();
+    if (selectedParentNode) selectedParentNode = selectedParentNode->getParent();
+    if (selectedParentNode) {for (Node* child : selectedParentNode->getChildren()) addNodeToScene(child);}
+    else{for (Node* rootNode : rootNodes) addNodeToScene(rootNode);}
     createConnections();
 }
 
@@ -54,7 +45,7 @@ void ReliabilityScene::onNodeDoubleClicked(Node* node)
 {
     if (node)
     {
-        clearNodes(items());
+        clearNodes();
         selectedParentNode = node;
         for(Node* child : node->getChildren()) addNodeToScene(child);
         createConnections();
@@ -71,24 +62,12 @@ void ReliabilityScene::onDeleteSelectedModelsNodes()
         if (!nodeModel) continue;
         Node* node = nodeModel->getModelNode();
         if (!node) continue;
-        if(!node->getChildren().isEmpty()) node->deleteChildren();
         if (node->getParent()) node->getParent()->removeChild(node);
         else rootNodes.removeOne(node);
         removeItem(item);
         delete item;
         delete node;
     }
-}
-
-void ReliabilityScene::onConnectSelectedNodes()
-{
-    if (selectedItems().size() != 2) return;
-    NodeGraphics* first = dynamic_cast<NodeGraphics*> (selectedItems()[0]);
-    NodeGraphics* second = dynamic_cast<NodeGraphics*> (selectedItems()[1]);
-    LineConnectionGraphics* line = new LineConnectionGraphics(first, second);
-    addItem(line);
-    first->getModelNode()->addNeighborNodes(second->getModelNode());
-    second->getModelNode()->addNeighborNodes(first->getModelNode());
 }
 
 void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -108,25 +87,30 @@ void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
             selectedParentNode->addChild(node);
             node->setParent(selectedParentNode);
         }
-
-        NodeGraphics* modelNode = new NodeGraphics(node);
-        connect(modelNode, &NodeGraphics::nodeDoubleClicked, this, &ReliabilityScene::onNodeDoubleClicked);
-        modelNode->setPos(x,y);
-        addItem(modelNode);
+        addNodeToScene(node);
     }
     QGraphicsScene::mousePressEvent(event);
 }
 
-void ReliabilityScene::clearNodes(const QList<QGraphicsItem*>& items)
+void ReliabilityScene::clearNodes()
 {
-
-    for(QGraphicsItem* item : items)
+    QList<QGraphicsItem*> itemsCopy = items();
+    for (QGraphicsItem* item : itemsCopy)
     {
-        //спросить про это у куратора*
-        NodeGraphics* mNode = dynamic_cast<NodeGraphics*> (item);
         removeItem(item);
+        delete item;
     }
 }
 
 void ReliabilityScene::createConnections()
 {}
+
+ReliabilityScene::~ReliabilityScene()
+{
+    qDeleteAll(rootNodes);
+    rootNodes.clear();
+}
+
+void ReliabilityScene::onConnectSelectedNodes()
+{
+}

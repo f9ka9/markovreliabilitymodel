@@ -2,8 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/markovreliabilitymodel_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/markovreliabilitymodel_autogen.dir/ParseCache.txt"
   "markovreliabilitymodel_autogen"
-  "CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj"
-  "CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj.d"
   "CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj"
   "CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj.d"
   "CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj"

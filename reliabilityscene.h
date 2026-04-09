@@ -6,13 +6,13 @@
 #include <QDebug>
 
 #include "nodegraphics.h"
-#include "lineconnectiongraphics.h"
 
 class ReliabilityScene : public QGraphicsScene
 {
     Q_OBJECT
 public:
     ReliabilityScene(QObject* parent = nullptr);
+    ~ReliabilityScene();
 
     void setModelsAddMode(bool toSwitch);
 
@@ -23,7 +23,7 @@ public:
     QList<Node*> getRootNodes () const;
 
     void addNodeToScene(Node* node);
-    void clearNodes(const QList<QGraphicsItem*>& items);
+    void clearNodes();
 
     void createConnections();
 

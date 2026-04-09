@@ -23,7 +23,6 @@ public:
 
     QList<Node*> getChildren() const;
     void addChild(Node* child);
-    void deleteChildren();
     void removeChild(Node* child);
 
     void addNeighborNodes(Node* node);

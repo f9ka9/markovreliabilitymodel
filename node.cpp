@@ -18,26 +18,20 @@ QPointF Node::getPreviousPosition() const {return previousPosition;}
 void Node::setPreviousPosition(const QPointF& pos){previousPosition = pos;}
 
 QList<Node*> Node::getChildren() const {return children;}
-void Node::addChild(Node* child) {children.append(child);}
-void Node::deleteChildren()
+void Node::addChild(Node* child)
 {
-    QList<Node*> copyNodesList = children;
-    for(Node* node: copyNodesList)
-    {
-        if(!node->getChildren().isEmpty())
-        {
-            node->deleteChildren();
-        }
-        node->setParent(nullptr);
-        delete node;
-    }
-    children.clear();
+    if (!child) return;
+    children.append(child);
 }
 
 void Node::removeChild(Node* child)
 {
+    if (!child)
+        return;
+
     children.removeOne(child);
+    child->setParent(nullptr);
 }
 
 QList<Node*> Node::getNeighborNodes() const {return neighborNodes;}
-void Node::addNeighborNodes(Node* node) {neighborNodes.append(node);}
+void Node::addNeighborNodes(Node* node){if (!neighborNodes.contains(node)) neighborNodes.append(node);}
