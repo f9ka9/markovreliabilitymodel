@@ -5,9 +5,15 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QDebug \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QRect \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h \
@@ -47,6 +53,8 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qcontainerinfo.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qcontainertools_impl.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qcontiguouscache.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qdarwinhelpers.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qdatastream.h \
@@ -83,6 +91,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qmetatype.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qminmax.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qnamespace.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qnativeinterface.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qnumeric.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qobject_impl.h \
@@ -149,19 +158,28 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qevent.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qeventpoint.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qfont.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qfontinfo.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qfontvariableaxis.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qicon.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qimage.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qinputdevice.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qkeysequence.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpainter.h \
@@ -171,10 +189,13 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpicture.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qpointingdevice.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpolygon.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen_platform.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtextdocument.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtgui-config.h \
@@ -182,6 +203,8 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtguiglobal.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qvalidator.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qvector2d.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qvectornd.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDockWidget \

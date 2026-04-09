@@ -461,4 +461,32 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnectiongraphics.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\statescene.h
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\statescene.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\stateview.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\structureview.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qevent.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qeventpoint.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qvector2d.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qvectornd.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpointingdevice.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qinputdevice.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QRect \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qrect.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qsize.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qnativeinterface.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen_platform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent

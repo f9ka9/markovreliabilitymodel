@@ -27,6 +27,7 @@ public:
 
     void createConnections();
 
+
 public slots:
     void onUpLevel();
     void onNodeDoubleClicked(Node* node);

@@ -468,6 +468,34 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qevent.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qeventpoint.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qvector2d.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qvectornd.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpointingdevice.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qinputdevice.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QRect \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qrect.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qsize.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qnativeinterface.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen_platform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\EWIEGA46WW/moc_nodegraphics.cpp \

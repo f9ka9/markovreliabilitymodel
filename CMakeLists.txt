@@ -18,17 +18,12 @@ qt_add_executable(markovreliabilitymodel
     nodegraphics.cpp
     reliabilityscene.cpp
     statescene.cpp
-
     lineconnectiongraphics.h
-
     lineconnectiongraphics.cpp
     structureview.h
     stateview.h
     stateview.cpp
     structureview.cpp
-
-
-
 )
 
 target_link_libraries(markovreliabilitymodel

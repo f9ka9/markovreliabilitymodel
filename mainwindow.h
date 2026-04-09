@@ -16,6 +16,8 @@
 
 #include "reliabilityscene.h"
 #include "statescene.h"
+#include "stateview.h"
+#include "structureview.h"
 
 class MainWindow : public QMainWindow
 {
@@ -43,8 +45,8 @@ private:
     ReliabilityScene* structureScene{nullptr};
     StateScene* stateScene{nullptr};
 
-    QGraphicsView* structureView{nullptr};
-    QGraphicsView* stateGraphView{nullptr};
+    StructureView* structureView{nullptr};
+    StateView* stateGraphView{nullptr};
 
     QSplitter* splitter{nullptr};
 

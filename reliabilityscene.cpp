@@ -109,8 +109,6 @@ void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
             node->setParent(selectedParentNode);
         }
 
-        qDebug() << node->getParent();
-
         NodeGraphics* modelNode = new NodeGraphics(node);
         connect(modelNode, &NodeGraphics::nodeDoubleClicked, this, &ReliabilityScene::onNodeDoubleClicked);
         modelNode->setPos(x,y);
@@ -131,31 +129,4 @@ void ReliabilityScene::clearNodes(const QList<QGraphicsItem*>& items)
 }
 
 void ReliabilityScene::createConnections()
-{
-    //это временное решение , я потом переделаю !!!!!!!!
-    QList<NodeGraphics*> nodeGraphicsList;
-
-    for (QGraphicsItem* item : items())
-        if (NodeGraphics* node = dynamic_cast<NodeGraphics*>(item))
-            nodeGraphicsList.append(node);
-
-    for (NodeGraphics* node : nodeGraphicsList)
-    {
-        Node* model = node->getModelNode();
-        for (Node* neighbor : model->getNeighborNodes())
-        {
-            for (NodeGraphics* other : nodeGraphicsList)
-            {
-                if (other->getModelNode() == neighbor)
-                {
-                    if (node < other)
-                    {
-                        LineConnectionGraphics* line = new LineConnectionGraphics(node, other);
-
-                        addItem(line);
-                    }
-                }
-            }
-        }
-    }
-}
+{}

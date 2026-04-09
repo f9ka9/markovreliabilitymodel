@@ -6,7 +6,7 @@
 class StateView : public QGraphicsView
 {
 public:
-    StateView(QGraphicsView* parent = nullptr);
+    StateView(QWidget* parent = nullptr);
     ~StateView();
 };
 

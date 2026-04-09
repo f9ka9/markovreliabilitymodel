@@ -53,14 +53,12 @@ MainWindow::MainWindow(QWidget *parent)
 void MainWindow::setupCentralWidgets()
 {
     structureScene = new ReliabilityScene(this);
-    structureView = new QGraphicsView(this);
+    structureView = new StructureView(this);
     structureView->setScene(structureScene);
-    structureView->setDragMode(QGraphicsView::ScrollHandDrag);
 
     stateScene = new StateScene(this);
-    stateGraphView = new QGraphicsView(this);
+    stateGraphView = new StateView(this);
     stateGraphView->setScene(stateScene);
-    stateGraphView->setDragMode(QGraphicsView::ScrollHandDrag);
 
 
     splitter = new QSplitter(this);

@@ -1,6 +1,11 @@
-#include <stateview.h>
+#include "stateview.h"
 
-StateView::StateView(QGraphicsView* parent): QGraphicsView(parent)
-{}
+StateView::StateView(QWidget* parent): QGraphicsView(parent)
+{
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setDragMode(QGraphicsView::ScrollHandDrag);
+}
+
 StateView::~StateView()
 {}
