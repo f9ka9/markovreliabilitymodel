@@ -78,11 +78,11 @@ private:
     QMenu* helpMenu{nullptr};
     //============================================================================================
 private slots:
-    void toggleModelsAddMode(bool toSwich);
+    void toggleModelsAddMode(bool checked);
     void toggleSelectionMode(bool checked);
     void upLevel();
     void deleteSelectedModelsNodes();
-    void connectSelectedNodes();
+    void toggleConnectionMode(bool checked);
 
     //============================================================================================
 protected:
@@ -91,7 +91,6 @@ protected:
 signals:
     void upLevelSignal();
     void deleteSelectedModelsNodesSignal();
-    void connectSelectedNodesSignal();
 
     //============================================================================================
 };

@@ -7,6 +7,10 @@ markovreliabilitymodel_autogen/timestamp: \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/3.30.5/CMakeRCCompiler.cmake \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/3.30.5/CMakeSystem.cmake \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/moc_predefs.h \
+	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.cpp \
+	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h \
+	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.cpp \
+	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/main.cpp \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.cpp \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h \
@@ -233,6 +237,7 @@ markovreliabilitymodel_autogen/timestamp: \
 	D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
 	D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSplitter \
 	D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
+	D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
 	D:/Qt/6.10.2/mingw_64/include/QtWidgets/QTableWidget \
 	D:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar \
 	D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \

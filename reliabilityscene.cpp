@@ -3,6 +3,11 @@
 ReliabilityScene::ReliabilityScene(QObject* parent): QGraphicsScene(parent)
 {
     setSceneRect(-5000, -5000, 10000, 10000);
+    tempConnectionPath = new QGraphicsPathItem;
+    tempConnectionPath->setZValue(-1.0);                     // рисуем под узлами
+    tempConnectionPath->setPen(QPen(Qt::blue, 2, Qt::DashLine));
+    tempConnectionPath->setVisible(false);
+    addItem(tempConnectionPath);
 }
 
 void ReliabilityScene::setModelsAddMode(bool toSwich){modelsAddMode = toSwich;}
@@ -13,7 +18,6 @@ void ReliabilityScene::onUpLevel()
     if (selectedParentNode) selectedParentNode = selectedParentNode->getParent();
     if (selectedParentNode) {for (Node* child : selectedParentNode->getChildren()) addNodeToScene(child);}
     else{for (Node* rootNode : rootNodes) addNodeToScene(rootNode);}
-    createConnections();
 }
 
 void ReliabilityScene::addNodeToScene(Node* node)
@@ -48,7 +52,6 @@ void ReliabilityScene::onNodeDoubleClicked(Node* node)
         clearNodes();
         selectedParentNode = node;
         for(Node* child : node->getChildren()) addNodeToScene(child);
-        createConnections();
     }
 }
 
@@ -72,6 +75,35 @@ void ReliabilityScene::onDeleteSelectedModelsNodes()
 
 void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    if(connectionMode && event->button() == Qt::LeftButton)
+    {
+        QGraphicsItem* item = itemAt(event->scenePos(), QTransform());
+        NodeGraphics* nodeItem =  dynamic_cast<NodeGraphics*> (item);
+        if (!connectionDrawingActive)
+        {
+            if (!nodeItem) return;
+            connectionStartNode = nodeItem->getModelNode();
+            connectionDrawingActive = true;
+            lastCursorScenePos = event->scenePos();
+            tempConnectionPath->setPath(calculateRubberBandPath());
+            tempConnectionPath->setVisible(true);
+            event->accept();
+            return;
+        }
+        else
+        {
+            if(nodeItem)
+            {
+                connectionStartNode = nullptr;
+                connectionDrawingActive = false;
+                connectionStartNode = nullptr;
+                tempConnectionPath->setVisible(false);
+                tempConnectionPath->setPath(QPainterPath());
+                event->accept();
+                return;
+            }
+        }
+    }
     if(modelsAddMode && event->button() == Qt::LeftButton)
     {
         if (!items(event->scenePos()).isEmpty()) return;
@@ -102,8 +134,19 @@ void ReliabilityScene::clearNodes()
     }
 }
 
-void ReliabilityScene::createConnections()
-{}
+void ReliabilityScene::setConnectionMode(bool enabled)
+{
+    connectionMode = enabled;
+    if(!enabled)
+    {
+        connectionDrawingActive = false;
+        connectionStartNode = nullptr;
+        tempConnectionPath->setVisible(false);
+        tempConnectionPath->setPath(QPainterPath());
+    }
+}
+
+
 
 ReliabilityScene::~ReliabilityScene()
 {
@@ -111,6 +154,29 @@ ReliabilityScene::~ReliabilityScene()
     rootNodes.clear();
 }
 
-void ReliabilityScene::onConnectSelectedNodes()
+
+void ReliabilityScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
+    if (connectionMode && connectionDrawingActive) {
+        lastCursorScenePos = event->scenePos();
+        tempConnectionPath->setPath(calculateRubberBandPath());
+        event->accept();
+        return;
+    }
+    QGraphicsScene::mouseMoveEvent(event);
+}
+
+QPainterPath ReliabilityScene::calculateRubberBandPath() const
+{
+    QPainterPath path;
+    if (!connectionStartNode) return path;
+
+    QPointF start = connectionStartNode->getPosition();
+    QPointF end = lastCursorScenePos;
+
+    QPointF corner(end.x(), start.y());
+    path.moveTo(start);
+    path.lineTo(corner);
+    path.lineTo(end);
+    return path;
 }

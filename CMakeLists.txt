@@ -22,6 +22,10 @@ qt_add_executable(markovreliabilitymodel
     stateview.h
     stateview.cpp
     structureview.cpp
+    lineconnection.h
+    lineconnection.cpp
+    lineconnectiongraphics.h
+    lineconnectiongraphics.cpp
 )
 
 target_link_libraries(markovreliabilitymodel

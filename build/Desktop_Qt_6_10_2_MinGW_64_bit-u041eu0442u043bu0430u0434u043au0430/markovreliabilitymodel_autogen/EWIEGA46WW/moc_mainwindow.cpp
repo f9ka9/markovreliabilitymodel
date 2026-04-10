@@ -43,14 +43,12 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "upLevelSignal",
         "",
         "deleteSelectedModelsNodesSignal",
-        "connectSelectedNodesSignal",
         "toggleModelsAddMode",
-        "toSwich",
-        "toggleSelectionMode",
         "checked",
+        "toggleSelectionMode",
         "upLevel",
         "deleteSelectedModelsNodes",
-        "connectSelectedNodes"
+        "toggleConnectionMode"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -58,22 +56,22 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Signal 'deleteSelectedModelsNodesSignal'
         QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'connectSelectedNodesSignal'
-        QtMocHelpers::SignalData<void()>(4, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'toggleModelsAddMode'
-        QtMocHelpers::SlotData<void(bool)>(5, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Bool, 6 },
+        QtMocHelpers::SlotData<void(bool)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 5 },
         }}),
         // Slot 'toggleSelectionMode'
-        QtMocHelpers::SlotData<void(bool)>(7, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Bool, 8 },
+        QtMocHelpers::SlotData<void(bool)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 5 },
         }}),
         // Slot 'upLevel'
-        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'deleteSelectedModelsNodes'
-        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'connectSelectedNodes'
-        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleConnectionMode'
+        QtMocHelpers::SlotData<void(bool)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 5 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -99,12 +97,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->upLevelSignal(); break;
         case 1: _t->deleteSelectedModelsNodesSignal(); break;
-        case 2: _t->connectSelectedNodesSignal(); break;
-        case 3: _t->toggleModelsAddMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 4: _t->toggleSelectionMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 5: _t->upLevel(); break;
-        case 6: _t->deleteSelectedModelsNodes(); break;
-        case 7: _t->connectSelectedNodes(); break;
+        case 2: _t->toggleModelsAddMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 3: _t->toggleSelectionMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 4: _t->upLevel(); break;
+        case 5: _t->deleteSelectedModelsNodes(); break;
+        case 6: _t->toggleConnectionMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
         default: ;
         }
     }
@@ -112,8 +109,6 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         if (QtMocHelpers::indexOfMethod<void (MainWindow::*)()>(_a, &MainWindow::upLevelSignal, 0))
             return;
         if (QtMocHelpers::indexOfMethod<void (MainWindow::*)()>(_a, &MainWindow::deleteSelectedModelsNodesSignal, 1))
-            return;
-        if (QtMocHelpers::indexOfMethod<void (MainWindow::*)()>(_a, &MainWindow::connectSelectedNodesSignal, 2))
             return;
     }
 }
@@ -137,14 +132,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 8;
+        _id -= 7;
     }
     return _id;
 }
@@ -159,11 +154,5 @@ void MainWindow::upLevelSignal()
 void MainWindow::deleteSelectedModelsNodesSignal()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
-}
-
-// SIGNAL 2
-void MainWindow::connectSelectedNodesSignal()
-{
-    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP

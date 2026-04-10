@@ -5,6 +5,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QDebug>
 
+
 #include "nodegraphics.h"
 
 class ReliabilityScene : public QGraphicsScene
@@ -15,6 +16,8 @@ public:
     ~ReliabilityScene();
 
     void setModelsAddMode(bool toSwitch);
+    void setConnectionMode(bool enabled);
+
 
     void setSelectedParentNode(Node* node);
     Node* getSelectedParentNode () const;
@@ -26,21 +29,27 @@ public:
     void clearNodes();
 
     void createConnections();
+    QPainterPath calculateRubberBandPath() const;
 
 
 public slots:
     void onUpLevel();
     void onNodeDoubleClicked(Node* node);
     void onDeleteSelectedModelsNodes();
-    void onConnectSelectedNodes();
 
 protected:
     void drawBackground(QPainter *painter, const QRectF &rect) override;
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
 
 private:
-    bool modelsAddMode = false;
+    bool modelsAddMode{false};
+    bool connectionMode{false};
+    bool connectionDrawingActive{false};
+    QPointF lastCursorScenePos;
+    Node* connectionStartNode {nullptr};
     Node* selectedParentNode{nullptr};
     QList<Node*> rootNodes;
+    QGraphicsPathItem* tempConnectionPath;
 };
 #endif // RELIABILITYSCENE_H

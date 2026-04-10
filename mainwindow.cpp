@@ -45,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
     //============================================================================================
     connect(this, &MainWindow::upLevelSignal, structureScene, &ReliabilityScene::onUpLevel);
     connect(this, &MainWindow::deleteSelectedModelsNodesSignal, structureScene, &ReliabilityScene::onDeleteSelectedModelsNodes);
-    connect(this, &MainWindow::connectSelectedNodesSignal, structureScene, &ReliabilityScene::onConnectSelectedNodes);
+
 
     //============================================================================================
 }
@@ -110,9 +110,10 @@ void MainWindow::createActions()
     connect(selectAction, &QAction::toggled, this, &MainWindow::toggleSelectionMode);
 
     connectAction = new QAction("🔗 Соединить",this);
+    connectAction->setCheckable(true);
     connectAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F));
     connectAction->setStatusTip("Соединение линиями между собой выбранных двух узлов на сцене редактора структурной схемы надёжности");
-    //connect(connectAction, &QAction::triggered, this, &MainWindow::connectSelectedNodes);
+    connect(connectAction, &QAction::triggered, this, &MainWindow::toggleConnectionMode);
 
     calculateAction = new QAction("∑ Расчитать",this);
     calculateAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_C));
@@ -203,13 +204,12 @@ void MainWindow::setupStatusBar ()
     statusBar()->showMessage("Готово", 5000);
 }
 //============================================================================================
-void MainWindow::toggleModelsAddMode(bool toSwich)
+void MainWindow::toggleModelsAddMode(bool checked)
 {
-    if (structureScene)
-    {
-        structureScene->setModelsAddMode(toSwich);
-        if(selectAction->isChecked()) selectAction->setChecked(false);
-    }
+    structureScene->setModelsAddMode(checked);
+    if(selectAction->isChecked()) selectAction->setChecked(false);
+    if(connectAction->isChecked()) connectAction->setChecked(false);
+    structureScene->setConnectionMode(false);
 }
 
 void MainWindow::toggleSelectionMode(bool checked)
@@ -218,10 +218,21 @@ void MainWindow::toggleSelectionMode(bool checked)
     if (checked)
     {
         structureView->setDragMode(QGraphicsView::RubberBandDrag);
-        if(addNodeAction->isChecked())
-            addNodeAction->setChecked(false);
+        if(addNodeAction->isChecked()) addNodeAction->setChecked(false);
+        if(connectAction->isChecked()) connectAction->setChecked(false);
         structureScene->setModelsAddMode(false);
+        structureScene->setConnectionMode(false);
     }
+    else structureView->setDragMode(QGraphicsView::ScrollHandDrag);
+}
+
+void MainWindow::toggleConnectionMode (bool checked)
+{
+    structureScene->setConnectionMode(checked);
+    if(selectAction->isChecked()) selectAction->setChecked(false);
+    if(addNodeAction->isChecked()) addNodeAction->setChecked(false);
+    structureScene->setModelsAddMode(false);
+    if (checked) structureView->setDragMode(QGraphicsView::NoDrag);
     else structureView->setDragMode(QGraphicsView::ScrollHandDrag);
 }
 
@@ -229,7 +240,6 @@ void MainWindow::upLevel() {emit upLevelSignal();}
 
 void MainWindow::deleteSelectedModelsNodes() {emit deleteSelectedModelsNodesSignal();}
 
-void MainWindow::connectSelectedNodes () {emit connectSelectedNodesSignal();}
 //============================================================================================
 
 //============================================================================================
