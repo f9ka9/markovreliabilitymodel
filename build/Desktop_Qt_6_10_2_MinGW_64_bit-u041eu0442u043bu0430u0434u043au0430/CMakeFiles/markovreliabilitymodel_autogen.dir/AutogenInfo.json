@@ -325,6 +325,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/gridsettings.h",
+			"MU",
+			"EWIEGA46WW/moc_gridsettings.cpp",
+			null
+		],
+		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h",
 			"MU",
 			"EWIEGA46WW/moc_lineconnection.cpp",
@@ -349,6 +355,12 @@
 			null
 		],
 		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.h",
+			"MU",
+			"EWIEGA46WW/moc_nodeconfigurationwidget.cpp",
+			null
+		],
+		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h",
 			"MU",
 			"EWIEGA46WW/moc_nodegraphics.cpp",
@@ -358,6 +370,12 @@
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h",
 			"MU",
 			"EWIEGA46WW/moc_reliabilityscene.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemamodel.h",
+			"MU",
+			"EWIEGA46WW/moc_schemamodel.cpp",
 			null
 		],
 		[
@@ -472,6 +490,11 @@
 		],
 		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.cpp",
 			"MU",
 			null
 		],

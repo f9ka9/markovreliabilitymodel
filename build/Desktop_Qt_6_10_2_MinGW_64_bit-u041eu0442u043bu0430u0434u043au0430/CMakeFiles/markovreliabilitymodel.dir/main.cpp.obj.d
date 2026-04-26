@@ -436,6 +436,9 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\reliabilityscene.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsPathItem \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpainterpath.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
@@ -445,21 +448,26 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QDebug \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodegraphics.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
- D:/Qt/6.10.2/mingw_64/include/QtGui/qpainterpath.h \
- D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
- D:/Qt/6.10.2/mingw_64/include/QtGui/qpainter.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QHash \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qhash.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpainterpath.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnectiongraphics.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpainter.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstyleoption.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodegraphics.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\schemamodel.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\statescene.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\stateview.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\structureview.h \
@@ -488,7 +496,11 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QPoint \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodeconfigurationwidget.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QApplication \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qapplication.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QIcon \

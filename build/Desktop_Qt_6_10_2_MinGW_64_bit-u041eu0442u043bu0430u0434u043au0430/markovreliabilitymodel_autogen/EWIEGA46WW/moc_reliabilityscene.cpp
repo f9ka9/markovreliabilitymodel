@@ -39,23 +39,34 @@ template <> constexpr inline auto ReliabilityScene::qt_create_metaobjectdata<qt_
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "ReliabilityScene",
-        "onUpLevel",
+        "editorModesResetRequested",
         "",
-        "onNodeDoubleClicked",
+        "nodeAboutToBeRemoved",
         "Node*",
         "node",
-        "onDeleteSelectedModelsNodes"
+        "currentLevelChanged",
+        "path",
+        "onUpLevel",
+        "onNodeDoubleClicked"
     };
 
     QtMocHelpers::UintData qt_methods {
-        // Slot 'onUpLevel'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
-        // Slot 'onNodeDoubleClicked'
-        QtMocHelpers::SlotData<void(Node *)>(3, 2, QMC::AccessPublic, QMetaType::Void, {{
+        // Signal 'editorModesResetRequested'
+        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'nodeAboutToBeRemoved'
+        QtMocHelpers::SignalData<void(Node *)>(3, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 4, 5 },
         }}),
-        // Slot 'onDeleteSelectedModelsNodes'
-        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'currentLevelChanged'
+        QtMocHelpers::SignalData<void(const QString &)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 7 },
+        }}),
+        // Slot 'onUpLevel'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPublic, QMetaType::Void),
+        // Slot 'onNodeDoubleClicked'
+        QtMocHelpers::SlotData<void(Node *)>(9, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 4, 5 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -79,11 +90,21 @@ void ReliabilityScene::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
     auto *_t = static_cast<ReliabilityScene *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->onUpLevel(); break;
-        case 1: _t->onNodeDoubleClicked((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1]))); break;
-        case 2: _t->onDeleteSelectedModelsNodes(); break;
+        case 0: _t->editorModesResetRequested(); break;
+        case 1: _t->nodeAboutToBeRemoved((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1]))); break;
+        case 2: _t->currentLevelChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 3: _t->onUpLevel(); break;
+        case 4: _t->onNodeDoubleClicked((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1]))); break;
         default: ;
         }
+    }
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (ReliabilityScene::*)()>(_a, &ReliabilityScene::editorModesResetRequested, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (ReliabilityScene::*)(Node * )>(_a, &ReliabilityScene::nodeAboutToBeRemoved, 1))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (ReliabilityScene::*)(const QString & )>(_a, &ReliabilityScene::currentLevelChanged, 2))
+            return;
     }
 }
 
@@ -106,15 +127,33 @@ int ReliabilityScene::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 5;
     }
     return _id;
+}
+
+// SIGNAL 0
+void ReliabilityScene::editorModesResetRequested()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void ReliabilityScene::nodeAboutToBeRemoved(Node * _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
+}
+
+// SIGNAL 2
+void ReliabilityScene::currentLevelChanged(const QString & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
 }
 QT_WARNING_POP

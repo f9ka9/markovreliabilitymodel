@@ -343,6 +343,30 @@ node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/node.cpp.s
 .PHONY : node.cpp.s
 
+nodeconfigurationwidget.obj: nodeconfigurationwidget.cpp.obj
+.PHONY : nodeconfigurationwidget.obj
+
+# target to build an object file
+nodeconfigurationwidget.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj
+.PHONY : nodeconfigurationwidget.cpp.obj
+
+nodeconfigurationwidget.i: nodeconfigurationwidget.cpp.i
+.PHONY : nodeconfigurationwidget.i
+
+# target to preprocess a source file
+nodeconfigurationwidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.i
+.PHONY : nodeconfigurationwidget.cpp.i
+
+nodeconfigurationwidget.s: nodeconfigurationwidget.cpp.s
+.PHONY : nodeconfigurationwidget.s
+
+# target to generate assembly for a file
+nodeconfigurationwidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.s
+.PHONY : nodeconfigurationwidget.cpp.s
+
 nodegraphics.obj: nodegraphics.cpp.obj
 .PHONY : nodegraphics.obj
 
@@ -496,6 +520,9 @@ help:
 	@echo ... node.obj
 	@echo ... node.i
 	@echo ... node.s
+	@echo ... nodeconfigurationwidget.obj
+	@echo ... nodeconfigurationwidget.i
+	@echo ... nodeconfigurationwidget.s
 	@echo ... nodegraphics.obj
 	@echo ... nodegraphics.i
 	@echo ... nodegraphics.s

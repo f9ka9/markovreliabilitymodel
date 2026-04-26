@@ -78,13 +78,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 36,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 30,
+				"line" : 35,
 				"parent" : 0
 			},
 			{
@@ -381,13 +381,15 @@
 				0,
 				1,
 				2,
-				8,
-				9,
 				10,
 				11,
+				12,
+				13,
 				14,
-				15,
-				17
+				17,
+				18,
+				20,
+				22
 			]
 		}
 	],
@@ -509,7 +511,7 @@
 			"sourceIndexes" : 
 			[
 				0,
-				19
+				24
 			]
 		},
 		{
@@ -518,13 +520,15 @@
 			[
 				1,
 				2,
-				8,
-				9,
 				10,
 				11,
+				12,
+				13,
 				14,
-				15,
-				17
+				17,
+				18,
+				20,
+				22
 			]
 		},
 		{
@@ -536,17 +540,20 @@
 				5,
 				6,
 				7,
-				12,
-				13,
+				8,
+				9,
+				15,
 				16,
-				18
+				19,
+				21,
+				23
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				20
+				25
 			]
 		}
 	],
@@ -583,12 +590,22 @@
 		},
 		{
 			"backtrace" : 4,
+			"path" : "nodeconfigurationwidget.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
 			"path" : "nodegraphics.h",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 4,
 			"path" : "reliabilityscene.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "schemamodel.h",
 			"sourceGroupIndex" : 2
 		},
 		{
@@ -600,6 +617,12 @@
 			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "node.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "nodeconfigurationwidget.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -656,6 +679,17 @@
 		{
 			"backtrace" : 4,
 			"path" : "lineconnectiongraphics.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "lineconnectiongraphics.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"path" : "gridsettings.h",
 			"sourceGroupIndex" : 2
 		},
 		{

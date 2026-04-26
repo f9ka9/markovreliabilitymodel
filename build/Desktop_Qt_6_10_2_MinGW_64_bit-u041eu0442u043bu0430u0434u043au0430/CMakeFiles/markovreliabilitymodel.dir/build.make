@@ -128,11 +128,26 @@ CMakeFiles/markovreliabilitymodel.dir/node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/markovreliabilitymodel.dir/node.cpp.s"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.cpp -o CMakeFiles\markovreliabilitymodel.dir\node.cpp.s
 
+CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/flags.make
+CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/includes_CXX.rsp
+CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.cpp
+CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj -MF CMakeFiles\markovreliabilitymodel.dir\nodeconfigurationwidget.cpp.obj.d -o CMakeFiles\markovreliabilitymodel.dir\nodeconfigurationwidget.cpp.obj -c C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodeconfigurationwidget.cpp
+
+CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.i"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodeconfigurationwidget.cpp > CMakeFiles\markovreliabilitymodel.dir\nodeconfigurationwidget.cpp.i
+
+CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.s"
+	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodeconfigurationwidget.cpp -o CMakeFiles\markovreliabilitymodel.dir\nodeconfigurationwidget.cpp.s
+
 CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/flags.make
 CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/includes_CXX.rsp
 CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.cpp
 CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj -MF CMakeFiles\markovreliabilitymodel.dir\nodegraphics.cpp.obj.d -o CMakeFiles\markovreliabilitymodel.dir\nodegraphics.cpp.obj -c C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodegraphics.cpp
 
 CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.i: cmake_force
@@ -147,7 +162,7 @@ CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: CMakeFiles/marko
 CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/includes_CXX.rsp
 CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.cpp
 CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj -MF CMakeFiles\markovreliabilitymodel.dir\reliabilityscene.cpp.obj.d -o CMakeFiles\markovreliabilitymodel.dir\reliabilityscene.cpp.obj -c C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\reliabilityscene.cpp
 
 CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.i: cmake_force
@@ -162,7 +177,7 @@ CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj: CMakeFiles/markovrelia
 CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/includes_CXX.rsp
 CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.cpp
 CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj -MF CMakeFiles\markovreliabilitymodel.dir\statescene.cpp.obj.d -o CMakeFiles\markovreliabilitymodel.dir\statescene.cpp.obj -c C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\statescene.cpp
 
 CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.i: cmake_force
@@ -177,7 +192,7 @@ CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj: CMakeFiles/markovreliab
 CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/includes_CXX.rsp
 CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.cpp
 CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj -MF CMakeFiles\markovreliabilitymodel.dir\stateview.cpp.obj.d -o CMakeFiles\markovreliabilitymodel.dir\stateview.cpp.obj -c C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\stateview.cpp
 
 CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.i: cmake_force
@@ -192,7 +207,7 @@ CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj: CMakeFiles/markovre
 CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/includes_CXX.rsp
 CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.cpp
 CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj -MF CMakeFiles\markovreliabilitymodel.dir\structureview.cpp.obj.d -o CMakeFiles\markovreliabilitymodel.dir\structureview.cpp.obj -c C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\structureview.cpp
 
 CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.i: cmake_force
@@ -207,7 +222,7 @@ CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.obj: CMakeFiles/markovr
 CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/includes_CXX.rsp
 CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.obj: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.cpp
 CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.obj -MF CMakeFiles\markovreliabilitymodel.dir\lineconnection.cpp.obj.d -o CMakeFiles\markovreliabilitymodel.dir\lineconnection.cpp.obj -c C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.cpp
 
 CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.i: cmake_force
@@ -222,7 +237,7 @@ CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: CMakeFiles
 CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/includes_CXX.rsp
 CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.cpp
 CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: CMakeFiles/markovreliabilitymodel.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj"
 	D:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj -MF CMakeFiles\markovreliabilitymodel.dir\lineconnectiongraphics.cpp.obj.d -o CMakeFiles\markovreliabilitymodel.dir\lineconnectiongraphics.cpp.obj -c C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnectiongraphics.cpp
 
 CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.i: cmake_force
@@ -239,6 +254,7 @@ markovreliabilitymodel_OBJECTS = \
 "CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj" \
 "CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj" \
 "CMakeFiles/markovreliabilitymodel.dir/node.cpp.obj" \
+"CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj" \
 "CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj" \
 "CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj" \
 "CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj" \
@@ -254,6 +270,7 @@ markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/markovreliabil
 markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj
 markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj
 markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/node.cpp.obj
+markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj
 markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj
 markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj
 markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj
@@ -269,7 +286,7 @@ markovreliabilitymodel.exe: D:/Qt/6.10.2/mingw_64/lib/libQt6EntryPoint.a
 markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/linkLibs.rsp
 markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/objects1.rsp
 markovreliabilitymodel.exe: CMakeFiles/markovreliabilitymodel.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable markovreliabilitymodel.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable markovreliabilitymodel.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\markovreliabilitymodel.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

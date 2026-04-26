@@ -1,11 +1,16 @@
 #include "structureview.h"
 
+#include <QScrollBar>
+
 StructureView::StructureView(QWidget* parent): QGraphicsView(parent), coord(nullptr)
 {
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setDragMode(QGraphicsView::ScrollHandDrag);
+    setDragMode(QGraphicsView::NoDrag);
+    setCursor(Qt::ArrowCursor);
+    viewport()->setCursor(Qt::ArrowCursor);
     setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+    setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
     setMouseTracking(true);
     setupCoordLabel();
 }
@@ -75,10 +80,55 @@ void StructureView::setupCoordLabel()
     updateCoordLabelPosition();
 }
 
+void StructureView::setPanningEnabled(bool enabled)
+{
+    panningEnabled = enabled;
+    if (!enabled) panning = false;
+
+    setCursor(Qt::ArrowCursor);
+    viewport()->setCursor(Qt::ArrowCursor);
+}
+
+void StructureView::mousePressEvent(QMouseEvent* event)
+{
+    if (panningEnabled && event->button() == Qt::LeftButton && !itemAt(event->pos()))
+    {
+        panning = true;
+        lastPanPoint = event->pos();
+        event->accept();
+        return;
+    }
+
+    QGraphicsView::mousePressEvent(event);
+}
+
 void StructureView::mouseMoveEvent(QMouseEvent* event)
 {
+    if (panning)
+    {
+        const QPoint delta = event->pos() - lastPanPoint;
+        horizontalScrollBar()->setValue(horizontalScrollBar()->value() - delta.x());
+        verticalScrollBar()->setValue(verticalScrollBar()->value() - delta.y());
+        lastPanPoint = event->pos();
+        updateCursorCoordinatesLabel();
+        event->accept();
+        return;
+    }
+
     updateCursorCoordinatesLabel();
     QGraphicsView::mouseMoveEvent(event);
+}
+
+void StructureView::mouseReleaseEvent(QMouseEvent* event)
+{
+    if (event->button() == Qt::LeftButton && panning)
+    {
+        panning = false;
+        event->accept();
+        return;
+    }
+
+    QGraphicsView::mouseReleaseEvent(event);
 }
 
 void StructureView::resizeEvent(QResizeEvent* event)

@@ -42,7 +42,7 @@ template <> constexpr inline auto NodeGraphics::qt_create_metaobjectdata<qt_meta
         "nodeDoubleClicked",
         "",
         "Node*",
-        "Node",
+        "node",
         "positionChanged"
     };
 

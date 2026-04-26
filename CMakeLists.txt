@@ -11,10 +11,13 @@ qt_add_executable(markovreliabilitymodel
     mainwindow.cpp
     mainwindow.h
     node.h
+    nodeconfigurationwidget.h
     nodegraphics.h
     reliabilityscene.h
+    schemamodel.h
     statescene.h
     node.cpp
+    nodeconfigurationwidget.cpp
     nodegraphics.cpp
     reliabilityscene.cpp
     statescene.cpp
@@ -26,6 +29,7 @@ qt_add_executable(markovreliabilitymodel
     lineconnection.cpp
     lineconnectiongraphics.h
     lineconnectiongraphics.cpp
+    gridsettings.h
 )
 
 target_link_libraries(markovreliabilitymodel

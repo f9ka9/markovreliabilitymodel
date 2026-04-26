@@ -1,37 +1,22 @@
 #ifndef LINECONNECTION_H
 #define LINECONNECTION_H
 
-#ifndef _LINECONNECTION_H
-#define _LINECONNECTION_H
-
-#include <QPointF>
-#include <QList>
-#include "node.h"
-
 class Node;
 
 class LineConnection
 {
 public:
     LineConnection() = default;
-    ~LineConnection() = default;
 
-    Node* getFirst() const;
-    void setFirst(Node* node);
+    Node* getSource() const;
+    void setSource(Node* node);
 
-    Node* getSecond() const;
-    void setSecond(Node* node);
-
-    void setPathPoints(const QList<QPointF>& points);
-    QList<QPointF> getPathPoints() const;
-    void updatePathPoints();
+    Node* getTarget() const;
+    void setTarget(Node* node);
 
 private:
-    Node* first{nullptr};
-    Node* second{nullptr};
-    QList<QPointF> pathPoints;
+    Node* source{nullptr};
+    Node* target{nullptr};
 };
-
-#endif // _LINECONNECTION_H
 
 #endif // LINECONNECTION_H

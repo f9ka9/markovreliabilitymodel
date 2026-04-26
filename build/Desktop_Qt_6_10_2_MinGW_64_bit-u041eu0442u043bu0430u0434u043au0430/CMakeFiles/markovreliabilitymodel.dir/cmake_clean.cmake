@@ -14,6 +14,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compilation.cpp.obj.d"
   "CMakeFiles/markovreliabilitymodel.dir/node.cpp.obj"
   "CMakeFiles/markovreliabilitymodel.dir/node.cpp.obj.d"
+  "CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj"
+  "CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj.d"
   "CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj"
   "CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj.d"
   "CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj"

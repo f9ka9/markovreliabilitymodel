@@ -371,6 +371,8 @@ CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qimage.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qpainter.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h \
@@ -381,6 +383,10 @@ CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qendian.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qfontvariableaxis.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpainterpath.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstyleoption.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
@@ -404,10 +410,19 @@ CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstractitemmodel.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodegraphics.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h

@@ -372,6 +372,8 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qimage.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qpainter.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h \
@@ -382,6 +384,10 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtCore/qendian.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qfontvariableaxis.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpainterpath.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstyleoption.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
@@ -405,13 +411,6 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstractitemmodel.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qtmochelpers.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qtmocconstants.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/q20algorithm.h \
@@ -457,6 +456,7 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsPathItem \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
@@ -466,9 +466,14 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QDebug \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QHash \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qhash.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemamodel.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.h \
@@ -497,9 +502,15 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QPoint \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\EWIEGA46WW/moc_nodeconfigurationwidget.cpp \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\EWIEGA46WW/moc_nodegraphics.cpp \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\EWIEGA46WW/moc_reliabilityscene.cpp \

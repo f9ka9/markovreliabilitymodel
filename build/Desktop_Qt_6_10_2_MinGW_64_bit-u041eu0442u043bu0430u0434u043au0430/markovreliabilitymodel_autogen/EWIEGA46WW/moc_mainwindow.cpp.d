@@ -1,14 +1,19 @@
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/moc_predefs.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemamodel.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.h \
-  D:/Qt/6.10.2/mingw_64/include/QtCore/QDebug \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QHash \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QPoint \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QRect \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
@@ -159,6 +164,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
@@ -208,6 +214,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDockWidget \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsPathItem \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsView \
@@ -217,8 +224,10 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSplitter \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QTableWidget \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemview.h \

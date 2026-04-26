@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 
+#include <QSignalBlocker>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
 
@@ -10,9 +12,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     matrixDock{nullptr},
     probabilityDock{nullptr},
+    nodeConfigurationDock{nullptr},
 
     matrixTable{nullptr},
     probabilityTable {nullptr},
+    nodeConfigurationWidget{nullptr},
 
     mainToolBar{nullptr},
 
@@ -44,7 +48,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     //============================================================================================
     connect(this, &MainWindow::upLevelSignal, structureScene, &ReliabilityScene::onUpLevel);
-    connect(this, &MainWindow::deleteSelectedModelsNodesSignal, structureScene, &ReliabilityScene::onDeleteSelectedModelsNodes);
+    connect(structureScene, &ReliabilityScene::editorModesResetRequested, this, &MainWindow::resetEditorModes);
+    connect(structureScene, &ReliabilityScene::nodeAboutToBeRemoved, this, &MainWindow::onConfiguredNodeAboutToBeRemoved);
+    connect(structureScene, &ReliabilityScene::currentLevelChanged, breadcrumbLabel, &QLabel::setText);
+    breadcrumbLabel->setText(structureScene->currentLevelPath());
 
 
     //============================================================================================
@@ -83,6 +90,15 @@ void MainWindow::setupDockWidgets()
     probabilityDock->setWidget(probabilityTable);
     addDockWidget(Qt::BottomDockWidgetArea, probabilityDock);
 
+    nodeConfigurationDock = new QDockWidget("Конфигурация узла", this);
+    nodeConfigurationWidget = new NodeConfigurationWidget(this);
+    nodeConfigurationDock->setWidget(nodeConfigurationWidget);
+    addDockWidget(Qt::LeftDockWidgetArea, nodeConfigurationDock);
+    nodeConfigurationDock->hide();
+
+    connect(nodeConfigurationWidget, &NodeConfigurationWidget::configurationApplied,
+            this, &MainWindow::applyNodeConfiguration);
+
 }
 
 void MainWindow::createActions()
@@ -92,30 +108,31 @@ void MainWindow::createActions()
     configNodeAction = new QAction("⚙ Конфигурация", this);
     configNodeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Q));
     configNodeAction->setStatusTip("Выбор конфигурации узла на сцене редактора структурной схемы надёжности");
-    //connect (configNodeAction, &QAction::triggered, this, &MainWindow::configureNode) ;
+    connect(configNodeAction, &QAction::triggered, this, &MainWindow::showNodeConfiguration);
 
-    addNodeAction = new QAction("＋ Добавить узлы",this);
+    addNodeAction = new QAction("＋ Добавить узлы", this);
     addNodeAction->setCheckable(true);
     addNodeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_D));
-    addNodeAction->setStatusTip("Добавить новые узелы на сцену редактора структурной схемы надежности");
+    addNodeAction->setStatusTip("Добавить новые узлы на сцену редактора структурной схемы надежности");
     connect(addNodeAction, &QAction::triggered, this, &MainWindow::toggleModelsAddMode);
 
-    deleteItemAction = new QAction("✖ Удалить узел" , this);
+    deleteItemAction = new QAction("✖ Удалить" , this);
+    deleteItemAction->setCheckable(true);
     deleteItemAction->setShortcut(QKeySequence(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_X)));
     deleteItemAction->setStatusTip("Удалить выбранный узел со сцены");
-    connect(deleteItemAction, &QAction::triggered, this, &MainWindow::deleteSelectedModelsNodes);
+    connect(deleteItemAction, &QAction::toggled, this, &MainWindow::toggleDeleteMode);
 
     selectAction = new QAction("🔲 Выделение", this);
     selectAction->setCheckable(true);
     connect(selectAction, &QAction::toggled, this, &MainWindow::toggleSelectionMode);
 
-    connectAction = new QAction("🔗 Соединить",this);
+    connectAction = new QAction("🔗 Соединить", this);
     connectAction->setCheckable(true);
     connectAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_F));
     connectAction->setStatusTip("Соединение линиями между собой выбранных двух узлов на сцене редактора структурной схемы надёжности");
     connect(connectAction, &QAction::triggered, this, &MainWindow::toggleConnectionMode);
 
-    calculateAction = new QAction("∑ Расчитать",this);
+    calculateAction = new QAction("∑ Рассчитать", this);
     calculateAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_C));
     calculateAction->setStatusTip("Выполнить расчет надежности для текущей структурной схемы");
     //connect(calculateAction, &QAction::triggered, this, &MainWindow::calculate);
@@ -191,6 +208,7 @@ void MainWindow::setupMenu()
 
     viewMenu->addAction(matrixDock->toggleViewAction());
     viewMenu->addAction(probabilityDock->toggleViewAction());
+    viewMenu->addAction(nodeConfigurationDock->toggleViewAction());
 
     helpMenu = new QMenu("Справка", this);
     menuBar()->addMenu(helpMenu);
@@ -204,12 +222,86 @@ void MainWindow::setupStatusBar ()
     statusBar()->showMessage("Готово", 5000);
 }
 //============================================================================================
+void MainWindow::showNodeConfiguration()
+{
+    configuredNode = structureScene->selectedNode();
+
+    if (configuredNode)
+    {
+        nodeConfigurationWidget->editSelectedNode(configuredNode->getId(),
+                                                 configuredNode->getName(),
+                                                 configuredNode->getGroupName(),
+                                                 configuredNode->getFailureRates(),
+                                                 configuredNode->getStructureType(),
+                                                 configuredNode->getRequiredElements());
+    }
+    else
+    {
+        nodeConfigurationWidget->editDefaultConfiguration(defaultNodeName,
+                                                         defaultNodeGroupName,
+                                                         defaultNodeFailureRates,
+                                                         defaultNodeStructureType,
+                                                         defaultNodeRequiredElements);
+    }
+
+    nodeConfigurationDock->show();
+    nodeConfigurationDock->raise();
+}
+
+void MainWindow::applyNodeConfiguration(const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements)
+{
+    const QString normalizedName = name.trimmed().isEmpty() ? QString("Node") : name.trimmed();
+    const QString normalizedGroupName = groupName.trimmed();
+
+    const FailureRates normalizedFailureRates = structureType == Node::StructureType::Element ? failureRates : FailureRates{};
+
+    if (configuredNode)
+    {
+        configuredNode->setName(normalizedName);
+        configuredNode->setGroupName(normalizedGroupName);
+        configuredNode->setFailureRates(normalizedFailureRates);
+        configuredNode->setStructureType(structureType);
+        configuredNode->setRequiredElements(requiredElements);
+        structureScene->updateNodeGraphics(configuredNode);
+        return;
+    }
+
+    defaultNodeName = normalizedName;
+    defaultNodeGroupName = normalizedGroupName;
+    defaultNodeFailureRates = normalizedFailureRates;
+    defaultNodeStructureType = structureType;
+    defaultNodeRequiredElements = requiredElements;
+    structureScene->setDefaultNodeConfiguration(defaultNodeName,
+                                                defaultNodeGroupName,
+                                                defaultNodeFailureRates,
+                                                defaultNodeStructureType,
+                                                defaultNodeRequiredElements);
+}
+
+void MainWindow::onConfiguredNodeAboutToBeRemoved(Node* node)
+{
+    if (node != configuredNode) return;
+
+    configuredNode = nullptr;
+    nodeConfigurationWidget->editDefaultConfiguration(defaultNodeName,
+                                                     defaultNodeGroupName,
+                                                     defaultNodeFailureRates,
+                                                     defaultNodeStructureType,
+                                                     defaultNodeRequiredElements);
+}
+
 void MainWindow::toggleModelsAddMode(bool checked)
 {
     structureScene->setModelsAddMode(checked);
-    if(selectAction->isChecked()) selectAction->setChecked(false);
-    if(connectAction->isChecked()) connectAction->setChecked(false);
-    structureScene->setConnectionMode(false);
+    if (checked)
+    {
+        if(selectAction->isChecked()) selectAction->setChecked(false);
+        if(connectAction->isChecked()) connectAction->setChecked(false);
+        if(deleteItemAction->isChecked()) deleteItemAction->setChecked(false);
+        structureScene->setConnectionMode(false);
+        structureScene->setDeleteMode(false);
+    }
+    updateStructureViewInteractionMode();
 }
 
 void MainWindow::toggleSelectionMode(bool checked)
@@ -217,28 +309,77 @@ void MainWindow::toggleSelectionMode(bool checked)
 
     if (checked)
     {
-        structureView->setDragMode(QGraphicsView::RubberBandDrag);
         if(addNodeAction->isChecked()) addNodeAction->setChecked(false);
         if(connectAction->isChecked()) connectAction->setChecked(false);
+        if(deleteItemAction->isChecked()) deleteItemAction->setChecked(false);
         structureScene->setModelsAddMode(false);
         structureScene->setConnectionMode(false);
+        structureScene->setDeleteMode(false);
     }
-    else structureView->setDragMode(QGraphicsView::ScrollHandDrag);
+    updateStructureViewInteractionMode();
 }
 
 void MainWindow::toggleConnectionMode (bool checked)
 {
     structureScene->setConnectionMode(checked);
-    if(selectAction->isChecked()) selectAction->setChecked(false);
-    if(addNodeAction->isChecked()) addNodeAction->setChecked(false);
-    structureScene->setModelsAddMode(false);
-    if (checked) structureView->setDragMode(QGraphicsView::NoDrag);
-    else structureView->setDragMode(QGraphicsView::ScrollHandDrag);
+    if (checked)
+    {
+        if(selectAction->isChecked()) selectAction->setChecked(false);
+        if(addNodeAction->isChecked()) addNodeAction->setChecked(false);
+        if(deleteItemAction->isChecked()) deleteItemAction->setChecked(false);
+        structureScene->setModelsAddMode(false);
+        structureScene->setDeleteMode(false);
+    }
+    updateStructureViewInteractionMode();
+}
+
+void MainWindow::toggleDeleteMode(bool checked)
+{
+    structureScene->setDeleteMode(checked);
+    if (checked)
+    {
+        if(selectAction->isChecked()) selectAction->setChecked(false);
+        if(addNodeAction->isChecked()) addNodeAction->setChecked(false);
+        if(connectAction->isChecked()) connectAction->setChecked(false);
+        structureScene->setModelsAddMode(false);
+        structureScene->setConnectionMode(false);
+    }
+    updateStructureViewInteractionMode();
 }
 
 void MainWindow::upLevel() {emit upLevelSignal();}
 
-void MainWindow::deleteSelectedModelsNodes() {emit deleteSelectedModelsNodesSignal();}
+void MainWindow::resetEditorModes()
+{
+    const QSignalBlocker addBlocker(addNodeAction);
+    const QSignalBlocker deleteBlocker(deleteItemAction);
+    const QSignalBlocker selectBlocker(selectAction);
+    const QSignalBlocker connectBlocker(connectAction);
+
+    addNodeAction->setChecked(false);
+    deleteItemAction->setChecked(false);
+    selectAction->setChecked(false);
+    connectAction->setChecked(false);
+
+    structureScene->setModelsAddMode(false);
+    structureScene->setConnectionMode(false);
+    structureScene->setDeleteMode(false);
+    updateStructureViewInteractionMode();
+}
+
+void MainWindow::updateStructureViewInteractionMode()
+{
+    const bool selectionMode = selectAction->isChecked();
+    const bool editorModeActive = addNodeAction->isChecked()
+        || deleteItemAction->isChecked()
+        || selectionMode
+        || connectAction->isChecked();
+
+    structureView->setDragMode(selectionMode ? QGraphicsView::RubberBandDrag : QGraphicsView::NoDrag);
+    structureView->setPanningEnabled(!editorModeActive);
+    structureView->setCursor(Qt::ArrowCursor);
+    structureView->viewport()->setCursor(Qt::ArrowCursor);
+}
 
 //============================================================================================
 

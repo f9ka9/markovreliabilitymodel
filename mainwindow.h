@@ -18,6 +18,7 @@
 #include "statescene.h"
 #include "stateview.h"
 #include "structureview.h"
+#include "nodeconfigurationwidget.h"
 
 class MainWindow : public QMainWindow
 {
@@ -52,9 +53,11 @@ private:
 
     QDockWidget* matrixDock{nullptr};
     QDockWidget* probabilityDock{nullptr};
+    QDockWidget* nodeConfigurationDock{nullptr};
 
     QTableWidget* matrixTable{nullptr};
     QTableWidget* probabilityTable {nullptr};
+    NodeConfigurationWidget* nodeConfigurationWidget{nullptr};
 
     QToolBar* mainToolBar{nullptr};
 
@@ -76,21 +79,34 @@ private:
     QMenu* fileMenu{nullptr};
     QMenu* viewMenu{nullptr};
     QMenu* helpMenu{nullptr};
+
+    Node* configuredNode{nullptr};
+    QString defaultNodeName{"Node"};
+    QString defaultNodeGroupName;
+    FailureRates defaultNodeFailureRates{};
+    Node::StructureType defaultNodeStructureType{Node::StructureType::Element};
+    int defaultNodeRequiredElements{1};
     //============================================================================================
 private slots:
+    void showNodeConfiguration();
+    void applyNodeConfiguration(const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements);
+    void onConfiguredNodeAboutToBeRemoved(Node* node);
     void toggleModelsAddMode(bool checked);
     void toggleSelectionMode(bool checked);
     void upLevel();
-    void deleteSelectedModelsNodes();
     void toggleConnectionMode(bool checked);
+    void toggleDeleteMode(bool checked);
+    void resetEditorModes();
 
     //============================================================================================
+private:
+    void updateStructureViewInteractionMode();
+
 protected:
 
     //============================================================================================
 signals:
     void upLevelSignal();
-    void deleteSelectedModelsNodesSignal();
 
     //============================================================================================
 };

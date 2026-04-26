@@ -429,4 +429,9 @@ CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qinputmethod.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
- D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QPoint \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QScrollBar \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qscrollbar.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractslider.h
