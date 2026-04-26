@@ -9,6 +9,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h \
@@ -144,8 +145,10 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qversiontagging.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \

@@ -16,6 +16,8 @@ public:
     explicit NodeGraphics(Node* node, QGraphicsItem* parent = nullptr);
     ~NodeGraphics();
 
+    static QRectF defaultBoundingRect();
+
     Node* getModelNode() const;
     QRectF connectionRect() const;
 

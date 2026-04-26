@@ -14,7 +14,7 @@ struct SchemaNodeData
     QString name;
     QString groupName;
     FailureRates failureRates{};
-    Node::StructureType structureType{Node::StructureType::Element};
+    StructureType structureType{StructureType::Element};
     int requiredElements{1};
 };
 

@@ -417,9 +417,6 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextdocument.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSplitter \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsplitter.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDockWidget \
@@ -433,8 +430,6 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstatusbar.h \
- D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
- D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\reliabilityscene.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsPathItem \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
@@ -464,9 +459,14 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qpainter.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstyleoption.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodegraphics.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\schemamodel.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\statescene.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\stateview.h \

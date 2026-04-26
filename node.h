@@ -8,29 +8,44 @@
 
 using FailureRates = std::array<double, 4>;
 
+enum class StructureType
+{
+    Element,
+    Series,
+    Parallel,
+    KOutOfN
+};
+
+enum class OperationMode
+{
+    Transportation = 0,
+    Storage = 1,
+    Functioning = 2,
+    Off = 3
+};
+
+struct NodeConfiguration
+{
+    QString name{"Node"};
+    QString groupName;
+    FailureRates failureRates{};
+    StructureType structureType{StructureType::Element};
+    int requiredElements{1};
+};
+
 class Node
 {
 public:
-    enum class StructureType
-    {
-        Element,
-        Series,
-        Parallel,
-        KOutOfN
-    };
-
-    enum class OperationMode
-    {
-        Transportation = 0,
-        Storage = 1,
-        Functioning = 2,
-        Off = 3
-    };
+    using StructureType = ::StructureType;
+    using OperationMode = ::OperationMode;
 
     explicit Node(Node* par = nullptr);
     ~Node();
 
     int getId() const;
+
+    NodeConfiguration getConfiguration() const;
+    void setConfiguration(const NodeConfiguration& value);
 
     Node* getParent() const;
     void setParent(Node* par);
@@ -62,11 +77,7 @@ private:
     int id{0};
     Node* parent{nullptr};
     QList<Node*> children;
-    QString name{"Node"};
-    QString groupName;
-    FailureRates failureRates{};
-    StructureType structureType{StructureType::Element};
-    int requiredElements{1};
+    NodeConfiguration configuration;
 };
 
 #endif // NODE_H

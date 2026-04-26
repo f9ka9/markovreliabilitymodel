@@ -409,7 +409,6 @@ CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstractitemmodel.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
@@ -425,4 +424,5 @@ CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h

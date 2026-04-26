@@ -19,6 +19,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h \
@@ -161,14 +162,14 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
-  D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
-  D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
@@ -221,14 +222,12 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMenuBar \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSplitter \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QTableWidget \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemview.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -244,7 +243,6 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenubar.h \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qscrollarea.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \

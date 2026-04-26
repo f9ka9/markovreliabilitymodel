@@ -41,20 +41,16 @@ template <> constexpr inline auto NodeConfigurationWidget::qt_create_metaobjectd
         "NodeConfigurationWidget",
         "configurationApplied",
         "",
-        "name",
-        "groupName",
-        "FailureRates",
-        "failureRates",
-        "Node::StructureType",
-        "structureType",
-        "requiredElements"
+        "Node*",
+        "node",
+        "NodeConfiguration",
+        "configuration"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'configurationApplied'
-        QtMocHelpers::SignalData<void(const QString &, const QString &, const FailureRates &, Node::StructureType, int)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 3 }, { QMetaType::QString, 4 }, { 0x80000000 | 5, 6 }, { 0x80000000 | 7, 8 },
-            { QMetaType::Int, 9 },
+        QtMocHelpers::SignalData<void(Node *, const NodeConfiguration &)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 3, 4 }, { 0x80000000 | 5, 6 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
@@ -79,12 +75,12 @@ void NodeConfigurationWidget::qt_static_metacall(QObject *_o, QMetaObject::Call 
     auto *_t = static_cast<NodeConfigurationWidget *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->configurationApplied((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<FailureRates>>(_a[3])),(*reinterpret_cast<std::add_pointer_t<Node::StructureType>>(_a[4])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[5]))); break;
+        case 0: _t->configurationApplied((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<NodeConfiguration>>(_a[2]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (NodeConfigurationWidget::*)(const QString & , const QString & , const FailureRates & , Node::StructureType , int )>(_a, &NodeConfigurationWidget::configurationApplied, 0))
+        if (QtMocHelpers::indexOfMethod<void (NodeConfigurationWidget::*)(Node * , const NodeConfiguration & )>(_a, &NodeConfigurationWidget::configurationApplied, 0))
             return;
     }
 }
@@ -121,8 +117,8 @@ int NodeConfigurationWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_
 }
 
 // SIGNAL 0
-void NodeConfigurationWidget::configurationApplied(const QString & _t1, const QString & _t2, const FailureRates & _t3, Node::StructureType _t4, int _t5)
+void NodeConfigurationWidget::configurationApplied(Node * _t1, const NodeConfiguration & _t2)
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1, _t2, _t3, _t4, _t5);
+    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1, _t2);
 }
 QT_WARNING_POP

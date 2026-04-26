@@ -16,6 +16,11 @@ NodeGraphics::NodeGraphics(Node* node, QGraphicsItem* parent): QGraphicsObject(p
 
 NodeGraphics::~NodeGraphics() = default;
 
+QRectF NodeGraphics::defaultBoundingRect()
+{
+    return QRectF(-25, -15, 50, 30);
+}
+
 Node* NodeGraphics::getModelNode() const {return modelNode;}
 
 QRectF NodeGraphics::connectionRect() const
@@ -25,7 +30,7 @@ QRectF NodeGraphics::connectionRect() const
 
 QRectF NodeGraphics::boundingRect() const
 {
-    return QRectF(-25, -15, 50, 30);
+    return defaultBoundingRect();
 }
 
 void NodeGraphics::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)

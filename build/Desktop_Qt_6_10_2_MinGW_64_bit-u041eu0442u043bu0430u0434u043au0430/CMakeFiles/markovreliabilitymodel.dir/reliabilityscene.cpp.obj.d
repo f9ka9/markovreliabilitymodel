@@ -424,9 +424,14 @@ CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstractitemmodel.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodegraphics.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\schemamodel.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPen \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
@@ -434,8 +439,6 @@ CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qstringlist.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\gridsettings.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h

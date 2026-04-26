@@ -589,15 +589,12 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: C:/Users/f9ka9/Desktop/progr
   D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
-  D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
-  D:/Qt/6.10.2/mingw_64/include/QtGui/QIcon \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
-  D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
@@ -651,14 +648,12 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: C:/Users/f9ka9/Desktop/progr
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMenuBar \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSplitter \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QTableWidget \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemview.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -675,7 +670,6 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: C:/Users/f9ka9/Desktop/progr
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenubar.h \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qscrollarea.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
@@ -1081,14 +1075,12 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: C:/Users/f9ka9/Desktop
   D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
-  D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
-  D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
@@ -1141,14 +1133,12 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: C:/Users/f9ka9/Desktop
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMenuBar \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSplitter \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QTableWidget \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemview.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -1164,7 +1154,6 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: C:/Users/f9ka9/Desktop
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenubar.h \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qscrollarea.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
@@ -1577,14 +1566,12 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
   D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
-  D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
-  D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
@@ -1639,14 +1626,12 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMenuBar \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSplitter \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QTableWidget \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemview.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h \
@@ -1662,7 +1647,6 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenubar.h \
-  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qscrollarea.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
@@ -4978,13 +4962,13 @@ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenubar.h:
 
 D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h:
 
+D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h:
+
 D:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/range_access.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/legendre_function.tcc:
-
-D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h:
 
 D:/Qt/6.10.2/mingw_64/include/QtCore/qlogging.h:
 
@@ -5024,23 +5008,23 @@ D:/Qt/6.10.2/mingw_64/include/QtGui/QAction:
 
 D:/Qt/6.10.2/mingw_64/include/QtCore/qobject_impl.h:
 
-D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox:
-
 D:/Qt/6.10.2/mingw_64/include/QtCore/qsysinfo.h:
 
 D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h:
+
+D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox:
 
 D:/Qt/6.10.2/mingw_64/include/QtCore/qobjectdefs.h:
 
 D:/Qt/6.10.2/mingw_64/include/QtCore/qobjectdefs_impl.h:
 
-D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/parse_numbers.h:
-
-D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLayout:
-
 D:/Qt/6.10.2/mingw_64/include/QtCore/qoverload.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h:
+
+D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLayout:
+
+D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/parse_numbers.h:
 
 D:/Qt/6.10.2/mingw_64/include/QtCore/qpair.h:
 
@@ -5199,8 +5183,6 @@ D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h:
 D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h:
 
 D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreapplication_platform.h:
-
-D:/Qt/6.10.2/mingw_64/include/QtGui/QIcon:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_init_exception.h:
 
@@ -5448,8 +5430,6 @@ D:/Qt/6.10.2/mingw_64/include/QtGui/qinputdevice.h:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h:
 
-D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h:
-
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/streambuf.tcc:
 
 D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc:
@@ -5616,8 +5596,6 @@ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/limits.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/stdlib.h:
 
-D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup:
-
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/malloc.h:
 
 D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/math.h:
@@ -5702,8 +5680,6 @@ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar:
 
 D:/Qt/6.10.2/mingw_64/include/QtWidgets/QTableWidget:
 
-D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h:
-
 D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsview.h:
 
 D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsplitter.h:
@@ -5731,6 +5707,8 @@ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QFormLayout:
 D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLineEdit:
 
 D:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout:
+
+D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h:
 
 D:/Qt/6.10.2/mingw_64/include/QtWidgets/qcombobox.h:
 

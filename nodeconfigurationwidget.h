@@ -19,15 +19,17 @@ class NodeConfigurationWidget : public QWidget
 public:
     explicit NodeConfigurationWidget(QWidget* parent = nullptr);
 
-    void editDefaultConfiguration(const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements);
-    void editSelectedNode(int id, const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements);
+    void editDefaultConfiguration(const NodeConfiguration& configuration);
+    void editSelectedNode(Node* node);
+    bool isEditingNode(Node* node) const;
 
 signals:
-    void configurationApplied(const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements);
+    void configurationApplied(Node* node, const NodeConfiguration& configuration);
 
 private:
+    NodeConfiguration configurationFromFields() const;
     FailureRates failureRatesFromFields() const;
-    void setConfiguration(const QString& mode, const QString& idText, const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements);
+    void setConfiguration(const QString& mode, const QString& idText, const NodeConfiguration& configuration);
     void updateFieldsAvailability();
 
     QLabel* modeLabel{nullptr};
@@ -38,6 +40,7 @@ private:
     QComboBox* structureTypeComboBox{nullptr};
     QSpinBox* requiredElementsSpinBox{nullptr};
     QPushButton* applyButton{nullptr};
+    Node* editedNode{nullptr};
 };
 
 #endif // NODECONFIGURATIONWIDGET_H

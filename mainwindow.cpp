@@ -32,7 +32,6 @@ MainWindow::MainWindow(QWidget *parent)
     viewMenu{nullptr},
     helpMenu{nullptr}
 {
-    //============================================================================================
     setWindowTitle("Markov Reliability Model");
 
 
@@ -46,17 +45,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     setupStatusBar();
 
-    //============================================================================================
     connect(this, &MainWindow::upLevelSignal, structureScene, &ReliabilityScene::onUpLevel);
     connect(structureScene, &ReliabilityScene::editorModesResetRequested, this, &MainWindow::resetEditorModes);
     connect(structureScene, &ReliabilityScene::nodeAboutToBeRemoved, this, &MainWindow::onConfiguredNodeAboutToBeRemoved);
     connect(structureScene, &ReliabilityScene::currentLevelChanged, breadcrumbLabel, &QLabel::setText);
     breadcrumbLabel->setText(structureScene->currentLevelPath());
 
-
-    //============================================================================================
 }
-//============================================================================================
+
 void MainWindow::setupCentralWidgets()
 {
     structureScene = new ReliabilityScene(this);
@@ -103,8 +99,6 @@ void MainWindow::setupDockWidgets()
 
 void MainWindow::createActions()
 {
-
-    //Можно сделать вариант с изображением-иконками на усмотрение куратора, пока оставлю так
     configNodeAction = new QAction("⚙ Конфигурация", this);
     configNodeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_Q));
     configNodeAction->setStatusTip("Выбор конфигурации узла на сцене редактора структурной схемы надёжности");
@@ -221,73 +215,51 @@ void MainWindow::setupStatusBar ()
 {
     statusBar()->showMessage("Готово", 5000);
 }
-//============================================================================================
+
 void MainWindow::showNodeConfiguration()
 {
-    configuredNode = structureScene->selectedNode();
+    Node* selectedNode = structureScene->selectedNode();
 
-    if (configuredNode)
+    if (selectedNode)
     {
-        nodeConfigurationWidget->editSelectedNode(configuredNode->getId(),
-                                                 configuredNode->getName(),
-                                                 configuredNode->getGroupName(),
-                                                 configuredNode->getFailureRates(),
-                                                 configuredNode->getStructureType(),
-                                                 configuredNode->getRequiredElements());
+        nodeConfigurationWidget->editSelectedNode(selectedNode);
     }
     else
     {
-        nodeConfigurationWidget->editDefaultConfiguration(defaultNodeName,
-                                                         defaultNodeGroupName,
-                                                         defaultNodeFailureRates,
-                                                         defaultNodeStructureType,
-                                                         defaultNodeRequiredElements);
+        nodeConfigurationWidget->editDefaultConfiguration(structureScene->getDefaultNodeConfiguration());
     }
 
     nodeConfigurationDock->show();
     nodeConfigurationDock->raise();
 }
 
-void MainWindow::applyNodeConfiguration(const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements)
+void MainWindow::applyNodeConfiguration(Node* node, const NodeConfiguration& configuration)
 {
-    const QString normalizedName = name.trimmed().isEmpty() ? QString("Node") : name.trimmed();
-    const QString normalizedGroupName = groupName.trimmed();
+    NodeConfiguration normalizedConfiguration = configuration;
+    normalizedConfiguration.name = normalizedConfiguration.name.trimmed().isEmpty()
+        ? QString("Node")
+        : normalizedConfiguration.name.trimmed();
+    normalizedConfiguration.groupName = normalizedConfiguration.groupName.trimmed();
+    if (normalizedConfiguration.structureType != StructureType::Element)
+        normalizedConfiguration.failureRates = FailureRates{};
+    if (normalizedConfiguration.requiredElements < 1)
+        normalizedConfiguration.requiredElements = 1;
 
-    const FailureRates normalizedFailureRates = structureType == Node::StructureType::Element ? failureRates : FailureRates{};
-
-    if (configuredNode)
+    if (node)
     {
-        configuredNode->setName(normalizedName);
-        configuredNode->setGroupName(normalizedGroupName);
-        configuredNode->setFailureRates(normalizedFailureRates);
-        configuredNode->setStructureType(structureType);
-        configuredNode->setRequiredElements(requiredElements);
-        structureScene->updateNodeGraphics(configuredNode);
+        node->setConfiguration(normalizedConfiguration);
+        structureScene->updateNodeGraphics(node);
         return;
     }
 
-    defaultNodeName = normalizedName;
-    defaultNodeGroupName = normalizedGroupName;
-    defaultNodeFailureRates = normalizedFailureRates;
-    defaultNodeStructureType = structureType;
-    defaultNodeRequiredElements = requiredElements;
-    structureScene->setDefaultNodeConfiguration(defaultNodeName,
-                                                defaultNodeGroupName,
-                                                defaultNodeFailureRates,
-                                                defaultNodeStructureType,
-                                                defaultNodeRequiredElements);
+    structureScene->setDefaultNodeConfiguration(normalizedConfiguration);
 }
 
 void MainWindow::onConfiguredNodeAboutToBeRemoved(Node* node)
 {
-    if (node != configuredNode) return;
+    if (!nodeConfigurationWidget->isEditingNode(node)) return;
 
-    configuredNode = nullptr;
-    nodeConfigurationWidget->editDefaultConfiguration(defaultNodeName,
-                                                     defaultNodeGroupName,
-                                                     defaultNodeFailureRates,
-                                                     defaultNodeStructureType,
-                                                     defaultNodeRequiredElements);
+    nodeConfigurationWidget->editDefaultConfiguration(structureScene->getDefaultNodeConfiguration());
 }
 
 void MainWindow::toggleModelsAddMode(bool checked)
@@ -381,8 +353,5 @@ void MainWindow::updateStructureViewInteractionMode()
     structureView->viewport()->setCursor(Qt::ArrowCursor);
 }
 
-//============================================================================================
-
-//============================================================================================
 MainWindow::~MainWindow()
 {}

@@ -22,6 +22,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QSize
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QString
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h
@@ -164,14 +165,14 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QAction
- mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h
- mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h
@@ -224,14 +225,12 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMenuBar
- mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSplitter
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QTableWidget
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget
- mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemview.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractscrollarea.h
@@ -247,7 +246,6 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenubar.h
- mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qscrollarea.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h
@@ -877,6 +875,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilitysce
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QList
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QString
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h
@@ -1012,8 +1011,10 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilitysce
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qversiontagging.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h
@@ -1298,8 +1299,12 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection
  mdp:C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/moc_predefs.h
  mdp:C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h
  mdp:C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h
+ mdp:C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h
+ mdp:C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QList
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QString
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h
@@ -1308,6 +1313,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q20utility.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q23type_traits.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/q23utility.h
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qabstractitemmodel.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qalgorithms.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qalloc.h
@@ -1319,6 +1325,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qatomic.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qatomic_cxx11.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qbasicatomic.h
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qbindingstorage.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qbytearray.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qbytearrayalgorithms.h
@@ -1336,10 +1343,13 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qcontainerinfo.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qcontainertools_impl.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qcontiguouscache.h
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qdarwinhelpers.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qdatastream.h
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qdebug.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qendian.h
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qexceptionhandling.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qflags.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qfloat16.h
@@ -1430,8 +1440,10 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qversiontagging.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h
@@ -1464,11 +1476,13 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStyleOptionGraphicsItem
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractslider.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractspinbox.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h
+ mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicssceneevent.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h
  mdp:D:/Qt/6.10.2/mingw_64/include/QtWidgets/qslider.h

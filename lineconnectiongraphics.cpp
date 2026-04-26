@@ -1,13 +1,5 @@
 #include "lineconnectiongraphics.h"
 
-#include <limits>
-
-#include <QCursor>
-#include <QPainterPathStroker>
-#include <QtMath>
-
-#include "nodegraphics.h"
-
 LineConnectionGraphics::LineConnectionGraphics(LineConnection* conn,
                                                NodeGraphics* first,
                                                NodeGraphics* second,

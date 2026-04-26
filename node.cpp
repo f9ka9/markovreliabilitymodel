@@ -13,6 +13,15 @@ Node::~Node()
 
 int Node::getId() const {return id;}
 
+NodeConfiguration Node::getConfiguration() const {return configuration;}
+
+void Node::setConfiguration(const NodeConfiguration& value)
+{
+    configuration = value;
+    if (configuration.requiredElements < 1)
+        configuration.requiredElements = 1;
+}
+
 Node* Node::getParent() const {return parent;}
 void Node::setParent(Node* par){parent = par;}
 
@@ -32,31 +41,31 @@ void Node::removeChild(Node* child)
     child->setParent(nullptr);
 }
 
-QString Node::getName() const {return name;}
-void Node::setName(const QString& value){name = value;}
+QString Node::getName() const {return configuration.name;}
+void Node::setName(const QString& value){configuration.name = value;}
 
-QString Node::getGroupName() const {return groupName;}
-void Node::setGroupName(const QString& value){groupName = value;}
+QString Node::getGroupName() const {return configuration.groupName;}
+void Node::setGroupName(const QString& value){configuration.groupName = value;}
 
-FailureRates Node::getFailureRates() const {return failureRates;}
-void Node::setFailureRates(const FailureRates& values){failureRates = values;}
+FailureRates Node::getFailureRates() const {return configuration.failureRates;}
+void Node::setFailureRates(const FailureRates& values){configuration.failureRates = values;}
 
 double Node::getFailureRate(OperationMode mode) const
 {
-    return failureRates[static_cast<int>(mode)];
+    return configuration.failureRates[static_cast<int>(mode)];
 }
 
 void Node::setFailureRate(OperationMode mode, double value)
 {
-    failureRates[static_cast<int>(mode)] = value;
+    configuration.failureRates[static_cast<int>(mode)] = value;
 }
 
-Node::StructureType Node::getStructureType() const {return structureType;}
-void Node::setStructureType(StructureType value){structureType = value;}
+Node::StructureType Node::getStructureType() const {return configuration.structureType;}
+void Node::setStructureType(StructureType value){configuration.structureType = value;}
 
-int Node::getRequiredElements() const {return requiredElements;}
+int Node::getRequiredElements() const {return configuration.requiredElements;}
 
 void Node::setRequiredElements(int value)
 {
-    requiredElements = value < 1 ? 1 : value;
+    configuration.requiredElements = value < 1 ? 1 : value;
 }

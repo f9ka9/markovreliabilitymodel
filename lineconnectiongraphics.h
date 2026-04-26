@@ -7,10 +7,13 @@
 #include <QPainterPath>
 #include <QPointF>
 #include <QStyleOptionGraphicsItem>
+#include <limits>
+#include <QCursor>
+#include <QPainterPathStroker>
+#include <QtMath>
 
+#include "nodegraphics.h"
 #include "lineconnection.h"
-
-class NodeGraphics;
 
 class LineConnectionGraphics : public QGraphicsObject
 {
@@ -36,10 +39,10 @@ private:
     LineConnection* connection{nullptr};
     NodeGraphics* firstNode{nullptr};
     NodeGraphics* secondNode{nullptr};
-    QList<QPointF> bendPoints;
+    QList<QPointF> bendPoints{};
     bool firstSegmentHorizontal{true};
     bool lastSegmentHorizontal{true};
-    QPainterPath cachedPath;
+    QPainterPath cachedPath{};
 
     QList<QPointF> buildPathPoints() const;
     QPointF nodeBoundaryPoint(NodeGraphics* node, const QPointF& toward) const;

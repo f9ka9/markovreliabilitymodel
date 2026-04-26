@@ -5,14 +5,12 @@
 #include <QGraphicsView>
 #include <QTableWidget>
 #include <QLabel>
-#include <QPushButton>
 #include <QSplitter>
 #include <QDockWidget>
 #include <QAction>
 #include <QToolBar>
 #include <QMenuBar>
 #include <QStatusBar>
-#include <QActionGroup>
 
 #include "reliabilityscene.h"
 #include "statescene.h"
@@ -28,7 +26,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    //============================================================================================
     void setupCentralWidgets();
     void setupDockWidgets();
 
@@ -39,10 +36,8 @@ public:
     void createActions();
 
     void setupStatusBar();
-    //============================================================================================
 
 private:
-    //============================================================================================
     ReliabilityScene* structureScene{nullptr};
     StateScene* stateScene{nullptr};
 
@@ -61,7 +56,7 @@ private:
 
     QToolBar* mainToolBar{nullptr};
 
-    QLabel* breadcrumbLabel {nullptr};
+    QLabel* breadcrumbLabel{nullptr};
 
     QAction* configNodeAction{nullptr};
     QAction* addNodeAction{nullptr};
@@ -80,16 +75,9 @@ private:
     QMenu* viewMenu{nullptr};
     QMenu* helpMenu{nullptr};
 
-    Node* configuredNode{nullptr};
-    QString defaultNodeName{"Node"};
-    QString defaultNodeGroupName;
-    FailureRates defaultNodeFailureRates{};
-    Node::StructureType defaultNodeStructureType{Node::StructureType::Element};
-    int defaultNodeRequiredElements{1};
-    //============================================================================================
 private slots:
     void showNodeConfiguration();
-    void applyNodeConfiguration(const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements);
+    void applyNodeConfiguration(Node* node, const NodeConfiguration& configuration);
     void onConfiguredNodeAboutToBeRemoved(Node* node);
     void toggleModelsAddMode(bool checked);
     void toggleSelectionMode(bool checked);
@@ -98,16 +86,11 @@ private slots:
     void toggleDeleteMode(bool checked);
     void resetEditorModes();
 
-    //============================================================================================
 private:
     void updateStructureViewInteractionMode();
 
-protected:
-
-    //============================================================================================
 signals:
     void upLevelSignal();
 
-    //============================================================================================
 };
 #endif // MAINWINDOW_H

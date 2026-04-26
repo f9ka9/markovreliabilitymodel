@@ -44,16 +44,11 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "",
         "showNodeConfiguration",
         "applyNodeConfiguration",
-        "name",
-        "groupName",
-        "FailureRates",
-        "failureRates",
-        "Node::StructureType",
-        "structureType",
-        "requiredElements",
-        "onConfiguredNodeAboutToBeRemoved",
         "Node*",
         "node",
+        "NodeConfiguration",
+        "configuration",
+        "onConfiguredNodeAboutToBeRemoved",
         "toggleModelsAddMode",
         "checked",
         "toggleSelectionMode",
@@ -69,34 +64,33 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         // Slot 'showNodeConfiguration'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'applyNodeConfiguration'
-        QtMocHelpers::SlotData<void(const QString &, const QString &, const FailureRates &, Node::StructureType, int)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 5 }, { QMetaType::QString, 6 }, { 0x80000000 | 7, 8 }, { 0x80000000 | 9, 10 },
-            { QMetaType::Int, 11 },
+        QtMocHelpers::SlotData<void(Node *, const NodeConfiguration &)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 5, 6 }, { 0x80000000 | 7, 8 },
         }}),
         // Slot 'onConfiguredNodeAboutToBeRemoved'
-        QtMocHelpers::SlotData<void(Node *)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 13, 14 },
+        QtMocHelpers::SlotData<void(Node *)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 5, 6 },
         }}),
         // Slot 'toggleModelsAddMode'
-        QtMocHelpers::SlotData<void(bool)>(15, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Bool, 16 },
+        QtMocHelpers::SlotData<void(bool)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 11 },
         }}),
         // Slot 'toggleSelectionMode'
-        QtMocHelpers::SlotData<void(bool)>(17, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Bool, 16 },
+        QtMocHelpers::SlotData<void(bool)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 11 },
         }}),
         // Slot 'upLevel'
-        QtMocHelpers::SlotData<void()>(18, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'toggleConnectionMode'
-        QtMocHelpers::SlotData<void(bool)>(19, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Bool, 16 },
+        QtMocHelpers::SlotData<void(bool)>(14, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 11 },
         }}),
         // Slot 'toggleDeleteMode'
-        QtMocHelpers::SlotData<void(bool)>(20, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::Bool, 16 },
+        QtMocHelpers::SlotData<void(bool)>(15, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 11 },
         }}),
         // Slot 'resetEditorModes'
-        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -122,7 +116,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->upLevelSignal(); break;
         case 1: _t->showNodeConfiguration(); break;
-        case 2: _t->applyNodeConfiguration((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<FailureRates>>(_a[3])),(*reinterpret_cast<std::add_pointer_t<Node::StructureType>>(_a[4])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[5]))); break;
+        case 2: _t->applyNodeConfiguration((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<NodeConfiguration>>(_a[2]))); break;
         case 3: _t->onConfiguredNodeAboutToBeRemoved((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1]))); break;
         case 4: _t->toggleModelsAddMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
         case 5: _t->toggleSelectionMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;

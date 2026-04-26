@@ -25,7 +25,8 @@ public:
     void setModelsAddMode(bool enabled);
     void setConnectionMode(bool enabled);
     void setDeleteMode(bool enabled);
-    void setDefaultNodeConfiguration(const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements);
+    void setDefaultNodeConfiguration(const NodeConfiguration& configuration);
+    NodeConfiguration getDefaultNodeConfiguration() const;
     Node* selectedNode() const;
     void updateNodeGraphics(Node* node);
     QString currentLevelPath() const;
@@ -62,11 +63,7 @@ private:
     QHash<Node*, NodeGraphics*> nodeGraphicsByNode;
     QHash<LineConnection*, LineConnectionGraphics*> connectionGraphicsByConnection;
     QGraphicsPathItem* tempConnectionPath{nullptr};
-    QString defaultNodeName{"Node"};
-    QString defaultNodeGroupName;
-    FailureRates defaultNodeFailureRates{};
-    Node::StructureType defaultNodeStructureType{Node::StructureType::Element};
-    int defaultNodeRequiredElements{1};
+    NodeConfiguration defaultNodeConfiguration;
 
     void addRootNode(Node* node);
     NodeGraphics* addNodeToScene(Node* node);

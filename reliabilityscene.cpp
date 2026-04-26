@@ -40,14 +40,12 @@ void ReliabilityScene::setDeleteMode(bool enabled)
     if (enabled) cancelConnectionDrawing();
 }
 
-void ReliabilityScene::setDefaultNodeConfiguration(const QString& name, const QString& groupName, const FailureRates& failureRates, Node::StructureType structureType, int requiredElements)
+void ReliabilityScene::setDefaultNodeConfiguration(const NodeConfiguration& configuration)
 {
-    defaultNodeName = name;
-    defaultNodeGroupName = groupName;
-    defaultNodeFailureRates = failureRates;
-    defaultNodeStructureType = structureType;
-    defaultNodeRequiredElements = requiredElements;
+    defaultNodeConfiguration = configuration;
 }
+
+NodeConfiguration ReliabilityScene::getDefaultNodeConfiguration() const {return defaultNodeConfiguration;}
 
 Node* ReliabilityScene::selectedNode() const
 {
@@ -228,11 +226,7 @@ void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
         if (!canPlaceNodeAt(nodePos)) return;
 
         Node* node = new Node(selectedParentNode);
-        node->setName(defaultNodeName);
-        node->setGroupName(defaultNodeGroupName);
-        node->setFailureRates(defaultNodeFailureRates);
-        node->setStructureType(defaultNodeStructureType);
-        node->setRequiredElements(defaultNodeRequiredElements);
+        node->setConfiguration(defaultNodeConfiguration);
 
         if (selectedParentNode) selectedParentNode->addChild(node);
         else addRootNode(node);
@@ -543,7 +537,7 @@ QPainterPath ReliabilityScene::calculateRubberBandPath() const
 
 bool ReliabilityScene::canPlaceNodeAt(const QPointF& scenePos) const
 {
-    const QRectF newNodeRect(scenePos.x() - 25.0, scenePos.y() - 15.0, 50.0, 30.0);
+    const QRectF newNodeRect = NodeGraphics::defaultBoundingRect().translated(scenePos);
 
     for (QGraphicsItem* item : items(newNodeRect))
     {

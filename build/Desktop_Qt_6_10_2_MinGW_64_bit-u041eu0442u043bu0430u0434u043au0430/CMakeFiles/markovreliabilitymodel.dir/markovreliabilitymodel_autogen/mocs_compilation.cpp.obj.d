@@ -410,6 +410,22 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qtmochelpers.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qtmocconstants.h \
@@ -437,9 +453,6 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextdocument.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSplitter \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsplitter.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDockWidget \
@@ -453,26 +466,13 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstatusbar.h \
- D:/Qt/6.10.2/mingw_64/include/QtGui/QActionGroup \
- D:/Qt/6.10.2/mingw_64/include/QtGui/qactiongroup.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsPathItem \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qbasictimer.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QHash \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qhash.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemamodel.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.h \
