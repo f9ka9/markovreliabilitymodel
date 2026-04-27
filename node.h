@@ -24,11 +24,31 @@ enum class OperationMode
     Off = 3
 };
 
+enum class LambdaInputType
+{
+    Fixed,
+    Expression
+};
+
+struct LambdaDefinition
+{
+    LambdaInputType inputType{LambdaInputType::Fixed};
+    double value{0.0};
+    double multiplier{1.0};
+    OperationMode referenceMode{OperationMode::Functioning};
+};
+
+using LambdaDefinitions = std::array<LambdaDefinition, 4>;
+
+LambdaDefinitions defaultLambdaDefinitions();
+LambdaDefinitions zeroLambdaDefinitions();
+FailureRates resolvedFailureRates(const LambdaDefinitions& definitions);
+
 struct NodeConfiguration
 {
     QString name{"Node"};
     QString groupName;
-    FailureRates failureRates{};
+    LambdaDefinitions lambdaDefinitions{defaultLambdaDefinitions()};
     StructureType structureType{StructureType::Element};
     int requiredElements{1};
 };
@@ -43,6 +63,7 @@ public:
     ~Node();
 
     int getId() const;
+    void setIdForLoading(int value);
 
     NodeConfiguration getConfiguration() const;
     void setConfiguration(const NodeConfiguration& value);
@@ -62,6 +83,8 @@ public:
 
     FailureRates getFailureRates() const;
     void setFailureRates(const FailureRates& values);
+    LambdaDefinitions getLambdaDefinitions() const;
+    void setLambdaDefinitions(const LambdaDefinitions& values);
     double getFailureRate(OperationMode mode) const;
     void setFailureRate(OperationMode mode, double value);
 

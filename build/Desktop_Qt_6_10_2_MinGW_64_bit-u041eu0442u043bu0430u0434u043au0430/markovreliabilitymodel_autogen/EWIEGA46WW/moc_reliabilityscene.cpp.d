@@ -1,5 +1,7 @@
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/EWIEGA46WW/moc_reliabilityscene.cpp: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/moc_predefs.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/editorschemamodel.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/gridsettings.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h \
@@ -9,6 +11,8 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QStringList \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h \
@@ -146,9 +150,12 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QFontMetrics \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPath \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QPen \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \

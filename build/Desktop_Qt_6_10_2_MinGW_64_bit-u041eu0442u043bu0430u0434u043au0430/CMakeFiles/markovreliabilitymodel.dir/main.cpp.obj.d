@@ -430,6 +430,56 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstatusbar.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QFile \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qfile.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qfiledevice.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/filesystem \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_fwd.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_path.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cwctype \
+ D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.tcc \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.tcc \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/quoted_string.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/codecvt \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_dir.h \
+ D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QFileDialog \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qfiledialog.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qdir.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qdirlisting.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qdatetime.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcalendar.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qfile.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qfileinfo.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qtimezone.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonParseError \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmessagebox.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QSignalBlocker \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\reliabilityscene.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsPathItem \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
@@ -453,6 +503,19 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPen \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QStringList \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qstringlist.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\gridsettings.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\editorschemamodel.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnectiongraphics.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
@@ -462,10 +525,9 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodegraphics.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QFontMetrics \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\schemamodel.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\statescene.h \
@@ -481,14 +543,12 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QObject \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QRect \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qrect.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qsize.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
- D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qnativeinterface.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen_platform.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication.h \
@@ -501,5 +561,43 @@ CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj: \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodeconfigurationwidget.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QComboBox \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qcombobox.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDoubleSpinBox \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qspinbox.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QFormLayout \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qformlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLayout \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgridlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QHBoxLayout \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLineEdit \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlineedit.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\schemaserializer.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonDocument \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonObject \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonobject.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonArray \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonarray.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QPair \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qpair.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QApplication \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qapplication.h

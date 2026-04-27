@@ -5,7 +5,12 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 #include <QPointF>
+#include <QCursor>
+#include <QFontMetrics>
+#include <QGraphicsScene>
+#include <QHash>
 
+#include "gridsettings.h"
 #include "node.h"
 
 class NodeGraphics : public QGraphicsObject
@@ -36,6 +41,7 @@ signals:
 private:
     Node* modelNode{nullptr};
     QPointF previousPosition;
+    QHash<NodeGraphics*, QPointF> draggedNodesStartPositions;
 };
 
 #endif // NODEGRAPHICS_H

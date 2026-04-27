@@ -390,11 +390,6 @@ CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
@@ -402,6 +397,13 @@ CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QHash \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qhash.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\gridsettings.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h

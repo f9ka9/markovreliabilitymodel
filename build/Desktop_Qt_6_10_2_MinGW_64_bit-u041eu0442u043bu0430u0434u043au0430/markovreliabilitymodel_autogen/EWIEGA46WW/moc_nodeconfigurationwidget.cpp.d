@@ -11,6 +11,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20utility.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q23type_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q23utility.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstractitemmodel.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qalloc.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qanystringview.h \
@@ -53,12 +54,14 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qglobalstatic.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qhash.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qhashfunctions.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qiodevice.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qiodevicebase.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qiterable.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qiterator.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qlatin1stringview.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qline.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qlocale.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qlogging.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qmalloc.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qmap.h \
@@ -79,6 +82,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qprocessordetection.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qrect.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qrefcount.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qregularexpression.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qscopedpointer.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qscopeguard.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qset.h \
@@ -124,6 +128,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qtversionchecks.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qtypeinfo.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qtypes.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qurl.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qutf8stringview.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qvariant.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qvarlengtharray.h \
@@ -144,20 +149,58 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/qkeysequence.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpaintdevice.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpalette.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qpicture.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpixelformat.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpixmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qpolygon.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextdocument.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextoption.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtgui-config.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtguiexports.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtguiglobal.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qvalidator.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QComboBox \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDoubleSpinBox \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QFormLayout \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QHBoxLayout \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLayout \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLineEdit \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractslider.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qcombobox.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qformlayout.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qframe.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgridlayout.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlabel.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlineedit.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qrubberband.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qslider.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qspinbox.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstyle.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstyleoption.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabbar.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \

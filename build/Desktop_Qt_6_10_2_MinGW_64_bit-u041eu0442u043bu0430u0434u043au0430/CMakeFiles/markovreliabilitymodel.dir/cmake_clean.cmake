@@ -20,6 +20,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj.d"
   "CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj"
   "CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj.d"
+  "CMakeFiles/markovreliabilitymodel.dir/schemaserializer.cpp.obj"
+  "CMakeFiles/markovreliabilitymodel.dir/schemaserializer.cpp.obj.d"
   "CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj"
   "CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj.d"
   "CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj"

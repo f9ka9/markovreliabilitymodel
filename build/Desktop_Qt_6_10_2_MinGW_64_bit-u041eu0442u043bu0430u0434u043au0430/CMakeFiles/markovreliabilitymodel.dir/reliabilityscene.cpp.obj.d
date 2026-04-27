@@ -394,6 +394,19 @@ CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPen \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QStringList \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qstringlist.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\gridsettings.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\editorschemamodel.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnectiongraphics.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
@@ -427,18 +440,8 @@ CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodegraphics.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QFontMetrics \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\schemamodel.h \
- D:/Qt/6.10.2/mingw_64/include/QtGui/QPen \
- D:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QStringList \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qstringlist.h \
- D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
- D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\gridsettings.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\schemamodel.h

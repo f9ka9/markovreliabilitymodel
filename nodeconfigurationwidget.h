@@ -2,15 +2,17 @@
 #define NODECONFIGURATIONWIDGET_H
 
 #include <QWidget>
+#include <QComboBox>
+#include <QDoubleSpinBox>
+#include <QFormLayout>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPushButton>
+#include <QSpinBox>
+#include <QVBoxLayout>
 
 #include "node.h"
-
-class QComboBox;
-class QDoubleSpinBox;
-class QLabel;
-class QLineEdit;
-class QPushButton;
-class QSpinBox;
 
 class NodeConfigurationWidget : public QWidget
 {
@@ -28,15 +30,21 @@ signals:
 
 private:
     NodeConfiguration configurationFromFields() const;
-    FailureRates failureRatesFromFields() const;
+    LambdaDefinitions lambdaDefinitionsFromFields() const;
     void setConfiguration(const QString& mode, const QString& idText, const NodeConfiguration& configuration);
+    QWidget* createLambdaEditor(OperationMode mode);
+    void fillReferenceModeComboBox(QComboBox* comboBox, OperationMode editedMode);
     void updateFieldsAvailability();
+    void updateLambdaFieldsAvailability();
 
     QLabel* modeLabel{nullptr};
     QLineEdit* idEdit{nullptr};
     QLineEdit* nameEdit{nullptr};
     QLineEdit* groupEdit{nullptr};
-    std::array<QDoubleSpinBox*, 4> failureRateSpinBoxes{};
+    std::array<QComboBox*, 4> lambdaInputTypeComboBoxes{};
+    std::array<QDoubleSpinBox*, 4> lambdaValueSpinBoxes{};
+    std::array<QDoubleSpinBox*, 4> lambdaMultiplierSpinBoxes{};
+    std::array<QComboBox*, 4> lambdaReferenceModeComboBoxes{};
     QComboBox* structureTypeComboBox{nullptr};
     QSpinBox* requiredElementsSpinBox{nullptr};
     QPushButton* applyButton{nullptr};

@@ -325,6 +325,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/editorschemamodel.h",
+			"MU",
+			"EWIEGA46WW/moc_editorschemamodel.cpp",
+			null
+		],
+		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/gridsettings.h",
 			"MU",
 			"EWIEGA46WW/moc_gridsettings.cpp",
@@ -376,6 +382,12 @@
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemamodel.h",
 			"MU",
 			"EWIEGA46WW/moc_schemamodel.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemaserializer.h",
+			"MU",
+			"EWIEGA46WW/moc_schemaserializer.cpp",
 			null
 		],
 		[
@@ -505,6 +517,11 @@
 		],
 		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemaserializer.cpp",
 			"MU",
 			null
 		],

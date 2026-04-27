@@ -25,6 +25,8 @@ LineConnectionGraphics::~LineConnectionGraphics() = default;
 
 LineConnection* LineConnectionGraphics::getConnection() const {return connection;}
 
+QList<QPointF> LineConnectionGraphics::getBendPoints() const {return bendPoints;}
+
 void LineConnectionGraphics::updateGeometry()
 {
     prepareGeometryChange();

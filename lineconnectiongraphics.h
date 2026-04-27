@@ -28,6 +28,7 @@ public:
     ~LineConnectionGraphics();
 
     LineConnection* getConnection() const;
+    QList<QPointF> getBendPoints() const;
     void updateGeometry();
 
 protected:

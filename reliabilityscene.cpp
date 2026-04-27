@@ -1,21 +1,9 @@
 #include "reliabilityscene.h"
 
-#include <QPen>
-#include <QStringList>
-#include <QTransform>
-#include <QtMath>
-
-#include "gridsettings.h"
-
 ReliabilityScene::ReliabilityScene(QObject* parent): QGraphicsScene(parent)
 {
     setSceneRect(-5000, -5000, 10000, 10000);
-
-    tempConnectionPath = new QGraphicsPathItem;
-    tempConnectionPath->setZValue(-1.0);
-    tempConnectionPath->setPen(QPen(Qt::blue, 2, Qt::DashLine));
-    tempConnectionPath->setVisible(false);
-    addItem(tempConnectionPath);
+    createTempConnectionPath();
 }
 
 ReliabilityScene::~ReliabilityScene()
@@ -94,10 +82,7 @@ SchemaModel ReliabilityScene::exportSchemaModel() const
     {
         if (!connection || !connection->getSource() || !connection->getTarget()) continue;
 
-        SchemaConnectionData connectionData;
-        connectionData.sourceNodeId = connection->getSource()->getId();
-        connectionData.targetNodeId = connection->getTarget()->getId();
-        model.connections.append(connectionData);
+        model.connections.append(createConnectionData(connection));
     }
 
     return model;
@@ -113,16 +98,7 @@ SchemaModel ReliabilityScene::exportCurrentLevelModel() const
     {
         if (!node) continue;
 
-        SchemaNodeData nodeData;
-        nodeData.id = node->getId();
-        nodeData.parentId = selectedParentNode ? selectedParentNode->getId() : 0;
-        nodeData.depth = currentDepth();
-        nodeData.name = node->getName();
-        nodeData.groupName = node->getGroupName();
-        nodeData.failureRates = node->getFailureRates();
-        nodeData.structureType = node->getStructureType();
-        nodeData.requiredElements = node->getRequiredElements();
-        model.nodes.append(nodeData);
+        model.nodes.append(createNodeData(node, currentDepth()));
     }
 
     for (LineConnection* connection : connections)
@@ -130,13 +106,157 @@ SchemaModel ReliabilityScene::exportCurrentLevelModel() const
         if (!connection || !isNodeInCurrentLevel(connection->getSource()) || !isNodeInCurrentLevel(connection->getTarget()))
             continue;
 
-        SchemaConnectionData connectionData;
+        model.connections.append(createConnectionData(connection));
+    }
+
+    return model;
+}
+
+EditorSchemaModel ReliabilityScene::exportEditorSchemaModel() const
+{
+    EditorSchemaModel model;
+    model.currentParentId = selectedParentNode ? selectedParentNode->getId() : 0;
+    model.defaultNodeConfiguration = defaultNodeConfiguration;
+
+    for (Node* node : rootNodes)
+        appendNodeToEditorSchemaModel(node, model);
+
+    for (LineConnection* connection : connections)
+    {
+        if (!connection || !connection->getSource() || !connection->getTarget()) continue;
+
+        EditorSchemaConnectionData connectionData;
         connectionData.sourceNodeId = connection->getSource()->getId();
         connectionData.targetNodeId = connection->getTarget()->getId();
+
+        if (const LineConnectionGraphics* graphics = connectionGraphicsByConnection.value(connection, nullptr))
+            connectionData.bendPoints = graphics->getBendPoints();
+
         model.connections.append(connectionData);
     }
 
     return model;
+}
+
+bool ReliabilityScene::importEditorSchemaModel(const EditorSchemaModel& model, QString& errorMessage)
+{
+    QHash<int, Node*> nodesById;
+    QHash<int, int> parentById;
+
+    for (const EditorSchemaNodeData& nodeData : model.nodes)
+    {
+        if (nodesById.contains(nodeData.id))
+        {
+            errorMessage = "В файле схемы найден повторяющийся идентификатор узла.";
+            qDeleteAll(nodesById);
+            return false;
+        }
+
+        Node* node = new Node;
+        node->setIdForLoading(nodeData.id);
+        node->setConfiguration(nodeData.configuration);
+        nodesById.insert(nodeData.id, node);
+        parentById.insert(nodeData.id, nodeData.parentId);
+    }
+
+    QList<Node*> loadedRootNodes;
+    for (const EditorSchemaNodeData& nodeData : model.nodes)
+    {
+        if (nodeData.parentId == 0)
+        {
+            loadedRootNodes.append(nodesById.value(nodeData.id));
+            continue;
+        }
+
+        if (!nodesById.contains(nodeData.parentId))
+        {
+            errorMessage = "В файле схемы узел ссылается на несуществующего родителя.";
+            qDeleteAll(nodesById);
+            return false;
+        }
+
+        int depth = 1;
+        int parentId = nodeData.parentId;
+        QList<int> visitedNodeIds{nodeData.id};
+        while (parentId != 0)
+        {
+            if (visitedNodeIds.contains(parentId))
+            {
+                errorMessage = "В файле схемы обнаружен цикл вложенности узлов.";
+                qDeleteAll(nodesById);
+                return false;
+            }
+
+            visitedNodeIds.append(parentId);
+            ++depth;
+            if (depth > 4)
+            {
+                errorMessage = "В файле схемы глубина вложенности больше 4 уровней.";
+                qDeleteAll(nodesById);
+                return false;
+            }
+
+            parentId = parentById.value(parentId, 0);
+        }
+    }
+
+    for (const EditorSchemaConnectionData& connectionData : model.connections)
+    {
+        if (!nodesById.contains(connectionData.sourceNodeId)
+            || !nodesById.contains(connectionData.targetNodeId))
+        {
+            errorMessage = "В файле схемы связь ссылается на несуществующий узел.";
+            qDeleteAll(nodesById);
+            return false;
+        }
+        if (parentById.value(connectionData.sourceNodeId) != parentById.value(connectionData.targetNodeId))
+        {
+            errorMessage = "В файле схемы связь соединяет узлы разных уровней.";
+            qDeleteAll(nodesById);
+            return false;
+        }
+    }
+
+    for (const EditorSchemaNodeData& nodeData : model.nodes)
+    {
+        if (nodeData.parentId == 0) continue;
+
+        Node* parent = nodesById.value(nodeData.parentId);
+        Node* node = nodesById.value(nodeData.id);
+        parent->addChild(node);
+    }
+
+    clearSchema();
+    defaultNodeConfiguration = model.defaultNodeConfiguration;
+    rootNodes = loadedRootNodes;
+
+    for (const EditorSchemaNodeData& nodeData : model.nodes)
+    {
+        Node* node = nodesById.value(nodeData.id, nullptr);
+        NodeGraphics* graphics = createNodeGraphics(node);
+        if (graphics)
+            graphics->setPos(GridSettings::snapToGrid(nodeData.position));
+    }
+
+    for (const EditorSchemaConnectionData& connectionData : model.connections)
+    {
+        LineConnection* connection = new LineConnection;
+        connection->setSource(nodesById.value(connectionData.sourceNodeId));
+        connection->setTarget(nodesById.value(connectionData.targetNodeId));
+        connections.append(connection);
+        createConnectionGraphics(connection, connectionData.bendPoints);
+    }
+
+    selectedParentNode = nodesById.value(model.currentParentId, nullptr);
+    refreshCurrentLevel();
+    emit currentLevelChanged(currentLevelPath());
+    return true;
+}
+
+void ReliabilityScene::clearSchema()
+{
+    deleteAllEditorObjects();
+    emit currentLevelChanged(currentLevelPath());
 }
 
 void ReliabilityScene::onUpLevel()
@@ -151,6 +271,7 @@ void ReliabilityScene::onUpLevel()
 void ReliabilityScene::onNodeDoubleClicked(Node* node)
 {
     if (!node) return;
+    if (node->getStructureType() == StructureType::Element) return;
     if (currentDepth() >= 4) return;
 
     resetEditorModes();
@@ -262,13 +383,7 @@ NodeGraphics* ReliabilityScene::addNodeToScene(Node* node)
 {
     if (!node) return nullptr;
 
-    NodeGraphics* nodeGraphics = nodeGraphicsByNode.value(node, nullptr);
-    if (!nodeGraphics)
-    {
-        nodeGraphics = new NodeGraphics(node);
-        nodeGraphicsByNode.insert(node, nodeGraphics);
-        connect(nodeGraphics, &NodeGraphics::nodeDoubleClicked, this, &ReliabilityScene::onNodeDoubleClicked);
-    }
+    NodeGraphics* nodeGraphics = createNodeGraphics(node);
 
     if (!nodeGraphics->scene())
         addItem(nodeGraphics);
@@ -280,23 +395,44 @@ LineConnectionGraphics* ReliabilityScene::addConnectionToScene(LineConnection* c
 {
     if (!connection) return nullptr;
 
-    LineConnectionGraphics* connectionGraphics = connectionGraphicsByConnection.value(connection, nullptr);
-    if (!connectionGraphics)
-    {
-        NodeGraphics* first = nodeGraphicsByNode.value(connection->getSource(), nullptr);
-        NodeGraphics* second = nodeGraphicsByNode.value(connection->getTarget(), nullptr);
-        if (!first || !second) return nullptr;
-
-        connectionGraphics = new LineConnectionGraphics(connection, first, second, {});
-        connectionGraphicsByConnection.insert(connection, connectionGraphics);
-        connect(first, &NodeGraphics::positionChanged, connectionGraphics, &LineConnectionGraphics::updateGeometry);
-        connect(second, &NodeGraphics::positionChanged, connectionGraphics, &LineConnectionGraphics::updateGeometry);
-    }
+    LineConnectionGraphics* connectionGraphics = createConnectionGraphics(connection, {});
+    if (!connectionGraphics) return nullptr;
 
     if (!connectionGraphics->scene())
         addItem(connectionGraphics);
 
     connectionGraphics->updateGeometry();
+    return connectionGraphics;
+}
+
+NodeGraphics* ReliabilityScene::createNodeGraphics(Node* node)
+{
+    if (!node) return nullptr;
+
+    NodeGraphics* nodeGraphics = nodeGraphicsByNode.value(node, nullptr);
+    if (nodeGraphics) return nodeGraphics;
+
+    nodeGraphics = new NodeGraphics(node);
+    nodeGraphicsByNode.insert(node, nodeGraphics);
+    connect(nodeGraphics, &NodeGraphics::nodeDoubleClicked, this, &ReliabilityScene::onNodeDoubleClicked);
+    return nodeGraphics;
+}
+
+LineConnectionGraphics* ReliabilityScene::createConnectionGraphics(LineConnection* connection, const QList<QPointF>& bendPoints)
+{
+    if (!connection) return nullptr;
+
+    LineConnectionGraphics* connectionGraphics = connectionGraphicsByConnection.value(connection, nullptr);
+    if (connectionGraphics) return connectionGraphics;
+
+    NodeGraphics* first = nodeGraphicsByNode.value(connection->getSource(), nullptr);
+    NodeGraphics* second = nodeGraphicsByNode.value(connection->getTarget(), nullptr);
+    if (!first || !second) return nullptr;
+
+    connectionGraphics = new LineConnectionGraphics(connection, first, second, bendPoints);
+    connectionGraphicsByConnection.insert(connection, connectionGraphics);
+    connect(first, &NodeGraphics::positionChanged, connectionGraphics, &LineConnectionGraphics::updateGeometry);
+    connect(second, &NodeGraphics::positionChanged, connectionGraphics, &LineConnectionGraphics::updateGeometry);
     return connectionGraphics;
 }
 
@@ -356,6 +492,17 @@ void ReliabilityScene::refreshCurrentLevel()
     }
 }
 
+void ReliabilityScene::createTempConnectionPath()
+{
+    tempConnectionPath = new QGraphicsPathItem;
+
+    tempConnectionPath->setZValue(-1.0);
+    tempConnectionPath->setPen(QPen(Qt::blue, 2, Qt::DashLine));
+    tempConnectionPath->setVisible(false);
+
+    addItem(tempConnectionPath);
+}
+
 void ReliabilityScene::createConnection(NodeGraphics* first, NodeGraphics* second, const QList<QPointF>& bendPoints)
 {
     if (!first || !second || first == second) return;
@@ -377,11 +524,8 @@ void ReliabilityScene::createConnection(NodeGraphics* first, NodeGraphics* secon
     connection->setTarget(secondNode);
     connections.append(connection);
 
-    LineConnectionGraphics* connectionGraphics = new LineConnectionGraphics(connection, first, second, bendPoints);
-    connectionGraphicsByConnection.insert(connection, connectionGraphics);
-    connect(first, &NodeGraphics::positionChanged, connectionGraphics, &LineConnectionGraphics::updateGeometry);
-    connect(second, &NodeGraphics::positionChanged, connectionGraphics, &LineConnectionGraphics::updateGeometry);
-    addItem(connectionGraphics);
+    if (LineConnectionGraphics* connectionGraphics = createConnectionGraphics(connection, bendPoints))
+        addItem(connectionGraphics);
 }
 
 void ReliabilityScene::removeConnection(LineConnection* connection)
@@ -574,7 +718,16 @@ void ReliabilityScene::appendNodeToSchemaModel(Node* node, SchemaModel& model, i
 {
     if (!node) return;
 
+    model.nodes.append(createNodeData(node, depth));
+
+    for (Node* child : node->getChildren())
+        appendNodeToSchemaModel(child, model, depth + 1);
+}
+
+SchemaNodeData ReliabilityScene::createNodeData(Node* node, int depth) const
+{
     SchemaNodeData nodeData;
+
     nodeData.id = node->getId();
     nodeData.parentId = node->getParent() ? node->getParent()->getId() : 0;
     nodeData.depth = depth;
@@ -583,8 +736,35 @@ void ReliabilityScene::appendNodeToSchemaModel(Node* node, SchemaModel& model, i
     nodeData.failureRates = node->getFailureRates();
     nodeData.structureType = node->getStructureType();
     nodeData.requiredElements = node->getRequiredElements();
+
+    return nodeData;
+}
+
+SchemaConnectionData ReliabilityScene::createConnectionData(LineConnection* connection) const
+{
+    SchemaConnectionData connectionData;
+    if (!connection || !connection->getSource() || !connection->getTarget())
+        return connectionData;
+
+    connectionData.sourceNodeId = connection->getSource()->getId();
+    connectionData.targetNodeId = connection->getTarget()->getId();
+    return connectionData;
+}
+
+void ReliabilityScene::appendNodeToEditorSchemaModel(Node* node, EditorSchemaModel& model) const
+{
+    if (!node) return;
+
+    EditorSchemaNodeData nodeData;
+    nodeData.id = node->getId();
+    nodeData.parentId = node->getParent() ? node->getParent()->getId() : 0;
+    nodeData.configuration = node->getConfiguration();
+
+    if (const NodeGraphics* graphics = nodeGraphicsByNode.value(node, nullptr))
+        nodeData.position = graphics->pos();
+
     model.nodes.append(nodeData);
 
     for (Node* child : node->getChildren())
-        appendNodeToSchemaModel(child, model, depth + 1);
+        appendNodeToEditorSchemaModel(child, model);
 }

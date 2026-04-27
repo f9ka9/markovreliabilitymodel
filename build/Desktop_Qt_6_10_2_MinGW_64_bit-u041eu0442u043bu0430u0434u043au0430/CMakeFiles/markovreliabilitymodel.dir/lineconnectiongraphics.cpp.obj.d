@@ -422,6 +422,15 @@ CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qeventloop.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qdeadlinetimer.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QFontMetrics \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QHash \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qhash.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\gridsettings.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \

@@ -1,0 +1,204 @@
+{
+    "connections": [
+        {
+            "bendPoints": [
+            ],
+            "sourceNodeId": 1,
+            "targetNodeId": 3
+        },
+        {
+            "bendPoints": [
+            ],
+            "sourceNodeId": 2,
+            "targetNodeId": 4
+        },
+        {
+            "bendPoints": [
+            ],
+            "sourceNodeId": 5,
+            "targetNodeId": 6
+        },
+        {
+            "bendPoints": [
+            ],
+            "sourceNodeId": 7,
+            "targetNodeId": 8
+        }
+    ],
+    "currentParentId": 0,
+    "defaultNodeConfiguration": {
+        "failureRates": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "groupName": "",
+        "name": "Node",
+        "requiredElements": 1,
+        "structureType": "element"
+    },
+    "nodes": [
+        {
+            "configuration": {
+                "failureRates": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "groupName": "",
+                "name": "Node",
+                "requiredElements": 1,
+                "structureType": "element"
+            },
+            "id": 1,
+            "parentId": 0,
+            "position": {
+                "x": -50,
+                "y": 0
+            }
+        },
+        {
+            "configuration": {
+                "failureRates": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "groupName": "",
+                "name": "Node",
+                "requiredElements": 1,
+                "structureType": "element"
+            },
+            "id": 2,
+            "parentId": 0,
+            "position": {
+                "x": 0,
+                "y": -50
+            }
+        },
+        {
+            "configuration": {
+                "failureRates": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "groupName": "",
+                "name": "Node",
+                "requiredElements": 1,
+                "structureType": "element"
+            },
+            "id": 3,
+            "parentId": 0,
+            "position": {
+                "x": 50,
+                "y": 0
+            }
+        },
+        {
+            "configuration": {
+                "failureRates": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "groupName": "",
+                "name": "Node",
+                "requiredElements": 1,
+                "structureType": "element"
+            },
+            "id": 4,
+            "parentId": 0,
+            "position": {
+                "x": 100,
+                "y": -50
+            }
+        },
+        {
+            "configuration": {
+                "failureRates": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "groupName": "",
+                "name": "Node",
+                "requiredElements": 1,
+                "structureType": "element"
+            },
+            "id": 5,
+            "parentId": 0,
+            "position": {
+                "x": 150,
+                "y": 0
+            }
+        },
+        {
+            "configuration": {
+                "failureRates": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "groupName": "",
+                "name": "Node",
+                "requiredElements": 1,
+                "structureType": "element"
+            },
+            "id": 6,
+            "parentId": 0,
+            "position": {
+                "x": 150,
+                "y": 50
+            }
+        },
+        {
+            "configuration": {
+                "failureRates": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "groupName": "",
+                "name": "Node",
+                "requiredElements": 1,
+                "structureType": "element"
+            },
+            "id": 7,
+            "parentId": 0,
+            "position": {
+                "x": 50,
+                "y": 50
+            }
+        },
+        {
+            "configuration": {
+                "failureRates": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "groupName": "",
+                "name": "Node",
+                "requiredElements": 1,
+                "structureType": "element"
+            },
+            "id": 8,
+            "parentId": 0,
+            "position": {
+                "x": -50,
+                "y": 50
+            }
+        }
+    ],
+    "version": 1
+}

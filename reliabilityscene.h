@@ -9,7 +9,13 @@
 #include <QPainterPath>
 #include <QPointF>
 #include <QString>
+#include <QPen>
+#include <QStringList>
+#include <QTransform>
+#include <QtMath>
 
+#include "gridsettings.h"
+#include "editorschemamodel.h"
 #include "lineconnectiongraphics.h"
 #include "nodegraphics.h"
 #include "schemamodel.h"
@@ -33,6 +39,9 @@ public:
     int currentDepth() const;
     SchemaModel exportSchemaModel() const;
     SchemaModel exportCurrentLevelModel() const;
+    EditorSchemaModel exportEditorSchemaModel() const;
+    bool importEditorSchemaModel(const EditorSchemaModel& model, QString& errorMessage);
+    void clearSchema();
 
 public slots:
     void onUpLevel();
@@ -68,9 +77,13 @@ private:
     void addRootNode(Node* node);
     NodeGraphics* addNodeToScene(Node* node);
     LineConnectionGraphics* addConnectionToScene(LineConnection* connection);
+    NodeGraphics* createNodeGraphics(Node* node);
+    LineConnectionGraphics* createConnectionGraphics(LineConnection* connection, const QList<QPointF>& bendPoints);
     void clearSceneItems();
     void deleteAllEditorObjects();
     void refreshCurrentLevel();
+
+    void createTempConnectionPath();
 
     void createConnection(NodeGraphics* first, NodeGraphics* second, const QList<QPointF>& bendPoints);
     void removeConnection(LineConnection* connection);
@@ -91,6 +104,9 @@ private:
     bool isNodeInCurrentLevel(Node* node) const;
     bool nodeContains(Node* root, Node* candidate) const;
     void appendNodeToSchemaModel(Node* node, SchemaModel& model, int depth) const;
+    SchemaNodeData createNodeData(Node* node, int depth) const;
+    SchemaConnectionData createConnectionData(LineConnection* connection) const;
+    void appendNodeToEditorSchemaModel(Node* node, EditorSchemaModel& model) const;
 };
 
 #endif // RELIABILITYSCENE_H

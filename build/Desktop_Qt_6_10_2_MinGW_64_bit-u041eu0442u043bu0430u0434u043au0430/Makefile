@@ -415,6 +415,30 @@ reliabilityscene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.s
 .PHONY : reliabilityscene.cpp.s
 
+schemaserializer.obj: schemaserializer.cpp.obj
+.PHONY : schemaserializer.obj
+
+# target to build an object file
+schemaserializer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/schemaserializer.cpp.obj
+.PHONY : schemaserializer.cpp.obj
+
+schemaserializer.i: schemaserializer.cpp.i
+.PHONY : schemaserializer.i
+
+# target to preprocess a source file
+schemaserializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/schemaserializer.cpp.i
+.PHONY : schemaserializer.cpp.i
+
+schemaserializer.s: schemaserializer.cpp.s
+.PHONY : schemaserializer.s
+
+# target to generate assembly for a file
+schemaserializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/schemaserializer.cpp.s
+.PHONY : schemaserializer.cpp.s
+
 statescene.obj: statescene.cpp.obj
 .PHONY : statescene.obj
 
@@ -529,6 +553,9 @@ help:
 	@echo ... reliabilityscene.obj
 	@echo ... reliabilityscene.i
 	@echo ... reliabilityscene.s
+	@echo ... schemaserializer.obj
+	@echo ... schemaserializer.i
+	@echo ... schemaserializer.s
 	@echo ... statescene.obj
 	@echo ... statescene.i
 	@echo ... statescene.s

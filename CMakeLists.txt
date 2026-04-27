@@ -14,12 +14,15 @@ qt_add_executable(markovreliabilitymodel
     nodeconfigurationwidget.h
     nodegraphics.h
     reliabilityscene.h
+    editorschemamodel.h
     schemamodel.h
+    schemaserializer.h
     statescene.h
     node.cpp
     nodeconfigurationwidget.cpp
     nodegraphics.cpp
     reliabilityscene.cpp
+    schemaserializer.cpp
     statescene.cpp
     structureview.h
     stateview.h

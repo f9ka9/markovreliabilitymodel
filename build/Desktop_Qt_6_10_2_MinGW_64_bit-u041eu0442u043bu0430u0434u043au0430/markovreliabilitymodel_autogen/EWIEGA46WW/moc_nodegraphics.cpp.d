@@ -1,9 +1,12 @@
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/EWIEGA46WW/moc_nodegraphics.cpp: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/moc_predefs.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/gridsettings.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QHash \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20functional.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q20iterator.h \
@@ -136,9 +139,13 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qversiontagging.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QCursor \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QFontMetrics \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainter \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qcolor.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qfont.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qfontinfo.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qfontmetrics.h \
@@ -162,8 +169,10 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsScene \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
+  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
   D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsexports.h \

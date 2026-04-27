@@ -383,11 +383,6 @@ CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qcursor.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QComboBox \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qcombobox.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
@@ -415,6 +410,8 @@ CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgridlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QHBoxLayout \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLabel \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlabel.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qpicture.h \
@@ -432,4 +429,8 @@ CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QList \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qlist.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h

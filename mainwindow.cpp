@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 
-#include <QSignalBlocker>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
@@ -80,11 +79,13 @@ void MainWindow::setupDockWidgets()
     matrixTable = new QTableWidget(5,5,this);
     matrixDock->setWidget(matrixTable);
     addDockWidget(Qt::RightDockWidgetArea, matrixDock);
+    matrixDock->hide();
 
     probabilityDock = new QDockWidget("Вероятности состояний p(i)", this);
     probabilityTable = new QTableWidget(5,5,this);
     probabilityDock->setWidget(probabilityTable);
     addDockWidget(Qt::BottomDockWidgetArea, probabilityDock);
+    probabilityDock->hide();
 
     nodeConfigurationDock = new QDockWidget("Конфигурация узла", this);
     nodeConfigurationWidget = new NodeConfigurationWidget(this);
@@ -92,8 +93,7 @@ void MainWindow::setupDockWidgets()
     addDockWidget(Qt::LeftDockWidgetArea, nodeConfigurationDock);
     nodeConfigurationDock->hide();
 
-    connect(nodeConfigurationWidget, &NodeConfigurationWidget::configurationApplied,
-            this, &MainWindow::applyNodeConfiguration);
+    connect(nodeConfigurationWidget, &NodeConfigurationWidget::configurationApplied, this, &MainWindow::applyNodeConfiguration);
 
 }
 
@@ -138,16 +138,16 @@ void MainWindow::createActions()
 
     newSchemaAction = new QAction("📄 Новая схема",this);
     newSchemaAction->setStatusTip("Создать новый файл структурной схемы");
-    //connect(newSchemaAction, &QAction::triggered, this, &MainWindow::newSchema);
+    connect(newSchemaAction, &QAction::triggered, this, &MainWindow::newSchema);
 
     openSchemaAction = new QAction("📂 Открыть...",this);
     openSchemaAction->setStatusTip("Открыть существующий файл структурной схемы");
-    //connect(openSchemAction, &QAction::triggered, this, &MainWindow::openSchema);
+    connect(openSchemaAction, &QAction::triggered, this, &MainWindow::openSchema);
 
     saveSchemaAction = new QAction("💾 Сохранить",this);
     saveSchemaAction->setShortcut(QKeySequence(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_S)));
     saveSchemaAction->setStatusTip("Сохранить текущую схему в файл");
-    //connect(saveSchemaAction, &QAction::triggered, this, &MainWindow::saveSchema);
+    connect(saveSchemaAction, &QAction::triggered, this, &MainWindow::saveSchema);
 
     exportResultsAction = new QAction("📤 Экспорт результатов",this);
     exportResultsAction->setStatusTip("Экспортировать результаты в файл");
@@ -221,13 +221,9 @@ void MainWindow::showNodeConfiguration()
     Node* selectedNode = structureScene->selectedNode();
 
     if (selectedNode)
-    {
         nodeConfigurationWidget->editSelectedNode(selectedNode);
-    }
     else
-    {
         nodeConfigurationWidget->editDefaultConfiguration(structureScene->getDefaultNodeConfiguration());
-    }
 
     nodeConfigurationDock->show();
     nodeConfigurationDock->raise();
@@ -241,7 +237,7 @@ void MainWindow::applyNodeConfiguration(Node* node, const NodeConfiguration& con
         : normalizedConfiguration.name.trimmed();
     normalizedConfiguration.groupName = normalizedConfiguration.groupName.trimmed();
     if (normalizedConfiguration.structureType != StructureType::Element)
-        normalizedConfiguration.failureRates = FailureRates{};
+        normalizedConfiguration.lambdaDefinitions = zeroLambdaDefinitions();
     if (normalizedConfiguration.requiredElements < 1)
         normalizedConfiguration.requiredElements = 1;
 
@@ -342,10 +338,7 @@ void MainWindow::resetEditorModes()
 void MainWindow::updateStructureViewInteractionMode()
 {
     const bool selectionMode = selectAction->isChecked();
-    const bool editorModeActive = addNodeAction->isChecked()
-        || deleteItemAction->isChecked()
-        || selectionMode
-        || connectAction->isChecked();
+    const bool editorModeActive = addNodeAction->isChecked() || deleteItemAction->isChecked() || selectionMode || connectAction->isChecked();
 
     structureView->setDragMode(selectionMode ? QGraphicsView::RubberBandDrag : QGraphicsView::NoDrag);
     structureView->setPanningEnabled(!editorModeActive);
@@ -353,5 +346,76 @@ void MainWindow::updateStructureViewInteractionMode()
     structureView->viewport()->setCursor(Qt::ArrowCursor);
 }
 
-MainWindow::~MainWindow()
-{}
+void MainWindow::newSchema()
+{
+    const QMessageBox::StandardButton answer = QMessageBox::question(
+        this,
+        "Новая схема",
+        "Очистить текущую структурную схему?");
+    if (answer != QMessageBox::Yes) return;
+
+    resetEditorModes();
+    structureScene->clearSchema();
+    nodeConfigurationWidget->editDefaultConfiguration(structureScene->getDefaultNodeConfiguration());
+    statusBar()->showMessage("Создана новая схема", 5000);
+}
+
+void MainWindow::openSchema()
+{
+    const QString fileName = QFileDialog::getOpenFileName(
+        this,
+        "Открыть схему",
+        QString(),
+        "JSON (*.json)");
+    if (fileName.isEmpty()) return;
+
+    QFile file(fileName);
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        QMessageBox::warning(this, "Открыть схему", "Не удалось открыть файл для чтения.");
+        return;
+    }
+
+    QJsonParseError parseError;
+    const QJsonDocument document = QJsonDocument::fromJson(file.readAll(), &parseError);
+    if (parseError.error != QJsonParseError::NoError)
+    {
+        QMessageBox::warning(this, "Открыть схему", "Ошибка JSON: " + parseError.errorString());
+        return;
+    }
+
+    EditorSchemaModel model;
+    QString errorMessage;
+    if (!SchemaSerializer::fromJson(document, model, errorMessage) || !structureScene->importEditorSchemaModel(model, errorMessage))
+    {
+        QMessageBox::warning(this, "Открыть схему", errorMessage);
+        return;
+    }
+
+    resetEditorModes();
+    nodeConfigurationWidget->editDefaultConfiguration(structureScene->getDefaultNodeConfiguration());
+    statusBar()->showMessage("Схема загружена: " + fileName, 5000);
+}
+
+void MainWindow::saveSchema()
+{
+    const QString fileName = QFileDialog::getSaveFileName(
+        this,
+        "Сохранить схему",
+        "schema.json",
+        "JSON (*.json)");
+    if (fileName.isEmpty()) return;
+
+    QFile file(fileName);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
+    {
+        QMessageBox::warning(this, "Сохранить схему", "Не удалось открыть файл для записи.");
+        return;
+    }
+
+    const QJsonDocument document = SchemaSerializer::toJson(structureScene->exportEditorSchemaModel());
+    file.write(document.toJson(QJsonDocument::Indented));
+    statusBar()->showMessage("Схема сохранена: " + fileName, 5000);
+}
+
+MainWindow::~MainWindow() = default;

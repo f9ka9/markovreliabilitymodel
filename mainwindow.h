@@ -11,12 +11,18 @@
 #include <QToolBar>
 #include <QMenuBar>
 #include <QStatusBar>
+#include <QFile>
+#include <QFileDialog>
+#include <QJsonParseError>
+#include <QMessageBox>
+#include <QSignalBlocker>
 
 #include "reliabilityscene.h"
 #include "statescene.h"
 #include "stateview.h"
 #include "structureview.h"
 #include "nodeconfigurationwidget.h"
+#include "schemaserializer.h"
 
 class MainWindow : public QMainWindow
 {
@@ -85,6 +91,9 @@ private slots:
     void toggleConnectionMode(bool checked);
     void toggleDeleteMode(bool checked);
     void resetEditorModes();
+    void newSchema();
+    void openSchema();
+    void saveSchema();
 
 private:
     void updateStructureViewInteractionMode();

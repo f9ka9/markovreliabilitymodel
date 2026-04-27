@@ -1,11 +1,5 @@
 #include "nodegraphics.h"
 
-#include <QCursor>
-#include <QFontMetrics>
-#include <QGraphicsScene>
-
-#include "gridsettings.h"
-
 NodeGraphics::NodeGraphics(Node* node, QGraphicsItem* parent): QGraphicsObject(parent), modelNode(node)
 {
     setFlag(QGraphicsItem::ItemIsMovable);
@@ -50,6 +44,20 @@ void NodeGraphics::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWi
 void NodeGraphics::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
     previousPosition = pos();
+    draggedNodesStartPositions.clear();
+
+    if (scene())
+    {
+        for (QGraphicsItem* item : scene()->selectedItems())
+        {
+            if (NodeGraphics* nodeGraphics = dynamic_cast<NodeGraphics*>(item))
+                draggedNodesStartPositions.insert(nodeGraphics, nodeGraphics->pos());
+        }
+    }
+
+    if (!draggedNodesStartPositions.contains(this))
+        draggedNodesStartPositions.insert(this, previousPosition);
+
     QGraphicsItem::mousePressEvent(event);
 }
 
@@ -63,23 +71,58 @@ void NodeGraphics::mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event)
 
 void NodeGraphics::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
-    const QPointF newPos = GridSettings::snapToGrid(pos());
-    setPos(newPos);
-
-    for (QGraphicsItem* item : collidingItems())
+    QHash<NodeGraphics*, QPointF> snappedPositions;
+    for (auto it = draggedNodesStartPositions.cbegin(); it != draggedNodesStartPositions.cend(); ++it)
     {
-        if (item == this) continue;
-        if(dynamic_cast<NodeGraphics*>(item))
+        NodeGraphics* nodeGraphics = it.key();
+        if (!nodeGraphics) continue;
+
+        const QPointF snappedPosition = GridSettings::snapToGrid(nodeGraphics->pos());
+        snappedPositions.insert(nodeGraphics, snappedPosition);
+        nodeGraphics->setPos(snappedPosition);
+    }
+
+    bool hasCollision = false;
+    for (auto it = snappedPositions.cbegin(); it != snappedPositions.cend() && !hasCollision; ++it)
+    {
+        NodeGraphics* nodeGraphics = it.key();
+        if (!nodeGraphics) continue;
+
+        for (QGraphicsItem* item : nodeGraphics->collidingItems())
         {
-            setPos(previousPosition);
-            emit positionChanged();
-            QGraphicsItem::mouseReleaseEvent(event);
-            return;
+            if (NodeGraphics* otherNode = dynamic_cast<NodeGraphics*>(item))
+            {
+                if (!snappedPositions.contains(otherNode))
+                {
+                    hasCollision = true;
+                    break;
+                }
+            }
         }
     }
 
-    emit positionChanged();
-    update();
+    if (hasCollision)
+    {
+        for (auto it = draggedNodesStartPositions.cbegin(); it != draggedNodesStartPositions.cend(); ++it)
+        {
+            if (NodeGraphics* nodeGraphics = it.key())
+            {
+                nodeGraphics->setPos(it.value());
+                emit nodeGraphics->positionChanged();
+                nodeGraphics->update();
+            }
+        }
+
+        QGraphicsItem::mouseReleaseEvent(event);
+        return;
+    }
+
+    for (NodeGraphics* nodeGraphics : snappedPositions.keys())
+    {
+        if (!nodeGraphics) continue;
+        emit nodeGraphics->positionChanged();
+        nodeGraphics->update();
+    }
 
     QGraphicsItem::mouseReleaseEvent(event);
 }
