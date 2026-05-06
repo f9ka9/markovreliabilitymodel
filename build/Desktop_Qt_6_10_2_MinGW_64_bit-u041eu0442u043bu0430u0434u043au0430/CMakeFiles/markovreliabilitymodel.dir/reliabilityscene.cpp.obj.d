@@ -406,6 +406,9 @@ CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\editorschemamodel.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QVector \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qvector.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\cyclogram.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnectiongraphics.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \

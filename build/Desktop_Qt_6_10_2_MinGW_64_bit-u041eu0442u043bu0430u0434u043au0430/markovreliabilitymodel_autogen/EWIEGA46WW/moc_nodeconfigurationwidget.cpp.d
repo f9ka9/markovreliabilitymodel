@@ -135,6 +135,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/qversiontagging.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QShortcut \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbrush.h \
@@ -157,6 +158,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/qregion.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qrgb.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qshortcut.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtextdocument.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \

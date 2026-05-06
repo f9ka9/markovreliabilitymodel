@@ -7,32 +7,54 @@ qt_standard_project_setup()
 
 qt_add_executable(markovreliabilitymodel
     WIN32 MACOSX_BUNDLE
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    node.h
-    nodeconfigurationwidget.h
-    nodegraphics.h
-    reliabilityscene.h
-    editorschemamodel.h
-    schemamodel.h
-    schemaserializer.h
-    statescene.h
-    node.cpp
-    nodeconfigurationwidget.cpp
-    nodegraphics.cpp
-    reliabilityscene.cpp
-    schemaserializer.cpp
-    statescene.cpp
-    structureview.h
-    stateview.h
-    stateview.cpp
-    structureview.cpp
-    lineconnection.h
-    lineconnection.cpp
-    lineconnectiongraphics.h
-    lineconnectiongraphics.cpp
-    gridsettings.h
+    src/main.cpp
+    src/ui/mainwindow.cpp
+    src/ui/mainwindow.h
+    src/ui/nodeconfigurationwidget.cpp
+    src/ui/nodeconfigurationwidget.h
+    src/ui/statescene.cpp
+    src/ui/statescene.h
+    src/ui/stateview.cpp
+    src/ui/stateview.h
+    src/ui/structureview.cpp
+    src/ui/structureview.h
+    src/editor/reliabilityscene.cpp
+    src/editor/reliabilityscene.h
+    src/editor/nodegraphics.cpp
+    src/editor/nodegraphics.h
+    src/editor/lineconnectiongraphics.cpp
+    src/editor/lineconnectiongraphics.h
+    src/editor/gridsettings.h
+    src/model/node.cpp
+    src/model/node.h
+    src/model/lineconnection.cpp
+    src/model/lineconnection.h
+    src/model/editorschemamodel.h
+    src/model/schemamodel.h
+    src/model/cyclogram.h
+    src/serialization/schemaserializer.cpp
+    src/serialization/schemaserializer.h
+    src/core/reliabilitystate.h
+    src/core/stategenerator.cpp
+    src/core/stategenerator.h
+    src/core/transitionbuilder.cpp
+    src/core/transitionbuilder.h
+    src/core/matrixbuilder.cpp
+    src/core/matrixbuilder.h
+    src/core/probabilitycalculator.cpp
+    src/core/probabilitycalculator.h
+    src/core/reliabilitycore.cpp
+    src/core/reliabilitycore.h
+    src/core/calculationresult.h
+)
+
+target_include_directories(markovreliabilitymodel
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/ui
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/editor
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/model
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/core
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/serialization
 )
 
 target_link_libraries(markovreliabilitymodel

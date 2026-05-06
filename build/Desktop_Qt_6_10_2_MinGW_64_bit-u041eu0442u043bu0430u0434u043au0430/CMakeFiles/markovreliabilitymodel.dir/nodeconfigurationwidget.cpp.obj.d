@@ -427,6 +427,8 @@ CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QShortcut \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qshortcut.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \

@@ -1,7 +1,7 @@
 CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compilation.cpp.obj: \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\mocs_compilation.cpp \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\EWIEGA46WW/moc_lineconnectiongraphics.cpp \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\W4MZGBQALC/moc_lineconnectiongraphics.cpp \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/lineconnectiongraphics.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsitem.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -415,7 +415,7 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qmath.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/nodegraphics.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsSceneMouseEvent \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicssceneevent.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qcoreevent.h \
@@ -429,18 +429,36 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgraphicsscene.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QHash \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qhash.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/gridsettings.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/gridsettings.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/node.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qstring.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/lineconnection.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qtmochelpers.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qtmocconstants.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/q20algorithm.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\EWIEGA46WW/moc_mainwindow.cpp \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\W4MZGBQALC/moc_nodegraphics.cpp \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/nodegraphics.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\W4MZGBQALC/moc_reliabilityscene.cpp \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/reliabilityscene.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsPathItem \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QPen \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QStringList \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qstringlist.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/editorschemamodel.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QVector \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qvector.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/cyclogram.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/node.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/lineconnectiongraphics.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/schemamodel.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\YPKJ5OE7LN/moc_mainwindow.cpp \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/mainwindow.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsView \
@@ -468,13 +486,28 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qdockwidget.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QComboBox \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qcombobox.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDoubleSpinBox \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qspinbox.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QHBoxLayout \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgridlayout.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtoolbar.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMenuBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenubar.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstatusbar.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QFile \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qfile.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qfiledevice.h \
@@ -518,6 +551,14 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtCore/qfileinfo.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qtimezone.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonArray \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonarray.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonParseError \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
@@ -525,20 +566,16 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QSignalBlocker \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsPathItem \
- D:/Qt/6.10.2/mingw_64/include/QtGui/QPen \
- D:/Qt/6.10.2/mingw_64/include/QtGui/qpen.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QStringList \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qstringlist.h \
- D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
- D:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/editorschemamodel.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemamodel.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/reliabilityscene.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/statescene.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/calculationresult.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/cyclogram.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/matrixbuilder.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/transitionbuilder.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/reliabilitystate.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/probabilitycalculator.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/stateview.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/structureview.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qevent.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qeventpoint.h \
@@ -564,50 +601,30 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtGui/qguiapplication_platform.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QPoint \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/nodeconfigurationwidget.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QComboBox \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qcombobox.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDoubleSpinBox \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qspinbox.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QFormLayout \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qformlayout.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLayout \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayoutitem.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgridlayout.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QHBoxLayout \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLineEdit \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlineedit.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemaserializer.h \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QShortcut \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qshortcut.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/reliabilitycore.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/calculationresult.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/stategenerator.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QSet \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qset.h \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/serialization/schemaserializer.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonDocument \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonObject \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonobject.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonArray \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonarray.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QPair \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpair.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\EWIEGA46WW/moc_nodeconfigurationwidget.cpp \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\EWIEGA46WW/moc_nodegraphics.cpp \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
- C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\EWIEGA46WW/moc_reliabilityscene.cpp \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\YPKJ5OE7LN/moc_nodeconfigurationwidget.cpp \
+ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/nodeconfigurationwidget.h

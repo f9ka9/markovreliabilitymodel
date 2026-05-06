@@ -1,18 +1,26 @@
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/moc_predefs.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/calculationresult.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/cyclogram.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/editorschemamodel.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/gridsettings.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/matrixbuilder.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/probabilitycalculator.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilitycore.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilitystate.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemamodel.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemaserializer.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stategenerator.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.h \
   C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.h \
+  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/transitionbuilder.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QFile \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QHash \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonArray \
@@ -25,11 +33,13 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/QPoint \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QRect \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QSet \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QSignalBlocker \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QSize \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QSizeF \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QString \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QStringList \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/QVector \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
   D:/Qt/6.10.2/mingw_64/include/QtCore/QtMath \
   D:/Qt/6.10.2/mingw_64/include/QtCore/q17memory.h \
@@ -186,6 +196,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qvariant.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qvarlengtharray.h \
+  D:/Qt/6.10.2/mingw_64/include/QtCore/qvector.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qversiontagging.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qxptype_traits.h \
   D:/Qt/6.10.2/mingw_64/include/QtCore/qyieldcpu.h \
@@ -198,6 +209,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPainterPathStroker \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QPen \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QResizeEvent \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/QShortcut \
   D:/Qt/6.10.2/mingw_64/include/QtGui/QTransform \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qbitmap.h \
@@ -232,6 +244,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_
   D:/Qt/6.10.2/mingw_64/include/QtGui/qrgba64.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qscreen_platform.h \
+  D:/Qt/6.10.2/mingw_64/include/QtGui/qshortcut.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtextdocument.h \
   D:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \

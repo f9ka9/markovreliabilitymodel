@@ -43,14 +43,15 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "upLevelSignal",
         "",
         "showNodeConfiguration",
-        "applyNodeConfiguration",
         "Node*",
         "node",
+        "applyNodeConfiguration",
         "NodeConfiguration",
         "configuration",
         "onConfiguredNodeAboutToBeRemoved",
-        "toggleModelsAddMode",
+        "toggleNodeConfigurationMode",
         "checked",
+        "toggleModelsAddMode",
         "toggleSelectionMode",
         "upLevel",
         "toggleConnectionMode",
@@ -58,7 +59,9 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "resetEditorModes",
         "newSchema",
         "openSchema",
-        "saveSchema"
+        "saveSchema",
+        "calculate",
+        "exportResults"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -66,40 +69,52 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'showNodeConfiguration'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'showNodeConfiguration'
+        QtMocHelpers::SlotData<void(Node *)>(3, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 4, 5 },
+        }}),
         // Slot 'applyNodeConfiguration'
-        QtMocHelpers::SlotData<void(Node *, const NodeConfiguration &)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 5, 6 }, { 0x80000000 | 7, 8 },
+        QtMocHelpers::SlotData<void(Node *, const NodeConfiguration &)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 4, 5 }, { 0x80000000 | 7, 8 },
         }}),
         // Slot 'onConfiguredNodeAboutToBeRemoved'
         QtMocHelpers::SlotData<void(Node *)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 5, 6 },
+            { 0x80000000 | 4, 5 },
         }}),
-        // Slot 'toggleModelsAddMode'
+        // Slot 'toggleNodeConfigurationMode'
         QtMocHelpers::SlotData<void(bool)>(10, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Bool, 11 },
         }}),
-        // Slot 'toggleSelectionMode'
+        // Slot 'toggleModelsAddMode'
         QtMocHelpers::SlotData<void(bool)>(12, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Bool, 11 },
         }}),
-        // Slot 'upLevel'
-        QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'toggleConnectionMode'
-        QtMocHelpers::SlotData<void(bool)>(14, 2, QMC::AccessPrivate, QMetaType::Void, {{
+        // Slot 'toggleSelectionMode'
+        QtMocHelpers::SlotData<void(bool)>(13, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Bool, 11 },
         }}),
-        // Slot 'toggleDeleteMode'
+        // Slot 'upLevel'
+        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'toggleConnectionMode'
         QtMocHelpers::SlotData<void(bool)>(15, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::Bool, 11 },
         }}),
+        // Slot 'toggleDeleteMode'
+        QtMocHelpers::SlotData<void(bool)>(16, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 11 },
+        }}),
         // Slot 'resetEditorModes'
-        QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'newSchema'
         QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'openSchema'
+        // Slot 'newSchema'
         QtMocHelpers::SlotData<void()>(18, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'saveSchema'
+        // Slot 'openSchema'
         QtMocHelpers::SlotData<void()>(19, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'saveSchema'
+        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'calculate'
+        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'exportResults'
+        QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -125,17 +140,21 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->upLevelSignal(); break;
         case 1: _t->showNodeConfiguration(); break;
-        case 2: _t->applyNodeConfiguration((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<NodeConfiguration>>(_a[2]))); break;
-        case 3: _t->onConfiguredNodeAboutToBeRemoved((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1]))); break;
-        case 4: _t->toggleModelsAddMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 5: _t->toggleSelectionMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 6: _t->upLevel(); break;
-        case 7: _t->toggleConnectionMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 8: _t->toggleDeleteMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
-        case 9: _t->resetEditorModes(); break;
-        case 10: _t->newSchema(); break;
-        case 11: _t->openSchema(); break;
-        case 12: _t->saveSchema(); break;
+        case 2: _t->showNodeConfiguration((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1]))); break;
+        case 3: _t->applyNodeConfiguration((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<NodeConfiguration>>(_a[2]))); break;
+        case 4: _t->onConfiguredNodeAboutToBeRemoved((*reinterpret_cast<std::add_pointer_t<Node*>>(_a[1]))); break;
+        case 5: _t->toggleNodeConfigurationMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 6: _t->toggleModelsAddMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 7: _t->toggleSelectionMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 8: _t->upLevel(); break;
+        case 9: _t->toggleConnectionMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 10: _t->toggleDeleteMode((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
+        case 11: _t->resetEditorModes(); break;
+        case 12: _t->newSchema(); break;
+        case 13: _t->openSchema(); break;
+        case 14: _t->saveSchema(); break;
+        case 15: _t->calculate(); break;
+        case 16: _t->exportResults(); break;
         default: ;
         }
     }
@@ -164,14 +183,14 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 17;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 17)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 13;
+        _id -= 17;
     }
     return _id;
 }

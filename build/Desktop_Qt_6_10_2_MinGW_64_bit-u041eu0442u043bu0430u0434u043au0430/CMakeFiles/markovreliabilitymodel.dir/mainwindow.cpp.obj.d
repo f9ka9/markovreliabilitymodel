@@ -423,13 +423,28 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qdockwidget.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QAction \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qaction.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QComboBox \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qcombobox.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDoubleSpinBox \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qspinbox.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QHBoxLayout \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayoutitem.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgridlayout.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QToolBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qtoolbar.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMenuBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenubar.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qmenu.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QStatusBar \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qstatusbar.h \
+ D:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QFile \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qfile.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qfiledevice.h \
@@ -473,6 +488,14 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qfileinfo.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qtimezone.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonArray \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonarray.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonParseError \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
@@ -515,6 +538,9 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QtGlobal \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qglobal.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\editorschemamodel.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QVector \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qvector.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\cyclogram.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnectiongraphics.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QGraphicsObject \
@@ -531,6 +557,11 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\lineconnection.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\schemamodel.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\statescene.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\calculationresult.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\matrixbuilder.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\transitionbuilder.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\reliabilitystate.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\probabilitycalculator.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\stateview.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\structureview.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QMouseEvent \
@@ -561,41 +592,24 @@ CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj: \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\nodeconfigurationwidget.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qwidget.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QComboBox \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qcombobox.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QDoubleSpinBox \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qspinbox.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QFormLayout \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qformlayout.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLayout \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayoutitem.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlayout.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qgridlayout.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QHBoxLayout \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qboxlayout.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QLineEdit \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qlineedit.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextcursor.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QSpinBox \
- D:/Qt/6.10.2/mingw_64/include/QtWidgets/QVBoxLayout \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/QShortcut \
+ D:/Qt/6.10.2/mingw_64/include/QtGui/qshortcut.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\reliabilitycore.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\stategenerator.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QSet \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qset.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\schemaserializer.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonDocument \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonObject \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonobject.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonArray \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonarray.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QPair \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpair.h

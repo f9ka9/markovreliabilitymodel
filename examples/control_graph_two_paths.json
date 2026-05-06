@@ -1,0 +1,98 @@
+{
+    "version": 1,
+    "currentParentId": 0,
+    "topLevelStructureType": "series",
+    "topLevelRequiredElements": 1,
+    "defaultNodeConfiguration": {
+        "name": "Node",
+        "groupName": "",
+        "structureType": "element",
+        "requiredElements": 1,
+        "lambdaDefinitions": {
+            "transportation": { "inputType": "fixed", "value": 0.000001, "multiplier": 1.0, "referenceMode": "functioning" },
+            "storage": { "inputType": "expression", "value": 0.0, "multiplier": 0.1, "referenceMode": "functioning" },
+            "functioning": { "inputType": "fixed", "value": 0.00001, "multiplier": 1.0, "referenceMode": "functioning" },
+            "off": { "inputType": "expression", "value": 0.0, "multiplier": 0.2, "referenceMode": "functioning" }
+        }
+    },
+    "cyclogram": [
+        { "name": "Functioning", "mode": "functioning", "duration": 10.0 }
+    ],
+    "initialProbabilities": [],
+    "nodes": [
+        {
+            "id": 1,
+            "parentId": 0,
+            "position": { "x": -320, "y": 0 },
+            "configuration": {
+                "name": "Input",
+                "groupName": "Graph",
+                "structureType": "element",
+                "requiredElements": 1,
+                "lambdaDefinitions": {
+                    "transportation": { "inputType": "fixed", "value": 0.000001, "multiplier": 1.0, "referenceMode": "functioning" },
+                    "storage": { "inputType": "expression", "value": 0.0, "multiplier": 0.1, "referenceMode": "functioning" },
+                    "functioning": { "inputType": "fixed", "value": 0.00001, "multiplier": 1.0, "referenceMode": "functioning" },
+                    "off": { "inputType": "expression", "value": 0.0, "multiplier": 0.2, "referenceMode": "functioning" }
+                }
+            }
+        },
+        {
+            "id": 2,
+            "parentId": 0,
+            "position": { "x": -80, "y": -100 },
+            "configuration": {
+                "name": "Path A",
+                "groupName": "Graph",
+                "structureType": "element",
+                "requiredElements": 1,
+                "lambdaDefinitions": {
+                    "transportation": { "inputType": "fixed", "value": 0.000001, "multiplier": 1.0, "referenceMode": "functioning" },
+                    "storage": { "inputType": "expression", "value": 0.0, "multiplier": 0.1, "referenceMode": "functioning" },
+                    "functioning": { "inputType": "fixed", "value": 0.00001, "multiplier": 1.0, "referenceMode": "functioning" },
+                    "off": { "inputType": "expression", "value": 0.0, "multiplier": 0.2, "referenceMode": "functioning" }
+                }
+            }
+        },
+        {
+            "id": 3,
+            "parentId": 0,
+            "position": { "x": -80, "y": 100 },
+            "configuration": {
+                "name": "Path B",
+                "groupName": "Graph",
+                "structureType": "element",
+                "requiredElements": 1,
+                "lambdaDefinitions": {
+                    "transportation": { "inputType": "fixed", "value": 0.000001, "multiplier": 1.0, "referenceMode": "functioning" },
+                    "storage": { "inputType": "expression", "value": 0.0, "multiplier": 0.1, "referenceMode": "functioning" },
+                    "functioning": { "inputType": "fixed", "value": 0.00001, "multiplier": 1.0, "referenceMode": "functioning" },
+                    "off": { "inputType": "expression", "value": 0.0, "multiplier": 0.2, "referenceMode": "functioning" }
+                }
+            }
+        },
+        {
+            "id": 4,
+            "parentId": 0,
+            "position": { "x": 200, "y": 0 },
+            "configuration": {
+                "name": "Output",
+                "groupName": "Graph",
+                "structureType": "element",
+                "requiredElements": 1,
+                "lambdaDefinitions": {
+                    "transportation": { "inputType": "fixed", "value": 0.000001, "multiplier": 1.0, "referenceMode": "functioning" },
+                    "storage": { "inputType": "expression", "value": 0.0, "multiplier": 0.1, "referenceMode": "functioning" },
+                    "functioning": { "inputType": "fixed", "value": 0.00001, "multiplier": 1.0, "referenceMode": "functioning" },
+                    "off": { "inputType": "expression", "value": 0.0, "multiplier": 0.2, "referenceMode": "functioning" }
+                }
+            }
+        }
+    ],
+    "connections": [
+        { "sourceNodeId": 1, "targetNodeId": 2, "bendPoints": [ { "x": -320, "y": -100 } ] },
+        { "sourceNodeId": 1, "targetNodeId": 3, "bendPoints": [ { "x": -320, "y": 100 } ] },
+        { "sourceNodeId": 2, "targetNodeId": 4, "bendPoints": [ { "x": 200, "y": -100 } ] },
+        { "sourceNodeId": 3, "targetNodeId": 4, "bendPoints": [ { "x": 200, "y": 100 } ] }
+    ]
+}

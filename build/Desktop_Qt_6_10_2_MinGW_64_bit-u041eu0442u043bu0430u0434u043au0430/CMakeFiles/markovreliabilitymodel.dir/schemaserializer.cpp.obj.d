@@ -369,4 +369,7 @@ CMakeFiles/markovreliabilitymodel.dir/schemaserializer.cpp.obj: \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QPointF \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpoint.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qcheckedint_impl.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QVector \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qvector.h \
+ C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\cyclogram.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\node.h

@@ -199,102 +199,6 @@ markovreliabilitymodel_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel_autogen.dir\build.make CMakeFiles/markovreliabilitymodel_autogen.dir/build
 .PHONY : markovreliabilitymodel_autogen/fast
 
-lineconnection.obj: lineconnection.cpp.obj
-.PHONY : lineconnection.obj
-
-# target to build an object file
-lineconnection.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.obj
-.PHONY : lineconnection.cpp.obj
-
-lineconnection.i: lineconnection.cpp.i
-.PHONY : lineconnection.i
-
-# target to preprocess a source file
-lineconnection.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.i
-.PHONY : lineconnection.cpp.i
-
-lineconnection.s: lineconnection.cpp.s
-.PHONY : lineconnection.s
-
-# target to generate assembly for a file
-lineconnection.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/lineconnection.cpp.s
-.PHONY : lineconnection.cpp.s
-
-lineconnectiongraphics.obj: lineconnectiongraphics.cpp.obj
-.PHONY : lineconnectiongraphics.obj
-
-# target to build an object file
-lineconnectiongraphics.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.obj
-.PHONY : lineconnectiongraphics.cpp.obj
-
-lineconnectiongraphics.i: lineconnectiongraphics.cpp.i
-.PHONY : lineconnectiongraphics.i
-
-# target to preprocess a source file
-lineconnectiongraphics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.i
-.PHONY : lineconnectiongraphics.cpp.i
-
-lineconnectiongraphics.s: lineconnectiongraphics.cpp.s
-.PHONY : lineconnectiongraphics.s
-
-# target to generate assembly for a file
-lineconnectiongraphics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/lineconnectiongraphics.cpp.s
-.PHONY : lineconnectiongraphics.cpp.s
-
-main.obj: main.cpp.obj
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-mainwindow.obj: mainwindow.cpp.obj
-.PHONY : mainwindow.obj
-
-# target to build an object file
-mainwindow.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.obj
-.PHONY : mainwindow.cpp.obj
-
-mainwindow.i: mainwindow.cpp.i
-.PHONY : mainwindow.i
-
-# target to preprocess a source file
-mainwindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.i
-.PHONY : mainwindow.cpp.i
-
-mainwindow.s: mainwindow.cpp.s
-.PHONY : mainwindow.s
-
-# target to generate assembly for a file
-mainwindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/mainwindow.cpp.s
-.PHONY : mainwindow.cpp.s
-
 markovreliabilitymodel_autogen/mocs_compilation.obj: markovreliabilitymodel_autogen/mocs_compilation.cpp.obj
 .PHONY : markovreliabilitymodel_autogen/mocs_compilation.obj
 
@@ -319,197 +223,413 @@ markovreliabilitymodel_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compilation.cpp.s
 .PHONY : markovreliabilitymodel_autogen/mocs_compilation.cpp.s
 
-node.obj: node.cpp.obj
-.PHONY : node.obj
+src/core/matrixbuilder.obj: src/core/matrixbuilder.cpp.obj
+.PHONY : src/core/matrixbuilder.obj
 
 # target to build an object file
-node.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/node.cpp.obj
-.PHONY : node.cpp.obj
+src/core/matrixbuilder.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/matrixbuilder.cpp.obj
+.PHONY : src/core/matrixbuilder.cpp.obj
 
-node.i: node.cpp.i
-.PHONY : node.i
+src/core/matrixbuilder.i: src/core/matrixbuilder.cpp.i
+.PHONY : src/core/matrixbuilder.i
 
 # target to preprocess a source file
-node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/node.cpp.i
-.PHONY : node.cpp.i
+src/core/matrixbuilder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/matrixbuilder.cpp.i
+.PHONY : src/core/matrixbuilder.cpp.i
 
-node.s: node.cpp.s
-.PHONY : node.s
+src/core/matrixbuilder.s: src/core/matrixbuilder.cpp.s
+.PHONY : src/core/matrixbuilder.s
 
 # target to generate assembly for a file
-node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/node.cpp.s
-.PHONY : node.cpp.s
+src/core/matrixbuilder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/matrixbuilder.cpp.s
+.PHONY : src/core/matrixbuilder.cpp.s
 
-nodeconfigurationwidget.obj: nodeconfigurationwidget.cpp.obj
-.PHONY : nodeconfigurationwidget.obj
+src/core/probabilitycalculator.obj: src/core/probabilitycalculator.cpp.obj
+.PHONY : src/core/probabilitycalculator.obj
 
 # target to build an object file
-nodeconfigurationwidget.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.obj
-.PHONY : nodeconfigurationwidget.cpp.obj
+src/core/probabilitycalculator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/probabilitycalculator.cpp.obj
+.PHONY : src/core/probabilitycalculator.cpp.obj
 
-nodeconfigurationwidget.i: nodeconfigurationwidget.cpp.i
-.PHONY : nodeconfigurationwidget.i
+src/core/probabilitycalculator.i: src/core/probabilitycalculator.cpp.i
+.PHONY : src/core/probabilitycalculator.i
 
 # target to preprocess a source file
-nodeconfigurationwidget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.i
-.PHONY : nodeconfigurationwidget.cpp.i
+src/core/probabilitycalculator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/probabilitycalculator.cpp.i
+.PHONY : src/core/probabilitycalculator.cpp.i
 
-nodeconfigurationwidget.s: nodeconfigurationwidget.cpp.s
-.PHONY : nodeconfigurationwidget.s
+src/core/probabilitycalculator.s: src/core/probabilitycalculator.cpp.s
+.PHONY : src/core/probabilitycalculator.s
 
 # target to generate assembly for a file
-nodeconfigurationwidget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/nodeconfigurationwidget.cpp.s
-.PHONY : nodeconfigurationwidget.cpp.s
+src/core/probabilitycalculator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/probabilitycalculator.cpp.s
+.PHONY : src/core/probabilitycalculator.cpp.s
 
-nodegraphics.obj: nodegraphics.cpp.obj
-.PHONY : nodegraphics.obj
+src/core/reliabilitycore.obj: src/core/reliabilitycore.cpp.obj
+.PHONY : src/core/reliabilitycore.obj
 
 # target to build an object file
-nodegraphics.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.obj
-.PHONY : nodegraphics.cpp.obj
+src/core/reliabilitycore.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/reliabilitycore.cpp.obj
+.PHONY : src/core/reliabilitycore.cpp.obj
 
-nodegraphics.i: nodegraphics.cpp.i
-.PHONY : nodegraphics.i
+src/core/reliabilitycore.i: src/core/reliabilitycore.cpp.i
+.PHONY : src/core/reliabilitycore.i
 
 # target to preprocess a source file
-nodegraphics.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.i
-.PHONY : nodegraphics.cpp.i
+src/core/reliabilitycore.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/reliabilitycore.cpp.i
+.PHONY : src/core/reliabilitycore.cpp.i
 
-nodegraphics.s: nodegraphics.cpp.s
-.PHONY : nodegraphics.s
+src/core/reliabilitycore.s: src/core/reliabilitycore.cpp.s
+.PHONY : src/core/reliabilitycore.s
 
 # target to generate assembly for a file
-nodegraphics.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/nodegraphics.cpp.s
-.PHONY : nodegraphics.cpp.s
+src/core/reliabilitycore.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/reliabilitycore.cpp.s
+.PHONY : src/core/reliabilitycore.cpp.s
 
-reliabilityscene.obj: reliabilityscene.cpp.obj
-.PHONY : reliabilityscene.obj
+src/core/stategenerator.obj: src/core/stategenerator.cpp.obj
+.PHONY : src/core/stategenerator.obj
 
 # target to build an object file
-reliabilityscene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.obj
-.PHONY : reliabilityscene.cpp.obj
+src/core/stategenerator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/stategenerator.cpp.obj
+.PHONY : src/core/stategenerator.cpp.obj
 
-reliabilityscene.i: reliabilityscene.cpp.i
-.PHONY : reliabilityscene.i
+src/core/stategenerator.i: src/core/stategenerator.cpp.i
+.PHONY : src/core/stategenerator.i
 
 # target to preprocess a source file
-reliabilityscene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.i
-.PHONY : reliabilityscene.cpp.i
+src/core/stategenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/stategenerator.cpp.i
+.PHONY : src/core/stategenerator.cpp.i
 
-reliabilityscene.s: reliabilityscene.cpp.s
-.PHONY : reliabilityscene.s
+src/core/stategenerator.s: src/core/stategenerator.cpp.s
+.PHONY : src/core/stategenerator.s
 
 # target to generate assembly for a file
-reliabilityscene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/reliabilityscene.cpp.s
-.PHONY : reliabilityscene.cpp.s
+src/core/stategenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/stategenerator.cpp.s
+.PHONY : src/core/stategenerator.cpp.s
 
-schemaserializer.obj: schemaserializer.cpp.obj
-.PHONY : schemaserializer.obj
+src/core/transitionbuilder.obj: src/core/transitionbuilder.cpp.obj
+.PHONY : src/core/transitionbuilder.obj
 
 # target to build an object file
-schemaserializer.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/schemaserializer.cpp.obj
-.PHONY : schemaserializer.cpp.obj
+src/core/transitionbuilder.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/transitionbuilder.cpp.obj
+.PHONY : src/core/transitionbuilder.cpp.obj
 
-schemaserializer.i: schemaserializer.cpp.i
-.PHONY : schemaserializer.i
+src/core/transitionbuilder.i: src/core/transitionbuilder.cpp.i
+.PHONY : src/core/transitionbuilder.i
 
 # target to preprocess a source file
-schemaserializer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/schemaserializer.cpp.i
-.PHONY : schemaserializer.cpp.i
+src/core/transitionbuilder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/transitionbuilder.cpp.i
+.PHONY : src/core/transitionbuilder.cpp.i
 
-schemaserializer.s: schemaserializer.cpp.s
-.PHONY : schemaserializer.s
+src/core/transitionbuilder.s: src/core/transitionbuilder.cpp.s
+.PHONY : src/core/transitionbuilder.s
 
 # target to generate assembly for a file
-schemaserializer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/schemaserializer.cpp.s
-.PHONY : schemaserializer.cpp.s
+src/core/transitionbuilder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/transitionbuilder.cpp.s
+.PHONY : src/core/transitionbuilder.cpp.s
 
-statescene.obj: statescene.cpp.obj
-.PHONY : statescene.obj
+src/editor/lineconnectiongraphics.obj: src/editor/lineconnectiongraphics.cpp.obj
+.PHONY : src/editor/lineconnectiongraphics.obj
 
 # target to build an object file
-statescene.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.obj
-.PHONY : statescene.cpp.obj
+src/editor/lineconnectiongraphics.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/editor/lineconnectiongraphics.cpp.obj
+.PHONY : src/editor/lineconnectiongraphics.cpp.obj
 
-statescene.i: statescene.cpp.i
-.PHONY : statescene.i
+src/editor/lineconnectiongraphics.i: src/editor/lineconnectiongraphics.cpp.i
+.PHONY : src/editor/lineconnectiongraphics.i
 
 # target to preprocess a source file
-statescene.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.i
-.PHONY : statescene.cpp.i
+src/editor/lineconnectiongraphics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/editor/lineconnectiongraphics.cpp.i
+.PHONY : src/editor/lineconnectiongraphics.cpp.i
 
-statescene.s: statescene.cpp.s
-.PHONY : statescene.s
+src/editor/lineconnectiongraphics.s: src/editor/lineconnectiongraphics.cpp.s
+.PHONY : src/editor/lineconnectiongraphics.s
 
 # target to generate assembly for a file
-statescene.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/statescene.cpp.s
-.PHONY : statescene.cpp.s
+src/editor/lineconnectiongraphics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/editor/lineconnectiongraphics.cpp.s
+.PHONY : src/editor/lineconnectiongraphics.cpp.s
 
-stateview.obj: stateview.cpp.obj
-.PHONY : stateview.obj
+src/editor/nodegraphics.obj: src/editor/nodegraphics.cpp.obj
+.PHONY : src/editor/nodegraphics.obj
 
 # target to build an object file
-stateview.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.obj
-.PHONY : stateview.cpp.obj
+src/editor/nodegraphics.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/editor/nodegraphics.cpp.obj
+.PHONY : src/editor/nodegraphics.cpp.obj
 
-stateview.i: stateview.cpp.i
-.PHONY : stateview.i
+src/editor/nodegraphics.i: src/editor/nodegraphics.cpp.i
+.PHONY : src/editor/nodegraphics.i
 
 # target to preprocess a source file
-stateview.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.i
-.PHONY : stateview.cpp.i
+src/editor/nodegraphics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/editor/nodegraphics.cpp.i
+.PHONY : src/editor/nodegraphics.cpp.i
 
-stateview.s: stateview.cpp.s
-.PHONY : stateview.s
+src/editor/nodegraphics.s: src/editor/nodegraphics.cpp.s
+.PHONY : src/editor/nodegraphics.s
 
 # target to generate assembly for a file
-stateview.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/stateview.cpp.s
-.PHONY : stateview.cpp.s
+src/editor/nodegraphics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/editor/nodegraphics.cpp.s
+.PHONY : src/editor/nodegraphics.cpp.s
 
-structureview.obj: structureview.cpp.obj
-.PHONY : structureview.obj
+src/editor/reliabilityscene.obj: src/editor/reliabilityscene.cpp.obj
+.PHONY : src/editor/reliabilityscene.obj
 
 # target to build an object file
-structureview.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.obj
-.PHONY : structureview.cpp.obj
+src/editor/reliabilityscene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/editor/reliabilityscene.cpp.obj
+.PHONY : src/editor/reliabilityscene.cpp.obj
 
-structureview.i: structureview.cpp.i
-.PHONY : structureview.i
+src/editor/reliabilityscene.i: src/editor/reliabilityscene.cpp.i
+.PHONY : src/editor/reliabilityscene.i
 
 # target to preprocess a source file
-structureview.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.i
-.PHONY : structureview.cpp.i
+src/editor/reliabilityscene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/editor/reliabilityscene.cpp.i
+.PHONY : src/editor/reliabilityscene.cpp.i
 
-structureview.s: structureview.cpp.s
-.PHONY : structureview.s
+src/editor/reliabilityscene.s: src/editor/reliabilityscene.cpp.s
+.PHONY : src/editor/reliabilityscene.s
 
 # target to generate assembly for a file
-structureview.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/structureview.cpp.s
-.PHONY : structureview.cpp.s
+src/editor/reliabilityscene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/editor/reliabilityscene.cpp.s
+.PHONY : src/editor/reliabilityscene.cpp.s
+
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/model/lineconnection.obj: src/model/lineconnection.cpp.obj
+.PHONY : src/model/lineconnection.obj
+
+# target to build an object file
+src/model/lineconnection.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/model/lineconnection.cpp.obj
+.PHONY : src/model/lineconnection.cpp.obj
+
+src/model/lineconnection.i: src/model/lineconnection.cpp.i
+.PHONY : src/model/lineconnection.i
+
+# target to preprocess a source file
+src/model/lineconnection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/model/lineconnection.cpp.i
+.PHONY : src/model/lineconnection.cpp.i
+
+src/model/lineconnection.s: src/model/lineconnection.cpp.s
+.PHONY : src/model/lineconnection.s
+
+# target to generate assembly for a file
+src/model/lineconnection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/model/lineconnection.cpp.s
+.PHONY : src/model/lineconnection.cpp.s
+
+src/model/node.obj: src/model/node.cpp.obj
+.PHONY : src/model/node.obj
+
+# target to build an object file
+src/model/node.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/model/node.cpp.obj
+.PHONY : src/model/node.cpp.obj
+
+src/model/node.i: src/model/node.cpp.i
+.PHONY : src/model/node.i
+
+# target to preprocess a source file
+src/model/node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/model/node.cpp.i
+.PHONY : src/model/node.cpp.i
+
+src/model/node.s: src/model/node.cpp.s
+.PHONY : src/model/node.s
+
+# target to generate assembly for a file
+src/model/node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/model/node.cpp.s
+.PHONY : src/model/node.cpp.s
+
+src/serialization/schemaserializer.obj: src/serialization/schemaserializer.cpp.obj
+.PHONY : src/serialization/schemaserializer.obj
+
+# target to build an object file
+src/serialization/schemaserializer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/serialization/schemaserializer.cpp.obj
+.PHONY : src/serialization/schemaserializer.cpp.obj
+
+src/serialization/schemaserializer.i: src/serialization/schemaserializer.cpp.i
+.PHONY : src/serialization/schemaserializer.i
+
+# target to preprocess a source file
+src/serialization/schemaserializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/serialization/schemaserializer.cpp.i
+.PHONY : src/serialization/schemaserializer.cpp.i
+
+src/serialization/schemaserializer.s: src/serialization/schemaserializer.cpp.s
+.PHONY : src/serialization/schemaserializer.s
+
+# target to generate assembly for a file
+src/serialization/schemaserializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/serialization/schemaserializer.cpp.s
+.PHONY : src/serialization/schemaserializer.cpp.s
+
+src/ui/mainwindow.obj: src/ui/mainwindow.cpp.obj
+.PHONY : src/ui/mainwindow.obj
+
+# target to build an object file
+src/ui/mainwindow.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/mainwindow.cpp.obj
+.PHONY : src/ui/mainwindow.cpp.obj
+
+src/ui/mainwindow.i: src/ui/mainwindow.cpp.i
+.PHONY : src/ui/mainwindow.i
+
+# target to preprocess a source file
+src/ui/mainwindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/mainwindow.cpp.i
+.PHONY : src/ui/mainwindow.cpp.i
+
+src/ui/mainwindow.s: src/ui/mainwindow.cpp.s
+.PHONY : src/ui/mainwindow.s
+
+# target to generate assembly for a file
+src/ui/mainwindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/mainwindow.cpp.s
+.PHONY : src/ui/mainwindow.cpp.s
+
+src/ui/nodeconfigurationwidget.obj: src/ui/nodeconfigurationwidget.cpp.obj
+.PHONY : src/ui/nodeconfigurationwidget.obj
+
+# target to build an object file
+src/ui/nodeconfigurationwidget.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/nodeconfigurationwidget.cpp.obj
+.PHONY : src/ui/nodeconfigurationwidget.cpp.obj
+
+src/ui/nodeconfigurationwidget.i: src/ui/nodeconfigurationwidget.cpp.i
+.PHONY : src/ui/nodeconfigurationwidget.i
+
+# target to preprocess a source file
+src/ui/nodeconfigurationwidget.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/nodeconfigurationwidget.cpp.i
+.PHONY : src/ui/nodeconfigurationwidget.cpp.i
+
+src/ui/nodeconfigurationwidget.s: src/ui/nodeconfigurationwidget.cpp.s
+.PHONY : src/ui/nodeconfigurationwidget.s
+
+# target to generate assembly for a file
+src/ui/nodeconfigurationwidget.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/nodeconfigurationwidget.cpp.s
+.PHONY : src/ui/nodeconfigurationwidget.cpp.s
+
+src/ui/statescene.obj: src/ui/statescene.cpp.obj
+.PHONY : src/ui/statescene.obj
+
+# target to build an object file
+src/ui/statescene.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/statescene.cpp.obj
+.PHONY : src/ui/statescene.cpp.obj
+
+src/ui/statescene.i: src/ui/statescene.cpp.i
+.PHONY : src/ui/statescene.i
+
+# target to preprocess a source file
+src/ui/statescene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/statescene.cpp.i
+.PHONY : src/ui/statescene.cpp.i
+
+src/ui/statescene.s: src/ui/statescene.cpp.s
+.PHONY : src/ui/statescene.s
+
+# target to generate assembly for a file
+src/ui/statescene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/statescene.cpp.s
+.PHONY : src/ui/statescene.cpp.s
+
+src/ui/stateview.obj: src/ui/stateview.cpp.obj
+.PHONY : src/ui/stateview.obj
+
+# target to build an object file
+src/ui/stateview.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/stateview.cpp.obj
+.PHONY : src/ui/stateview.cpp.obj
+
+src/ui/stateview.i: src/ui/stateview.cpp.i
+.PHONY : src/ui/stateview.i
+
+# target to preprocess a source file
+src/ui/stateview.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/stateview.cpp.i
+.PHONY : src/ui/stateview.cpp.i
+
+src/ui/stateview.s: src/ui/stateview.cpp.s
+.PHONY : src/ui/stateview.s
+
+# target to generate assembly for a file
+src/ui/stateview.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/stateview.cpp.s
+.PHONY : src/ui/stateview.cpp.s
+
+src/ui/structureview.obj: src/ui/structureview.cpp.obj
+.PHONY : src/ui/structureview.obj
+
+# target to build an object file
+src/ui/structureview.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/structureview.cpp.obj
+.PHONY : src/ui/structureview.cpp.obj
+
+src/ui/structureview.i: src/ui/structureview.cpp.i
+.PHONY : src/ui/structureview.i
+
+# target to preprocess a source file
+src/ui/structureview.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/structureview.cpp.i
+.PHONY : src/ui/structureview.cpp.i
+
+src/ui/structureview.s: src/ui/structureview.cpp.s
+.PHONY : src/ui/structureview.s
+
+# target to generate assembly for a file
+src/ui/structureview.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/ui/structureview.cpp.s
+.PHONY : src/ui/structureview.cpp.s
 
 # Help Target
 help:
@@ -526,45 +646,60 @@ help:
 	@echo ... markovreliabilitymodel_autogen
 	@echo ... markovreliabilitymodel_autogen_timestamp_deps
 	@echo ... markovreliabilitymodel
-	@echo ... lineconnection.obj
-	@echo ... lineconnection.i
-	@echo ... lineconnection.s
-	@echo ... lineconnectiongraphics.obj
-	@echo ... lineconnectiongraphics.i
-	@echo ... lineconnectiongraphics.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... mainwindow.obj
-	@echo ... mainwindow.i
-	@echo ... mainwindow.s
 	@echo ... markovreliabilitymodel_autogen/mocs_compilation.obj
 	@echo ... markovreliabilitymodel_autogen/mocs_compilation.i
 	@echo ... markovreliabilitymodel_autogen/mocs_compilation.s
-	@echo ... node.obj
-	@echo ... node.i
-	@echo ... node.s
-	@echo ... nodeconfigurationwidget.obj
-	@echo ... nodeconfigurationwidget.i
-	@echo ... nodeconfigurationwidget.s
-	@echo ... nodegraphics.obj
-	@echo ... nodegraphics.i
-	@echo ... nodegraphics.s
-	@echo ... reliabilityscene.obj
-	@echo ... reliabilityscene.i
-	@echo ... reliabilityscene.s
-	@echo ... schemaserializer.obj
-	@echo ... schemaserializer.i
-	@echo ... schemaserializer.s
-	@echo ... statescene.obj
-	@echo ... statescene.i
-	@echo ... statescene.s
-	@echo ... stateview.obj
-	@echo ... stateview.i
-	@echo ... stateview.s
-	@echo ... structureview.obj
-	@echo ... structureview.i
-	@echo ... structureview.s
+	@echo ... src/core/matrixbuilder.obj
+	@echo ... src/core/matrixbuilder.i
+	@echo ... src/core/matrixbuilder.s
+	@echo ... src/core/probabilitycalculator.obj
+	@echo ... src/core/probabilitycalculator.i
+	@echo ... src/core/probabilitycalculator.s
+	@echo ... src/core/reliabilitycore.obj
+	@echo ... src/core/reliabilitycore.i
+	@echo ... src/core/reliabilitycore.s
+	@echo ... src/core/stategenerator.obj
+	@echo ... src/core/stategenerator.i
+	@echo ... src/core/stategenerator.s
+	@echo ... src/core/transitionbuilder.obj
+	@echo ... src/core/transitionbuilder.i
+	@echo ... src/core/transitionbuilder.s
+	@echo ... src/editor/lineconnectiongraphics.obj
+	@echo ... src/editor/lineconnectiongraphics.i
+	@echo ... src/editor/lineconnectiongraphics.s
+	@echo ... src/editor/nodegraphics.obj
+	@echo ... src/editor/nodegraphics.i
+	@echo ... src/editor/nodegraphics.s
+	@echo ... src/editor/reliabilityscene.obj
+	@echo ... src/editor/reliabilityscene.i
+	@echo ... src/editor/reliabilityscene.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
+	@echo ... src/model/lineconnection.obj
+	@echo ... src/model/lineconnection.i
+	@echo ... src/model/lineconnection.s
+	@echo ... src/model/node.obj
+	@echo ... src/model/node.i
+	@echo ... src/model/node.s
+	@echo ... src/serialization/schemaserializer.obj
+	@echo ... src/serialization/schemaserializer.i
+	@echo ... src/serialization/schemaserializer.s
+	@echo ... src/ui/mainwindow.obj
+	@echo ... src/ui/mainwindow.i
+	@echo ... src/ui/mainwindow.s
+	@echo ... src/ui/nodeconfigurationwidget.obj
+	@echo ... src/ui/nodeconfigurationwidget.i
+	@echo ... src/ui/nodeconfigurationwidget.s
+	@echo ... src/ui/statescene.obj
+	@echo ... src/ui/statescene.i
+	@echo ... src/ui/statescene.s
+	@echo ... src/ui/stateview.obj
+	@echo ... src/ui/stateview.i
+	@echo ... src/ui/stateview.s
+	@echo ... src/ui/structureview.obj
+	@echo ... src/ui/structureview.i
+	@echo ... src/ui/structureview.s
 .PHONY : help
 
 

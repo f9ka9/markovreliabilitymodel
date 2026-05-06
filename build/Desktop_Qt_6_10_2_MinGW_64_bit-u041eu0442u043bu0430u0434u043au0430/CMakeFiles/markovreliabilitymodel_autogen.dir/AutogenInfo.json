@@ -325,87 +325,135 @@
 	"HEADERS" : 
 	[
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/editorschemamodel.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/calculationresult.h",
 			"MU",
-			"EWIEGA46WW/moc_editorschemamodel.cpp",
+			"PRMOGMWJPH/moc_calculationresult.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/gridsettings.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/matrixbuilder.h",
 			"MU",
-			"EWIEGA46WW/moc_gridsettings.cpp",
+			"PRMOGMWJPH/moc_matrixbuilder.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/probabilitycalculator.h",
 			"MU",
-			"EWIEGA46WW/moc_lineconnection.cpp",
+			"PRMOGMWJPH/moc_probabilitycalculator.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/reliabilitycore.h",
 			"MU",
-			"EWIEGA46WW/moc_lineconnectiongraphics.cpp",
+			"PRMOGMWJPH/moc_reliabilitycore.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/reliabilitystate.h",
 			"MU",
-			"EWIEGA46WW/moc_mainwindow.cpp",
+			"PRMOGMWJPH/moc_reliabilitystate.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/stategenerator.h",
 			"MU",
-			"EWIEGA46WW/moc_node.cpp",
+			"PRMOGMWJPH/moc_stategenerator.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/transitionbuilder.h",
 			"MU",
-			"EWIEGA46WW/moc_nodeconfigurationwidget.cpp",
+			"PRMOGMWJPH/moc_transitionbuilder.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/gridsettings.h",
 			"MU",
-			"EWIEGA46WW/moc_nodegraphics.cpp",
+			"W4MZGBQALC/moc_gridsettings.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/lineconnectiongraphics.h",
 			"MU",
-			"EWIEGA46WW/moc_reliabilityscene.cpp",
+			"W4MZGBQALC/moc_lineconnectiongraphics.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemamodel.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/nodegraphics.h",
 			"MU",
-			"EWIEGA46WW/moc_schemamodel.cpp",
+			"W4MZGBQALC/moc_nodegraphics.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemaserializer.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/reliabilityscene.h",
 			"MU",
-			"EWIEGA46WW/moc_schemaserializer.cpp",
+			"W4MZGBQALC/moc_reliabilityscene.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/cyclogram.h",
 			"MU",
-			"EWIEGA46WW/moc_statescene.cpp",
+			"VNQA4LF4BW/moc_cyclogram.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/editorschemamodel.h",
 			"MU",
-			"EWIEGA46WW/moc_stateview.cpp",
+			"VNQA4LF4BW/moc_editorschemamodel.cpp",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.h",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/lineconnection.h",
 			"MU",
-			"EWIEGA46WW/moc_structureview.cpp",
+			"VNQA4LF4BW/moc_lineconnection.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/node.h",
+			"MU",
+			"VNQA4LF4BW/moc_node.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/schemamodel.h",
+			"MU",
+			"VNQA4LF4BW/moc_schemamodel.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/serialization/schemaserializer.h",
+			"MU",
+			"ENPXIVRQOX/moc_schemaserializer.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/mainwindow.h",
+			"MU",
+			"YPKJ5OE7LN/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/nodeconfigurationwidget.h",
+			"MU",
+			"YPKJ5OE7LN/moc_nodeconfigurationwidget.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/statescene.h",
+			"MU",
+			"YPKJ5OE7LN/moc_statescene.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/stateview.h",
+			"MU",
+			"YPKJ5OE7LN/moc_stateview.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/structureview.h",
+			"MU",
+			"YPKJ5OE7LN/moc_structureview.cpp",
 			null
 		]
 	],
@@ -436,6 +484,11 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui",
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor",
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model",
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core",
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/serialization",
 		"D:/Qt/6.10.2/mingw_64/include/QtCore",
 		"D:/Qt/6.10.2/mingw_64/include",
 		"D:/Qt/6.10.2/mingw_64/mkspecs/win32-g++",
@@ -481,62 +534,87 @@
 	"SOURCES" : 
 	[
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnection.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/matrixbuilder.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/lineconnectiongraphics.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/probabilitycalculator.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/main.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/reliabilitycore.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/mainwindow.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/stategenerator.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/node.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/transitionbuilder.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodeconfigurationwidget.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/lineconnectiongraphics.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/nodegraphics.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/nodegraphics.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/reliabilityscene.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/reliabilityscene.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/schemaserializer.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/main.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/statescene.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/lineconnection.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/stateview.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/node.cpp",
 			"MU",
 			null
 		],
 		[
-			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/structureview.cpp",
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/serialization/schemaserializer.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/nodeconfigurationwidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/statescene.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/stateview.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/structureview.cpp",
 			"MU",
 			null
 		]
