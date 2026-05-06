@@ -568,6 +568,8 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtCore/qobject.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/reliabilityscene.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/statescene.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QSet \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qset.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/calculationresult.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/cyclogram.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/matrixbuilder.h \
@@ -617,8 +619,6 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/reliabilitycore.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/calculationresult.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/stategenerator.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QSet \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qset.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/serialization/schemaserializer.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonDocument \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \

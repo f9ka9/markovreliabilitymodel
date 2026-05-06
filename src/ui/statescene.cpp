@@ -20,13 +20,15 @@ void StateScene::showCalculationResult(const CalculationResult& result)
     clear();
     if (result.states.isEmpty()) return;
 
-    const QHash<int, QPointF> positionsByStateId = calculateStatePositions(result.states);
-    const bool compactMode = result.states.size() > 600;
+    const QList<ReliabilityState> visibleStates = reachableStates(result);
+    const QSet<int> visibleStateIds = reachableStateIds(result);
+    const QHash<int, QPointF> positionsByStateId = calculateStatePositions(visibleStates);
+    const bool compactMode = visibleStates.size() > 600;
     const qreal nodeRadius = compactMode ? 5.0 : 30.0;
 
-    for (int i = 0; i < result.states.size(); ++i)
+    for (int i = 0; i < visibleStates.size(); ++i)
     {
-        const ReliabilityState& state = result.states[i];
+        const ReliabilityState& state = visibleStates[i];
         const QPointF position = positionsByStateId.value(state.id);
 
         QGraphicsEllipseItem* ellipse = addEllipse(position.x() - nodeRadius, position.y() - nodeRadius, nodeRadius * 2.0, nodeRadius * 2.0, compactMode ? QPen(Qt::black, 0.4) : QPen(Qt::black, 2), QBrush(stateColor(state.systemState)));
@@ -46,6 +48,9 @@ void StateScene::showCalculationResult(const CalculationResult& result)
     constexpr int maxCompactTransitions = 8000;
     for (const ReliabilityTransition& transition : result.transitions)
     {
+        if (!visibleStateIds.contains(transition.sourceStateId) || !visibleStateIds.contains(transition.targetStateId))
+            continue;
+
         if (!positionsByStateId.contains(transition.sourceStateId) || !positionsByStateId.contains(transition.targetStateId))
             continue;
 
@@ -66,6 +71,45 @@ void StateScene::showCalculationResult(const CalculationResult& result)
 
         ++drawnTransitions;
     }
+}
+
+QList<ReliabilityState> StateScene::reachableStates(const CalculationResult& result) const
+{
+    const QSet<int> ids = reachableStateIds(result);
+    QList<ReliabilityState> states;
+    for (const ReliabilityState& state : result.states)
+    {
+        if (ids.contains(state.id))
+            states.append(state);
+    }
+    return states;
+}
+
+QSet<int> StateScene::reachableStateIds(const CalculationResult& result) const
+{
+    QHash<int, QList<int>> adjacency;
+    for (const ReliabilityTransition& transition : result.transitions)
+        adjacency[transition.sourceStateId].append(transition.targetStateId);
+
+    QSet<int> visited;
+    QList<int> queue;
+    visited.insert(0);
+    queue.append(0);
+
+    while (!queue.isEmpty())
+    {
+        const int current = queue.takeFirst();
+        for (int next : adjacency.value(current))
+        {
+            if (visited.contains(next))
+                continue;
+
+            visited.insert(next);
+            queue.append(next);
+        }
+    }
+
+    return visited;
 }
 
 QHash<int, QPointF> StateScene::calculateStatePositions(const QList<ReliabilityState>& states) const

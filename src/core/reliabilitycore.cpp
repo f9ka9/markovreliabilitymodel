@@ -97,6 +97,67 @@ ProbabilityVector ReliabilityCore::advanceProbabilitiesSparse(const ProbabilityV
     return result;
 }
 
+QSet<int> ReliabilityCore::reachableStateIds(const QList<ReliabilityTransition>& transitions)
+{
+    QHash<int, QList<int>> adjacency;
+    for (const ReliabilityTransition& transition : transitions)
+        adjacency[transition.sourceStateId].append(transition.targetStateId);
+
+    QSet<int> visited;
+    QList<int> queue;
+    visited.insert(0);
+    queue.append(0);
+
+    while (!queue.isEmpty())
+    {
+        const int current = queue.takeFirst();
+        for (int next : adjacency.value(current))
+        {
+            if (visited.contains(next))
+                continue;
+
+            visited.insert(next);
+            queue.append(next);
+        }
+    }
+
+    return visited;
+}
+
+QList<ReliabilityState> ReliabilityCore::remapReachableStates(const QList<ReliabilityState>& states, const QSet<int>& reachableIds, QHash<int, int>& stateIdMap)
+{
+    QList<ReliabilityState> result;
+    for (const ReliabilityState& state : states)
+    {
+        if (!reachableIds.contains(state.id))
+            continue;
+
+        ReliabilityState remappedState = state;
+        const int newId = result.size();
+        stateIdMap.insert(state.id, newId);
+        remappedState.id = newId;
+        const int descriptionStart = remappedState.name.indexOf(':');
+        remappedState.name = descriptionStart >= 0 ? QString("S%1%2").arg(newId).arg(remappedState.name.mid(descriptionStart)) : QString("S%1").arg(newId);
+        result.append(remappedState);
+    }
+    return result;
+}
+
+QList<ReliabilityTransition> ReliabilityCore::remapReachableTransitions(const QList<ReliabilityTransition>& transitions, const QHash<int, int>& stateIdMap)
+{
+    QList<ReliabilityTransition> result;
+    for (ReliabilityTransition transition : transitions)
+    {
+        if (!stateIdMap.contains(transition.sourceStateId) || !stateIdMap.contains(transition.targetStateId))
+            continue;
+
+        transition.sourceStateId = stateIdMap.value(transition.sourceStateId);
+        transition.targetStateId = stateIdMap.value(transition.targetStateId);
+        result.append(transition);
+    }
+    return result;
+}
+
 CalculationResult ReliabilityCore::calculateCurrentLevel(const SchemaModel& model, StructureType structureType, int requiredElements, OperationMode mode) const
 {
     Cyclogram cyclogram;
@@ -109,8 +170,11 @@ CalculationResult ReliabilityCore::calculateCyclogram(const SchemaModel& model, 
     CalculationResult result;
 
     result.nodes = model.nodes;
-    result.states = stateGenerator.generate(model.nodes, model.connections, structureType, requiredElements);
-    result.transitions = transitionBuilder.build(result.states);
+    const QList<ReliabilityState> generatedStates = stateGenerator.generate(model.nodes, model.connections, structureType, requiredElements);
+    const QList<ReliabilityTransition> generatedTransitions = transitionBuilder.build(generatedStates);
+    QHash<int, int> stateIdMap;
+    result.states = remapReachableStates(generatedStates, reachableStateIds(generatedTransitions), stateIdMap);
+    result.transitions = remapReachableTransitions(generatedTransitions, stateIdMap);
     result.initialProbabilities = probabilityCalculator.normalizedInitialProbabilities(initialProbabilities, result.states.size());
 
     ProbabilityVector currentProbabilities = result.initialProbabilities;

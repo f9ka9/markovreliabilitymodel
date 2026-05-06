@@ -7,6 +7,9 @@ QList<ReliabilityTransition> TransitionBuilder::build(const QList<ReliabilitySta
 
     for (const ReliabilityState& source : states)
     {
+        if (source.systemState == ReliabilitySystemState::Failure)
+            continue;
+
         int stateStep = 1;
         for (int nodeIndex = 0; nodeIndex < source.elementStates.size(); ++nodeIndex)
         {
