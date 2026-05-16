@@ -1008,6 +1008,7 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/mainwin
  mdp:D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
  mdp:D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/calculationresult.h
+C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/compositereliabilitycalculator.h
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/node.cpp
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/reliabilitystate.h
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/nodeconfigurationwidget.h
@@ -1436,8 +1437,8 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/nodecon
  mdp:D:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/reliabilitycore.h
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/probabilitycalculator.h
-C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/transitionbuilder.h
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/compositereliabilitycalculator.cpp
+C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/transitionbuilder.h
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/gridsettings.h
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model/editorschemamodel.h
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor/lineconnectiongraphics.h
@@ -2277,4 +2278,3 @@ C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/mainwin
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/statescene.cpp
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/stateview.cpp
 C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui/structureview.cpp
-C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/compositereliabilitycalculator.h

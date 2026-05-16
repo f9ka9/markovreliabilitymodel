@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.19)
 project(markovreliabilitymodel LANGUAGES CXX)
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets)
+find_package(Eigen3 3.3 QUIET NO_MODULE)
 
 qt_standard_project_setup()
 
@@ -64,6 +65,13 @@ target_link_libraries(markovreliabilitymodel
         Qt::Core
         Qt::Widgets
 )
+
+if(Eigen3_FOUND)
+    target_link_libraries(markovreliabilitymodel PRIVATE Eigen3::Eigen)
+    target_compile_definitions(markovreliabilitymodel PRIVATE MARKOV_USE_EIGEN)
+else()
+    message(WARNING "Eigen3 was not found. Dense matrix exponentials will use the built-in uniformization fallback.")
+endif()
 
 install(TARGETS markovreliabilitymodel
     BUNDLE  DESTINATION .

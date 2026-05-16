@@ -30425,3 +30425,161 @@ events:
         - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
         - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake:13 (find_package)"
+      - "build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:259 (find_package)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
+      - "build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:252 (find_package)"
+      - "D:/mingw64/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "D:/mingw64/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:234 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    name: "Vulkan"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "D:/mingw64/share/cmake-4.2/Modules/FindVulkan.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "D:/Qt/6.10.2/mingw_64"
+      ENV{PATH}:
+        - "C:\\Users\\f9ka9\\.sbx-denybin"
+        - "C:\\Users\\f9ka9\\.codex\\tmp\\arg0\\codex-arg04gNicr"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "D:\\Git\\Git\\cmd"
+        - "d:\\Cursor\\cursor\\resources\\app\\codeBin"
+        - "C:\\Users\\f9ka9\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\f9ka9\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\f9ka9\\.local\\bin"
+        - "C:\\Users\\f9ka9\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\VSCode\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Users\\f9ka9\\AppData\\Local\\OpenAI\\Codex\\bin\\ada252862d154cdd"
+        - "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.513.3673.0_x64__2p2nqsd0c76g0\\app\\resources"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/markovreliabilitymodel"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "D:/mingw64"
+        - "C:/Program Files (x86)/markovreliabilitymodel"
+      CMAKE_MODULE_PATH:
+        - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6"
+        - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:34 (find_package)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:36 (_qt_internal_find_third_party_dependencies)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
+      - "build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:252 (find_package)"
+      - "D:/mingw64/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:93 (find_package)"
+      - "D:/mingw64/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:125 (__find_dependency_common)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:50 (_qt_internal_find_qt_dependencies)"
+      - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:40 (include)"
+      - "build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/.qtcreator/cmake-helper/maintenance_tool_provider.cmake:234 (find_package)"
+      - "CMakeLists.txt:4 (find_package)"
+    name: "WrapVulkanHeaders"
+    version_request:
+      exact: false
+    settings:
+      required: "optional"
+      quiet: true
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "dependency_provider::qt_maintenance_tool_dependency"
+        mode: "provider"
+        reason: "not_found"
+      -
+        path: "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
+        mode: "module"
+        reason: "not_found"
+    found: null
+    search_context:
+      CMAKE_PREFIX_PATH:
+        - "D:/Qt/6.10.2/mingw_64"
+      ENV{PATH}:
+        - "C:\\Users\\f9ka9\\.sbx-denybin"
+        - "C:\\Users\\f9ka9\\.codex\\tmp\\arg0\\codex-arg04gNicr"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "D:\\Git\\Git\\cmd"
+        - "d:\\Cursor\\cursor\\resources\\app\\codeBin"
+        - "C:\\Users\\f9ka9\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\f9ka9\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\f9ka9\\.local\\bin"
+        - "C:\\Users\\f9ka9\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "D:\\VSCode\\Microsoft VS Code\\bin"
+        - "D:\\mingw64\\bin"
+        - "C:\\Users\\f9ka9\\AppData\\Local\\OpenAI\\Codex\\bin\\ada252862d154cdd"
+        - "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.513.3673.0_x64__2p2nqsd0c76g0\\app\\resources"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/markovreliabilitymodel"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "D:/mingw64"
+        - "C:/Program Files (x86)/markovreliabilitymodel"
+      CMAKE_MODULE_PATH:
+        - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6"
+        - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules"
+        - "D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/3rdparty/kwin"
+...

@@ -3,6 +3,7 @@
 
 #include <QHash>
 #include <QList>
+#include <QString>
 
 #include "reliabilitystate.h"
 
@@ -25,7 +26,8 @@ public:
     QList<ReliabilityTransition> build(const QList<ReliabilityState>& states) const;
 
 private:
-    int stateCode(const ReliabilityState& state) const;
+    QString stateKey(const ReliabilityState& state) const;
+    QString withFailedNode(QString key, int nodeIndex) const;
 };
 
 #endif // TRANSITIONBUILDER_H

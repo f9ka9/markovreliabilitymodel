@@ -63,18 +63,6 @@ QString MainWindow::resultSystemStateName(ReliabilitySystemState state)
     return "unknown";
 }
 
-int MainWindow::stateCountForNodeCount(int nodeCount)
-{
-    int count = 1;
-    for (int i = 0; i < nodeCount; ++i)
-    {
-        if (count > maxStateCountForCalculation / 2)
-            return maxStateCountForCalculation + 1;
-        count *= 2;
-    }
-    return count;
-}
-
 int MainWindow::reliabilityNodeCount(const QList<SchemaNodeData>& nodes)
 {
     int count = 0;

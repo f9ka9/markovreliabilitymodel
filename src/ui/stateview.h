@@ -8,7 +8,7 @@ class QWheelEvent;
 class StateView : public QGraphicsView
 {
 public:
-    StateView(QWidget* parent = nullptr);
+    explicit StateView(QWidget* parent = nullptr);
     ~StateView();
 
 protected:

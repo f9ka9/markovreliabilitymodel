@@ -1,16 +1,21 @@
 #include "transitionbuilder.h"
 
-int TransitionBuilder::stateCode(const ReliabilityState& state) const
+QString TransitionBuilder::stateKey(const ReliabilityState& state) const
 {
-    int code = 0;
-    int stateStep = 1;
+    QString key;
+    key.reserve(state.elementStates.size());
     for (ReliabilityElementState elementState : state.elementStates)
     {
-        if (elementState == ReliabilityElementState::Failed)
-            code += stateStep;
-        stateStep *= 2;
+        key.append(elementState == ReliabilityElementState::Failed ? QLatin1Char('1') : QLatin1Char('0'));
     }
-    return code;
+    return key;
+}
+
+QString TransitionBuilder::withFailedNode(QString key, int nodeIndex) const
+{
+    if (nodeIndex >= 0 && nodeIndex < key.size())
+        key[nodeIndex] = QLatin1Char('1');
+    return key;
 }
 
 QList<ReliabilityTransition> TransitionBuilder::build(const QList<ReliabilityState>& states) const
@@ -18,32 +23,25 @@ QList<ReliabilityTransition> TransitionBuilder::build(const QList<ReliabilitySta
     QList<ReliabilityTransition> transitions;
     if (states.isEmpty()) return transitions;
 
-    QHash<int, int> stateIdByCode;
+    QHash<QString, int> stateIdByKey;
     for (const ReliabilityState& state : states)
-        stateIdByCode.insert(stateCode(state), state.id);
+        stateIdByKey.insert(stateKey(state), state.id);
 
     for (const ReliabilityState& source : states)
     {
         if (source.systemState == ReliabilitySystemState::Failure)
             continue;
 
-        const int sourceCode = stateCode(source);
-        int stateStep = 1;
+        const QString sourceKey = stateKey(source);
         for (int nodeIndex = 0; nodeIndex < source.elementStates.size(); ++nodeIndex)
         {
             const ReliabilityElementState sourceState = source.elementStates[nodeIndex];
             if (sourceState == ReliabilityElementState::Failed)
-            {
-                stateStep *= 2;
                 continue;
-            }
 
-            const int targetStateId = stateIdByCode.value(sourceCode | stateStep, -1);
+            const int targetStateId = stateIdByKey.value(withFailedNode(sourceKey, nodeIndex), -1);
             if (targetStateId < 0 || targetStateId >= states.size())
-            {
-                stateStep *= 2;
                 continue;
-            }
 
             ReliabilityTransition transition;
             transition.sourceStateId = source.id;
@@ -57,8 +55,6 @@ QList<ReliabilityTransition> TransitionBuilder::build(const QList<ReliabilitySta
 
             transition.failedNodeId = transition.changedNodeId;
             transitions.append(transition);
-
-            stateStep *= 2;
         }
     }
 

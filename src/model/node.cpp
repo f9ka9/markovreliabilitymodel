@@ -1,5 +1,7 @@
 #include "node.h"
 
+#include <limits>
+
 int Node::nextId = 1;
 
 int Node::modeIndex(OperationMode mode)
@@ -16,7 +18,7 @@ double Node::resolveLambda(const LambdaDefinitions& definitions, OperationMode m
         return definition.value;
 
     if (resolving[index])
-        return 0.0;
+        return std::numeric_limits<double>::quiet_NaN();
 
     resolving[index] = true;
     const double referenceValue = resolveLambda(definitions, definition.referenceMode, resolving);
@@ -60,7 +62,7 @@ void Node::setIdForLoading(int value)
         nextId = value + 1;
 }
 
-NodeConfiguration Node::getConfiguration() const {return configuration;}
+const NodeConfiguration& Node::getConfiguration() const {return configuration;}
 
 void Node::setConfiguration(const NodeConfiguration& value)
 {
@@ -117,7 +119,7 @@ void Node::setFailureRates(const FailureRates& values)
     configuration.lambdaDefinitions = definitions;
 }
 
-LambdaDefinitions Node::getLambdaDefinitions() const {return configuration.lambdaDefinitions;}
+const LambdaDefinitions& Node::getLambdaDefinitions() const {return configuration.lambdaDefinitions;}
 
 void Node::setLambdaDefinitions(const LambdaDefinitions& values)
 {

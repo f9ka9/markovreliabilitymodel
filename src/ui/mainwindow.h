@@ -128,7 +128,6 @@ private:
     static QJsonArray vectorToJson(const ProbabilityVector& vector);
     static QString operationModeName(OperationMode mode);
     static QString resultSystemStateName(ReliabilitySystemState state);
-    static int stateCountForNodeCount(int nodeCount);
     static int reliabilityNodeCount(const QList<SchemaNodeData>& nodes);
 
     void updateStructureViewInteractionMode();

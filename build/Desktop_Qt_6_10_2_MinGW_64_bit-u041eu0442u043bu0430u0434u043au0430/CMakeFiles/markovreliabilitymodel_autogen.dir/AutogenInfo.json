@@ -316,6 +316,9 @@
 		"D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake",
 		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
 		"D:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/_deps/eigen-build/Eigen3ConfigVersion.cmake",
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/_deps/eigen-build/Eigen3Config.cmake",
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/_deps/eigen-build/Eigen3Targets.cmake",
 		"D:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GNUInstallDirs.cmake"
 	],
 	"CMAKE_SOURCE_DIR" : "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel",
@@ -468,6 +471,7 @@
 	"MOC_COMPILATION_FILE" : "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
+		"MARKOV_USE_EIGEN",
 		"MINGW_HAS_SECURE_API=1",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
@@ -500,6 +504,7 @@
 		"D:/Qt/6.10.2/mingw_64/mkspecs/win32-g++",
 		"D:/Qt/6.10.2/mingw_64/include/QtWidgets",
 		"D:/Qt/6.10.2/mingw_64/include/QtGui",
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/_deps/eigen-src",
 		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
 		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
 		"D:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",

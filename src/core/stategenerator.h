@@ -16,7 +16,9 @@ public:
 
 private:
     QList<SchemaNodeData> reliabilityNodes(const QList<SchemaNodeData>& nodes) const ;
-    ReliabilityState createState(int stateId, int stateCode, const QList<SchemaNodeData>& stateNodes, const QList<SchemaNodeData>& allNodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements) const;
+    QString initialStateKey(int stateCount) const;
+    QString withFailedNode(QString key, int nodeIndex) const;
+    ReliabilityState createState(int stateId, const QString& stateKey, const QList<SchemaNodeData>& stateNodes, const QList<SchemaNodeData>& allNodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements) const;
     ReliabilitySystemState classifyState(const ReliabilityState& state, const QList<SchemaNodeData>& allNodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements) const;
     bool structureWorksByType(const ReliabilityState& state, int totalCount, StructureType structureType, int requiredElements) const;
     bool structureWorksByConnections(const ReliabilityState& state, const QList<SchemaNodeData>& allNodes, const QList<SchemaConnectionData>& connections) const;

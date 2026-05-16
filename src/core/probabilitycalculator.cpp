@@ -2,10 +2,16 @@
 
 #include <cmath>
 
+#ifdef MARKOV_USE_EIGEN
+#include <Eigen/Dense>
+#include <unsupported/Eigen/MatrixFunctions>
+#endif
+
 namespace
 {
 constexpr double maxUniformizationMean = 16.0;
 constexpr double poissonTolerance = 1.0e-14;
+constexpr double transitionTolerance = 1.0e-12;
 constexpr int maxUniformizationIterations = 10000;
 
 int squaringCountForMean(double mean)
@@ -18,6 +24,49 @@ int squaringCountForMean(double mean)
     }
     return count;
 }
+
+#ifdef MARKOV_USE_EIGEN
+ReliabilityMatrix eigenExponential(const ReliabilityMatrix& intensityMatrix, double duration)
+{
+    const int size = intensityMatrix.size();
+    Eigen::MatrixXd generator(size, size);
+    for (int row = 0; row < size; ++row)
+    {
+        for (int column = 0; column < size; ++column)
+            generator(row, column) = intensityMatrix[row][column];
+    }
+
+    const Eigen::MatrixXd transition = (generator * duration).exp();
+
+    ReliabilityMatrix result(size);
+    for (int row = 0; row < size; ++row)
+    {
+        result[row] = QVector<double>(size, 0.0);
+        double rowSum = 0.0;
+        for (int column = 0; column < size; ++column)
+        {
+            double value = transition(row, column);
+            if (!std::isfinite(value))
+                return {};
+            if (value < 0.0 && value > -transitionTolerance)
+                value = 0.0;
+            if (value < 0.0)
+                return {};
+
+            result[row][column] = value;
+            rowSum += value;
+        }
+
+        if (rowSum <= 0.0 || !std::isfinite(rowSum))
+            return {};
+
+        for (double& value : result[row])
+            value /= rowSum;
+    }
+
+    return result;
+}
+#endif
 }
 
 ReliabilityMatrix ProbabilityCalculator::buildTransitionMatrix(const ReliabilityMatrix& intensityMatrix,  double duration) const
@@ -31,6 +80,10 @@ ReliabilityMatrix ProbabilityCalculator::buildTransitionMatrix(const Reliability
 
     const double mean = rate * duration;
     if (!std::isfinite(mean)) return {};
+
+#ifdef MARKOV_USE_EIGEN
+    return eigenExponential(intensityMatrix, duration);
+#endif
 
     const int squaringCount = squaringCountForMean(mean);
     if (squaringCount > 0)

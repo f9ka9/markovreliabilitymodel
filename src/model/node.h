@@ -54,7 +54,7 @@ public:
     int getId() const;
     void setIdForLoading(int value);
 
-    NodeConfiguration getConfiguration() const;
+    const NodeConfiguration& getConfiguration() const;
     void setConfiguration(const NodeConfiguration& value);
 
     Node* getParent() const;
@@ -75,7 +75,7 @@ public:
 
     FailureRates getFailureRates() const;
     void setFailureRates(const FailureRates& values);
-    LambdaDefinitions getLambdaDefinitions() const;
+    const LambdaDefinitions& getLambdaDefinitions() const;
     void setLambdaDefinitions(const LambdaDefinitions& values);
     double getFailureRate(OperationMode mode) const;
     void setFailureRate(OperationMode mode, double value);

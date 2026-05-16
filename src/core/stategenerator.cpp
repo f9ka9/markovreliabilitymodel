@@ -11,6 +11,17 @@ QList<SchemaNodeData> StateGenerator::reliabilityNodes(const QList<SchemaNodeDat
     return result;
 }
 
+QString StateGenerator::initialStateKey(int stateCount) const
+{
+    return QString(stateCount, QLatin1Char('0'));
+}
+
+QString StateGenerator::withFailedNode(QString key, int nodeIndex) const
+{
+    if (nodeIndex >= 0 && nodeIndex < key.size())
+        key[nodeIndex] = QLatin1Char('1');
+    return key;
+}
 
 QList<ReliabilityState> StateGenerator::generate(const QList<SchemaNodeData>& nodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements, int maxStateCount) const
 {
@@ -18,18 +29,19 @@ QList<ReliabilityState> StateGenerator::generate(const QList<SchemaNodeData>& no
     if (nodes.isEmpty()) return states;
 
     const QList<SchemaNodeData> stateNodes = reliabilityNodes(nodes);
-    QHash<int, int> stateIdByCode;
-    QList<int> queue;
+    QHash<QString, int> stateIdByKey;
+    QList<QString> queue;
 
-    states.append(createState(0, 0, stateNodes, nodes, connections, structureType, requiredElements));
-    stateIdByCode.insert(0, 0);
-    queue.append(0);
+    const QString initialKey = initialStateKey(stateNodes.size());
+    states.append(createState(0, initialKey, stateNodes, nodes, connections, structureType, requiredElements));
+    stateIdByKey.insert(initialKey, 0);
+    queue.append(initialKey);
 
     int queueIndex = 0;
     while (queueIndex < queue.size())
     {
-        const int sourceCode = queue[queueIndex++];
-        const int sourceStateId = stateIdByCode.value(sourceCode, -1);
+        const QString sourceKey = queue[queueIndex++];
+        const int sourceStateId = stateIdByKey.value(sourceKey, -1);
         if (sourceStateId < 0 || sourceStateId >= states.size())
             continue;
 
@@ -42,36 +54,34 @@ QList<ReliabilityState> StateGenerator::generate(const QList<SchemaNodeData>& no
             if (source.elementStates.value(nodeIndex) == ReliabilityElementState::Failed)
                 continue;
 
-            const int targetCode = sourceCode | (1 << nodeIndex);
-            if (stateIdByCode.contains(targetCode))
+            const QString targetKey = withFailedNode(sourceKey, nodeIndex);
+            if (stateIdByKey.contains(targetKey))
                 continue;
 
             const int targetStateId = states.size();
-            states.append(createState(targetStateId, targetCode, stateNodes, nodes, connections, structureType, requiredElements));
+            states.append(createState(targetStateId, targetKey, stateNodes, nodes, connections, structureType, requiredElements));
             if (maxStateCount > 0 && states.size() > maxStateCount)
                 return states;
 
-            stateIdByCode.insert(targetCode, targetStateId);
-            queue.append(targetCode);
+            stateIdByKey.insert(targetKey, targetStateId);
+            queue.append(targetKey);
         }
     }
 
     return states;
 }
 
-ReliabilityState StateGenerator::createState(int stateId, int stateCode, const QList<SchemaNodeData>& stateNodes, const QList<SchemaNodeData>& allNodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements) const
+ReliabilityState StateGenerator::createState(int stateId, const QString& stateKey, const QList<SchemaNodeData>& stateNodes, const QList<SchemaNodeData>& allNodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements) const
 {
     ReliabilityState state;
     state.id = stateId;
 
-    int code = stateCode;
     for (int i = 0; i < stateNodes.size(); ++i)
     {
         state.nodeIds.append(stateNodes[i].id);
-        const int digit = code % 2;
-        code /= 2;
+        const bool failed = i < stateKey.size() && stateKey[i] == QLatin1Char('1');
 
-        if (digit == 0)
+        if (!failed)
         {
             state.elementStates.append(ReliabilityElementState::Working);
         }
@@ -248,7 +258,7 @@ QString StateGenerator::createStateName(const ReliabilityState& state, const QLi
 
     QStringList parts;
     if (!failedNames.isEmpty())
-        parts.append("failed " + failedNames.join(", "));
+        parts.append("отказали: " + failedNames.join(", "));
 
     return QString("S%1: %2").arg(state.id).arg(parts.join("; "));
 }

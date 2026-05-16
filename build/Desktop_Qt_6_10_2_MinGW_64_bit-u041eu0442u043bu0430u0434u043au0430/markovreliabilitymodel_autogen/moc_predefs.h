@@ -162,6 +162,7 @@
 #define __cplusplus 201703L
 #define __cpp_ref_qualifiers 200710L
 #define __DEC32_MIN__ 1E-95DF
+#define MARKOV_USE_EIGEN 1
 #define __DEPRECATED 1
 #define __cpp_rvalue_references 200610L
 #define __DBL_MAX_EXP__ 1024

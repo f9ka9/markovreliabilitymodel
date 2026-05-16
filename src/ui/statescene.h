@@ -13,7 +13,7 @@
 class StateScene : public QGraphicsScene
 {
 public:
-    StateScene(QObject* parent = nullptr);
+    explicit StateScene(QObject* parent = nullptr);
 
     void showCalculationResult(const CalculationResult& result);
 

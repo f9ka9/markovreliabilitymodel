@@ -11,7 +11,7 @@
 class StructureView : public QGraphicsView
 {
 public:
-    StructureView(QWidget* parent = nullptr);
+    explicit StructureView(QWidget* parent = nullptr);
     ~StructureView();
 
     void setupCoordLabel();
