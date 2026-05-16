@@ -8,7 +8,7 @@
 
 using FailureRates = std::array<double, 4>;
 
-enum class StructureType { Element, Series, Parallel, KOutOfN };
+enum class StructureType { Element, Composite, Series, Parallel, KOutOfN };
 
 enum class NodeKind { Normal, Input, Output };
 

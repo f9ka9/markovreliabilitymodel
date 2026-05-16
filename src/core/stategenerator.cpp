@@ -12,19 +12,49 @@ QList<SchemaNodeData> StateGenerator::reliabilityNodes(const QList<SchemaNodeDat
 }
 
 
-QList<ReliabilityState> StateGenerator::generate(const QList<SchemaNodeData>& nodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements) const
+QList<ReliabilityState> StateGenerator::generate(const QList<SchemaNodeData>& nodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements, int maxStateCount) const
 {
     QList<ReliabilityState> states;
     if (nodes.isEmpty()) return states;
 
     const QList<SchemaNodeData> stateNodes = reliabilityNodes(nodes);
-    int stateCount = 1;
-    for (int i = 0; i < stateNodes.size(); ++i)
-        stateCount *= 2;
-    states.reserve(stateCount);
+    QHash<int, int> stateIdByCode;
+    QList<int> queue;
 
-    for (int stateCode = 0; stateCode < stateCount; ++stateCode)
-        states.append(createState(states.size(), stateCode, stateNodes, nodes, connections, structureType, requiredElements));
+    states.append(createState(0, 0, stateNodes, nodes, connections, structureType, requiredElements));
+    stateIdByCode.insert(0, 0);
+    queue.append(0);
+
+    int queueIndex = 0;
+    while (queueIndex < queue.size())
+    {
+        const int sourceCode = queue[queueIndex++];
+        const int sourceStateId = stateIdByCode.value(sourceCode, -1);
+        if (sourceStateId < 0 || sourceStateId >= states.size())
+            continue;
+
+        const ReliabilityState source = states[sourceStateId];
+        if (source.systemState == ReliabilitySystemState::Failure)
+            continue;
+
+        for (int nodeIndex = 0; nodeIndex < stateNodes.size(); ++nodeIndex)
+        {
+            if (source.elementStates.value(nodeIndex) == ReliabilityElementState::Failed)
+                continue;
+
+            const int targetCode = sourceCode | (1 << nodeIndex);
+            if (stateIdByCode.contains(targetCode))
+                continue;
+
+            const int targetStateId = states.size();
+            states.append(createState(targetStateId, targetCode, stateNodes, nodes, connections, structureType, requiredElements));
+            if (maxStateCount > 0 && states.size() > maxStateCount)
+                return states;
+
+            stateIdByCode.insert(targetCode, targetStateId);
+            queue.append(targetCode);
+        }
+    }
 
     return states;
 }
@@ -96,6 +126,9 @@ bool StateGenerator::structureWorksByType(const ReliabilityState& state, int tot
         break;
     case StructureType::Element:
         systemWorks = workingCount > 0;
+        break;
+    case StructureType::Composite:
+        systemWorks = failedCount == 0;
         break;
     }
 

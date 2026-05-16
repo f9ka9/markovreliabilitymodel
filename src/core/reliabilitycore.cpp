@@ -1,23 +1,45 @@
 #include "reliabilitycore.h"
 
-double ReliabilityCore::failureRateForNode(const QList<SchemaNodeData>& nodes, int nodeId, OperationMode mode)
-{
-    for (const SchemaNodeData& node : nodes)
-    {
-        if (node.id == nodeId)
-            return node.failureRates[static_cast<int>(mode)];
-    }
+#include <cmath>
 
-    return 0.0;
+namespace
+{
+constexpr double maxUniformizationMean = 16.0;
+constexpr double poissonTolerance = 1.0e-14;
+constexpr int maxUniformizationIterations = 10000;
+constexpr int maxSparseChunks = 65536;
+
+int chunkCountForMean(double mean)
+{
+    int chunks = 1;
+    while (mean / chunks > maxUniformizationMean && chunks < maxSparseChunks)
+        chunks *= 2;
+    return chunks;
+}
+}
+
+QHash<int, FailureRates> ReliabilityCore::createFailureRatesByNodeId(const QList<SchemaNodeData>& nodes)
+{
+    QHash<int, FailureRates> result;
+    result.reserve(nodes.size());
+    for (const SchemaNodeData& node : nodes)
+        result.insert(node.id, node.failureRates);
+    return result;
+}
+
+double ReliabilityCore::failureRateForNode(const QHash<int, FailureRates>& failureRatesByNodeId, int nodeId, OperationMode mode)
+{
+    return failureRatesByNodeId.value(nodeId)[static_cast<int>(mode)];
 }
 
 QVector<double> ReliabilityCore::transitionRatesForMode(const QList<ReliabilityTransition>& transitions, const QList<SchemaNodeData>& nodes, OperationMode mode)
 {
     QVector<double> rates;
     rates.reserve(transitions.size());
+    const QHash<int, FailureRates> failureRatesByNodeId = createFailureRatesByNodeId(nodes);
 
     for (const ReliabilityTransition& transition : transitions)
-        rates.append(failureRateForNode(nodes, transition.changedNodeId, mode));
+        rates.append(failureRateForNode(failureRatesByNodeId, transition.changedNodeId, mode));
 
     return rates;
 }
@@ -72,17 +94,28 @@ ProbabilityVector ReliabilityCore::advanceProbabilitiesSparse(const ProbabilityV
     if (qFuzzyIsNull(uniformizationRate))
         return probabilities;
 
+    const double mean = uniformizationRate * duration;
+    if (!std::isfinite(mean))
+        return probabilities;
+
+    const int chunkCount = chunkCountForMean(mean);
+    if (chunkCount > 1)
+    {
+        ProbabilityVector current = probabilities;
+        const double stepDuration = duration / chunkCount;
+        for (int chunk = 0; chunk < chunkCount; ++chunk)
+            current = advanceProbabilitiesSparse(current, transitions, nodes, mode, stepDuration);
+        return current;
+    }
+
     ProbabilityVector result(probabilities.size(), 0.0);
     ProbabilityVector power = probabilities;
-    const double mean = uniformizationRate * duration;
     double poissonWeight = qExp(-mean);
 
     for (int i = 0; i < result.size(); ++i)
         result[i] += power[i] * poissonWeight;
 
-    constexpr int maxIterations = 10000;
-    constexpr double tolerance = 1.0e-14;
-    for (int iteration = 1; iteration <= maxIterations; ++iteration)
+    for (int iteration = 1; iteration <= maxUniformizationIterations; ++iteration)
     {
         power = multiplyByEmbeddedMatrix(power, transitions, transitionRates, exitRates, uniformizationRate);
         poissonWeight *= mean / iteration;
@@ -90,71 +123,10 @@ ProbabilityVector ReliabilityCore::advanceProbabilitiesSparse(const ProbabilityV
         for (int i = 0; i < result.size(); ++i)
             result[i] += power[i] * poissonWeight;
 
-        if (poissonWeight < tolerance)
+        if (iteration > mean && poissonWeight < poissonTolerance)
             break;
     }
 
-    return result;
-}
-
-QSet<int> ReliabilityCore::reachableStateIds(const QList<ReliabilityTransition>& transitions)
-{
-    QHash<int, QList<int>> adjacency;
-    for (const ReliabilityTransition& transition : transitions)
-        adjacency[transition.sourceStateId].append(transition.targetStateId);
-
-    QSet<int> visited;
-    QList<int> queue;
-    visited.insert(0);
-    queue.append(0);
-
-    while (!queue.isEmpty())
-    {
-        const int current = queue.takeFirst();
-        for (int next : adjacency.value(current))
-        {
-            if (visited.contains(next))
-                continue;
-
-            visited.insert(next);
-            queue.append(next);
-        }
-    }
-
-    return visited;
-}
-
-QList<ReliabilityState> ReliabilityCore::remapReachableStates(const QList<ReliabilityState>& states, const QSet<int>& reachableIds, QHash<int, int>& stateIdMap)
-{
-    QList<ReliabilityState> result;
-    for (const ReliabilityState& state : states)
-    {
-        if (!reachableIds.contains(state.id))
-            continue;
-
-        ReliabilityState remappedState = state;
-        const int newId = result.size();
-        stateIdMap.insert(state.id, newId);
-        remappedState.id = newId;
-        const int descriptionStart = remappedState.name.indexOf(':');
-        remappedState.name = descriptionStart >= 0 ? QString("S%1%2").arg(newId).arg(remappedState.name.mid(descriptionStart)) : QString("S%1").arg(newId);
-        result.append(remappedState);
-    }
-    return result;
-}
-
-QList<ReliabilityTransition> ReliabilityCore::remapReachableTransitions(const QList<ReliabilityTransition>& transitions, const QHash<int, int>& stateIdMap)
-{
-    QList<ReliabilityTransition> result;
-    for (ReliabilityTransition transition : transitions)
-    {
-        if (!stateIdMap.contains(transition.sourceStateId) || !stateIdMap.contains(transition.targetStateId))
-            continue;
-
-        transition.sourceStateId = stateIdMap.value(transition.sourceStateId);
-        transition.targetStateId = stateIdMap.value(transition.targetStateId);
-        result.append(transition);
-    }
     return result;
 }
 
@@ -170,11 +142,8 @@ CalculationResult ReliabilityCore::calculateCyclogram(const SchemaModel& model, 
     CalculationResult result;
 
     result.nodes = model.nodes;
-    const QList<ReliabilityState> generatedStates = stateGenerator.generate(model.nodes, model.connections, structureType, requiredElements);
-    const QList<ReliabilityTransition> generatedTransitions = transitionBuilder.build(generatedStates);
-    QHash<int, int> stateIdMap;
-    result.states = remapReachableStates(generatedStates, reachableStateIds(generatedTransitions), stateIdMap);
-    result.transitions = remapReachableTransitions(generatedTransitions, stateIdMap);
+    result.states = stateGenerator.generate(model.nodes, model.connections, structureType, requiredElements);
+    result.transitions = transitionBuilder.build(result.states);
     result.initialProbabilities = probabilityCalculator.normalizedInitialProbabilities(initialProbabilities, result.states.size());
 
     ProbabilityVector currentProbabilities = result.initialProbabilities;

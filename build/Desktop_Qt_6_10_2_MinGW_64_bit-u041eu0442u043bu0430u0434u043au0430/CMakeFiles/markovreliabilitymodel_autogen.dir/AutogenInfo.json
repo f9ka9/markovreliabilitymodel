@@ -331,6 +331,12 @@
 			null
 		],
 		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/compositereliabilitycalculator.h",
+			"MU",
+			"PRMOGMWJPH/moc_compositereliabilitycalculator.cpp",
+			null
+		],
+		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/matrixbuilder.h",
 			"MU",
 			"PRMOGMWJPH/moc_matrixbuilder.cpp",
@@ -533,6 +539,11 @@
 	"SETTINGS_FILE" : "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/markovreliabilitymodel_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/compositereliabilitycalculator.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/matrixbuilder.cpp",
 			"MU",

@@ -276,7 +276,7 @@ void ReliabilityScene::onNodeDoubleClicked(Node* node)
 {
     if (!node) return;
     if (node->getNodeKind() != NodeKind::Normal) return;
-    if (node->getStructureType() == StructureType::Element) return;
+    if (node->getStructureType() == StructureType::Element && node->getChildren().isEmpty()) return;
     if (currentDepth() >= 4) return;
 
     resetEditorModes();
@@ -575,6 +575,31 @@ void ReliabilityScene::removeConnectionsForNode(Node* node)
         removeConnection(connection);
 }
 
+void ReliabilityScene::removeNodeChildren(Node* node)
+{
+    if (!node) return;
+
+    const bool currentLevelInsideRemovedSubtree = selectedParentNode && selectedParentNode != node && nodeContains(node, selectedParentNode);
+    const QList<Node*> children = node->getChildren();
+    for (Node* child : children)
+        removeConnectionsForNode(child);
+
+    for (Node* child : children)
+    {
+        emitNodeAboutToBeRemovedForSubtree(child);
+        removeNodeGraphicsForSubtree(child);
+        node->removeChild(child);
+        delete child;
+    }
+
+    if (currentLevelInsideRemovedSubtree)
+    {
+        selectedParentNode = node;
+        refreshCurrentLevel();
+        emit currentLevelChanged(currentLevelPath());
+    }
+}
+
 void ReliabilityScene::removeNode(NodeGraphics* nodeGraphics)
 {
     if (!nodeGraphics) return;
@@ -609,7 +634,7 @@ void ReliabilityScene::removeNodeGraphicsForSubtree(Node* node)
 
     if (NodeGraphics* graphics = nodeGraphicsByNode.take(node))
     {
-        removeItem(graphics);
+        if (graphics->scene()) removeItem(graphics);
         delete graphics;
     }
 }

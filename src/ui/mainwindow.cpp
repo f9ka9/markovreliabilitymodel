@@ -7,6 +7,9 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 
+#include "compositereliabilitycalculator.h"
+#include "stategenerator.h"
+
 QJsonArray MainWindow::matrixToJson(const ReliabilityMatrix& matrix)
 {
     QJsonArray rows;
@@ -397,6 +400,10 @@ void MainWindow::applyNodeConfiguration(Node* node, const NodeConfiguration& con
     normalizedConfiguration.groupName = normalizedConfiguration.groupName.trimmed();
     if (normalizedConfiguration.requiredElements < 1)
         normalizedConfiguration.requiredElements = 1;
+    if (normalizedConfiguration.structureType != StructureType::KOutOfN)
+        normalizedConfiguration.requiredElements = 1;
+    if (normalizedConfiguration.structureType != StructureType::Element)
+        normalizedConfiguration.lambdaDefinitions = LambdaDefinitions{};
     if (normalizedConfiguration.nodeKind != NodeKind::Normal)
     {
         normalizedConfiguration.groupName.clear();
@@ -407,6 +414,8 @@ void MainWindow::applyNodeConfiguration(Node* node, const NodeConfiguration& con
 
     if (node)
     {
+        if (normalizedConfiguration.nodeKind != NodeKind::Normal || normalizedConfiguration.structureType == StructureType::Element)
+            structureScene->removeNodeChildren(node);
         node->setConfiguration(normalizedConfiguration);
         structureScene->updateNodeGraphics(node);
         return;
@@ -600,7 +609,9 @@ void MainWindow::saveSchema()
 void MainWindow::calculate()
 {
     applyTopLevelStructureConfiguration();
-    const SchemaModel model = structureScene->exportCurrentLevelModel();
+    const EditorSchemaModel editorModel = structureScene->exportEditorSchemaModel();
+    CompositeReliabilityCalculator compositeCalculator;
+    const SchemaModel model = compositeCalculator.buildEffectiveModel(editorModel, editorModel.currentParentId);
     const Cyclogram cyclogram = cyclogramFromTable();
 
     QString errorMessage;
@@ -609,7 +620,8 @@ void MainWindow::calculate()
         QMessageBox::warning(this, "Расчет", errorMessage);
         return;
     }
-    const int stateCount = stateCountForNodeCount(reliabilityNodeCount(model.nodes));
+    StateGenerator stateGenerator;
+    const int stateCount = stateGenerator.generate(model.nodes, model.connections, model.structureType, model.requiredElements).size();
     const ProbabilityVector initialProbabilities = initialProbabilitiesFromTable(stateCount);
     if (!validateInitialProbabilities(initialProbabilities, stateCount, errorMessage))
     {
@@ -826,13 +838,14 @@ void MainWindow::showStatesTable(const CalculationResult& result)
     statesTable->setRowCount(result.states.size());
     statesTable->setColumnCount(3);
     statesTable->setHorizontalHeaderLabels({"Состояние", "Статус системы", "Отказавшие узлы"});
+    const QHash<int, QString> nodeNamesById = createNodeNamesById(result.nodes);
 
     for (int row = 0; row < result.states.size(); ++row)
     {
         const ReliabilityState& state = result.states[row];
         statesTable->setItem(row, 0, new QTableWidgetItem(QString("S%1").arg(state.id)));
         statesTable->setItem(row, 1, new QTableWidgetItem(systemStateToString(state.systemState)));
-        statesTable->setItem(row, 2, new QTableWidgetItem(failedNodesToString(state, result.nodes)));
+        statesTable->setItem(row, 2, new QTableWidgetItem(failedNodesToString(state, nodeNamesById)));
     }
 
     statesTable->resizeColumnsToContents();
@@ -906,7 +919,16 @@ QString MainWindow::systemStateToString(ReliabilitySystemState state) const
     return "Неизвестно";
 }
 
-QString MainWindow::failedNodesToString(const ReliabilityState& state, const QList<SchemaNodeData>& nodes) const
+QHash<int, QString> MainWindow::createNodeNamesById(const QList<SchemaNodeData>& nodes) const
+{
+    QHash<int, QString> result;
+    result.reserve(nodes.size());
+    for (const SchemaNodeData& node : nodes)
+        result.insert(node.id, node.name);
+    return result;
+}
+
+QString MainWindow::failedNodesToString(const ReliabilityState& state, const QHash<int, QString>& nodeNamesById) const
 {
     if (state.failedNodeIds.isEmpty())
         return "-";
@@ -914,16 +936,7 @@ QString MainWindow::failedNodesToString(const ReliabilityState& state, const QLi
     QStringList names;
     for (int nodeId : state.failedNodeIds)
     {
-        QString name;
-        for (const SchemaNodeData& node : nodes)
-        {
-            if (node.id == nodeId)
-            {
-                name = node.name;
-                break;
-            }
-        }
-
+        const QString name = nodeNamesById.value(nodeId);
         names.append(name.isEmpty() ? QString("узел #%1").arg(nodeId) : name);
     }
 
@@ -938,8 +951,9 @@ bool MainWindow::validateCalculationInput(const SchemaModel& model, const Cyclog
         return false;
     }
 
+    StateGenerator stateGenerator;
     const int reliableNodes = reliabilityNodeCount(model.nodes);
-    const int stateCount = stateCountForNodeCount(reliableNodes);
+    const int stateCount = stateGenerator.generate(model.nodes, model.connections, model.structureType, model.requiredElements, maxStateCountForCalculation).size();
     if (stateCount > maxStateCountForCalculation)
     {
         errorMessage = QString("На текущем уровне слишком много расчетных узлов: %1. Двоичный граф состояний содержит больше %2 состояний. Откройте вложенный блок и рассчитайте меньший уровень.").arg(reliableNodes).arg(maxStateCountForCalculation);

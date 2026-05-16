@@ -403,6 +403,8 @@ QString SchemaSerializer::structureTypeToString(StructureType type)
 {
     switch (type)
     {
+    case StructureType::Composite:
+        return "composite";
     case StructureType::Series:
         return "series";
     case StructureType::Parallel:
@@ -426,6 +428,11 @@ bool SchemaSerializer::structureTypeFromString(const QString& value, StructureTy
     if (value == "series")
     {
         type = StructureType::Series;
+        return true;
+    }
+    if (value == "composite")
+    {
+        type = StructureType::Composite;
         return true;
     }
     if (value == "parallel")

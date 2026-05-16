@@ -1,6 +1,7 @@
 #ifndef TRANSITIONBUILDER_H
 #define TRANSITIONBUILDER_H
 
+#include <QHash>
 #include <QList>
 
 #include "reliabilitystate.h"
@@ -22,6 +23,9 @@ class TransitionBuilder
 {
 public:
     QList<ReliabilityTransition> build(const QList<ReliabilityState>& states) const;
+
+private:
+    int stateCode(const ReliabilityState& state) const;
 };
 
 #endif // TRANSITIONBUILDER_H

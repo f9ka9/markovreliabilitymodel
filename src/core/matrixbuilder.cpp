@@ -3,6 +3,7 @@
 ReliabilityMatrix MatrixBuilder::buildIntensityMatrix(const QList<ReliabilityState>& states, const QList<ReliabilityTransition>& transitions, const QList<SchemaNodeData>& nodes, OperationMode mode) const
 {
     ReliabilityMatrix matrix = createZeroMatrix(states.size());
+    const QHash<int, FailureRates> failureRatesByNodeId = createFailureRatesByNodeId(nodes);
 
     for (const ReliabilityTransition& transition : transitions)
     {
@@ -11,7 +12,7 @@ ReliabilityMatrix MatrixBuilder::buildIntensityMatrix(const QList<ReliabilitySta
         if (transition.targetStateId < 0 || transition.targetStateId >= matrix.size())
             continue;
 
-        const double lambda = failureRateForNode(nodes, transition.failedNodeId, mode);
+        const double lambda = failureRateForNode(failureRatesByNodeId, transition.failedNodeId, mode);
         matrix[transition.sourceStateId][transition.targetStateId] += lambda;
     }
 
@@ -37,15 +38,16 @@ ReliabilityMatrix MatrixBuilder::createZeroMatrix(int size) const
     return matrix;
 }
 
-double MatrixBuilder::failureRateForNode(const QList<SchemaNodeData>& nodes, int nodeId, OperationMode mode) const
+QHash<int, FailureRates> MatrixBuilder::createFailureRatesByNodeId(const QList<SchemaNodeData>& nodes) const
 {
+    QHash<int, FailureRates> result;
+    result.reserve(nodes.size());
     for (const SchemaNodeData& node : nodes)
-    {
-        if (node.id != nodeId)
-            continue;
+        result.insert(node.id, node.failureRates);
+    return result;
+}
 
-        return node.failureRates[static_cast<int>(mode)];
-    }
-
-    return 0.0;
+double MatrixBuilder::failureRateForNode(const QHash<int, FailureRates>& failureRatesByNodeId, int nodeId, OperationMode mode) const
+{
+    return failureRatesByNodeId.value(nodeId)[static_cast<int>(mode)];
 }

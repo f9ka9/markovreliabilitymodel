@@ -16,9 +16,10 @@ NodeConfigurationWidget::NodeConfigurationWidget(QWidget* parent): QWidget(paren
     nodeKindComboBox->addItem("Выход", static_cast<int>(NodeKind::Output));
 
     structureTypeComboBox = new QComboBox(this);
-    structureTypeComboBox->addItem("Обычный элемент", static_cast<int>(StructureType::Element));
-    structureTypeComboBox->addItem("Последовательная структура", static_cast<int>(StructureType::Series));
-    structureTypeComboBox->addItem("Параллельная структура", static_cast<int>(StructureType::Parallel));
+    structureTypeComboBox->addItem("Листовой элемент", static_cast<int>(StructureType::Element));
+    structureTypeComboBox->addItem("Композитный блок", static_cast<int>(StructureType::Composite));
+    structureTypeComboBox->addItem("Последовательное соединение", static_cast<int>(StructureType::Series));
+    structureTypeComboBox->addItem("Параллельное соединение", static_cast<int>(StructureType::Parallel));
     structureTypeComboBox->addItem("k из n", static_cast<int>(StructureType::KOutOfN));
 
     requiredElementsSpinBox = new QSpinBox(this);
@@ -137,7 +138,10 @@ void NodeConfigurationWidget::setConfiguration(const QString& mode, const QStrin
     }
 
     const int typeIndex = structureTypeComboBox->findData(static_cast<int>(configuration.structureType));
-    structureTypeComboBox->setCurrentIndex(typeIndex >= 0 ? typeIndex : 0);
+    if (typeIndex >= 0)
+        structureTypeComboBox->setCurrentIndex(typeIndex);
+    else
+        structureTypeComboBox->setCurrentIndex(configuration.structureType == StructureType::Element ? 0 : structureTypeComboBox->findData(static_cast<int>(StructureType::Composite)));
     requiredElementsSpinBox->setValue(configuration.requiredElements);
     updateFieldsAvailability();
 }
@@ -199,6 +203,7 @@ void NodeConfigurationWidget::updateFieldsAvailability()
     const NodeKind nodeKind = static_cast<NodeKind>(nodeKindComboBox->currentData().toInt());
     const StructureType structureType = static_cast<StructureType>(structureTypeComboBox->currentData().toInt());
     const bool normalNode = nodeKind == NodeKind::Normal;
+    const bool leafElement = normalNode && structureType == StructureType::Element;
 
     groupEdit->setEnabled(normalNode);
     structureTypeComboBox->setEnabled(normalNode);
@@ -208,10 +213,10 @@ void NodeConfigurationWidget::updateFieldsAvailability()
         if (!lambdaInputTypeComboBoxes[i] || !lambdaValueSpinBoxes[i] || !lambdaMultiplierSpinBoxes[i] || !lambdaReferenceModeComboBoxes[i])
             continue;
 
-        lambdaInputTypeComboBoxes[i]->setEnabled(normalNode);
-        lambdaValueSpinBoxes[i]->setEnabled(normalNode);
-        lambdaMultiplierSpinBoxes[i]->setEnabled(normalNode);
-        lambdaReferenceModeComboBoxes[i]->setEnabled(normalNode);
+        lambdaInputTypeComboBoxes[i]->setEnabled(leafElement);
+        lambdaValueSpinBoxes[i]->setEnabled(leafElement);
+        lambdaMultiplierSpinBoxes[i]->setEnabled(leafElement);
+        lambdaReferenceModeComboBoxes[i]->setEnabled(leafElement);
     }
 
     requiredElementsSpinBox->setEnabled(normalNode && structureType == StructureType::KOutOfN);
@@ -221,7 +226,8 @@ void NodeConfigurationWidget::updateFieldsAvailability()
 void NodeConfigurationWidget::updateLambdaFieldsAvailability()
 {
     const NodeKind nodeKind = static_cast<NodeKind>(nodeKindComboBox->currentData().toInt());
-    const bool normalNode = nodeKind == NodeKind::Normal;
+    const StructureType structureType = static_cast<StructureType>(structureTypeComboBox->currentData().toInt());
+    const bool leafElement = nodeKind == NodeKind::Normal && structureType == StructureType::Element;
 
     for (int i = 0; i < static_cast<int>(lambdaInputTypeComboBoxes.size()); ++i)
     {
@@ -231,8 +237,8 @@ void NodeConfigurationWidget::updateLambdaFieldsAvailability()
         const LambdaInputType inputType = static_cast<LambdaInputType>(lambdaInputTypeComboBoxes[i]->currentData().toInt());
         const bool expression = inputType == LambdaInputType::Expression;
 
-        lambdaValueSpinBoxes[i]->setEnabled(normalNode && !expression);
-        lambdaMultiplierSpinBoxes[i]->setEnabled(normalNode && expression);
-        lambdaReferenceModeComboBoxes[i]->setEnabled(normalNode && expression);
+        lambdaValueSpinBoxes[i]->setEnabled(leafElement && !expression);
+        lambdaMultiplierSpinBoxes[i]->setEnabled(leafElement && expression);
+        lambdaReferenceModeComboBoxes[i]->setEnabled(leafElement && expression);
     }
 }

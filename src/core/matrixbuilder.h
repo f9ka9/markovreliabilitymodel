@@ -1,6 +1,7 @@
 #ifndef MATRIXBUILDER_H
 #define MATRIXBUILDER_H
 
+#include <QHash>
 #include <QList>
 #include <QVector>
 
@@ -16,7 +17,8 @@ public:
 
 private:
     ReliabilityMatrix createZeroMatrix(int size) const;
-    double failureRateForNode(const QList<SchemaNodeData>& nodes, int nodeId, OperationMode mode) const;
+    QHash<int, FailureRates> createFailureRatesByNodeId(const QList<SchemaNodeData>& nodes) const;
+    double failureRateForNode(const QHash<int, FailureRates>& failureRatesByNodeId, int nodeId, OperationMode mode) const;
 };
 
 #endif // MATRIXBUILDER_H

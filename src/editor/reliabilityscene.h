@@ -44,6 +44,7 @@ public:
     SchemaModel exportCurrentLevelModel() const;
     EditorSchemaModel exportEditorSchemaModel() const;
     bool importEditorSchemaModel(const EditorSchemaModel& model, QString& errorMessage);
+    void removeNodeChildren(Node* node);
     void clearSchema();
 
 public slots:

@@ -19,6 +19,7 @@
 #include <QVBoxLayout>
 #include <QFile>
 #include <QFileDialog>
+#include <QHash>
 #include <QJsonArray>
 #include <QJsonParseError>
 #include <QMessageBox>
@@ -138,7 +139,8 @@ private:
     void showInitialProbabilitiesTable(const CalculationResult& result);
     void clearCalculationResultViews();
     QString systemStateToString(ReliabilitySystemState state) const;
-    QString failedNodesToString(const ReliabilityState& state, const QList<SchemaNodeData>& nodes) const;
+    QHash<int, QString> createNodeNamesById(const QList<SchemaNodeData>& nodes) const;
+    QString failedNodesToString(const ReliabilityState& state, const QHash<int, QString>& nodeNamesById) const;
     bool validateCalculationInput(const SchemaModel& model, const Cyclogram& cyclogram, QString& errorMessage) const;
     bool validateInitialProbabilities(const ProbabilityVector& probabilities, int stateCount, QString& errorMessage) const;
     ProbabilityVector initialProbabilitiesFromTable(int stateCount) const;

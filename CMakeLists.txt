@@ -43,6 +43,8 @@ qt_add_executable(markovreliabilitymodel
     src/core/matrixbuilder.h
     src/core/probabilitycalculator.cpp
     src/core/probabilitycalculator.h
+    src/core/compositereliabilitycalculator.cpp
+    src/core/compositereliabilitycalculator.h
     src/core/reliabilitycore.cpp
     src/core/reliabilitycore.h
     src/core/calculationresult.h

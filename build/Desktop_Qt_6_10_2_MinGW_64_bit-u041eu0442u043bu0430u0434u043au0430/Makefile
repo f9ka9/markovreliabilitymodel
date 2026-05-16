@@ -223,6 +223,30 @@ markovreliabilitymodel_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compilation.cpp.s
 .PHONY : markovreliabilitymodel_autogen/mocs_compilation.cpp.s
 
+src/core/compositereliabilitycalculator.obj: src/core/compositereliabilitycalculator.cpp.obj
+.PHONY : src/core/compositereliabilitycalculator.obj
+
+# target to build an object file
+src/core/compositereliabilitycalculator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/compositereliabilitycalculator.cpp.obj
+.PHONY : src/core/compositereliabilitycalculator.cpp.obj
+
+src/core/compositereliabilitycalculator.i: src/core/compositereliabilitycalculator.cpp.i
+.PHONY : src/core/compositereliabilitycalculator.i
+
+# target to preprocess a source file
+src/core/compositereliabilitycalculator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/compositereliabilitycalculator.cpp.i
+.PHONY : src/core/compositereliabilitycalculator.cpp.i
+
+src/core/compositereliabilitycalculator.s: src/core/compositereliabilitycalculator.cpp.s
+.PHONY : src/core/compositereliabilitycalculator.s
+
+# target to generate assembly for a file
+src/core/compositereliabilitycalculator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/core/compositereliabilitycalculator.cpp.s
+.PHONY : src/core/compositereliabilitycalculator.cpp.s
+
 src/core/matrixbuilder.obj: src/core/matrixbuilder.cpp.obj
 .PHONY : src/core/matrixbuilder.obj
 
@@ -649,6 +673,9 @@ help:
 	@echo ... markovreliabilitymodel_autogen/mocs_compilation.obj
 	@echo ... markovreliabilitymodel_autogen/mocs_compilation.i
 	@echo ... markovreliabilitymodel_autogen/mocs_compilation.s
+	@echo ... src/core/compositereliabilitycalculator.obj
+	@echo ... src/core/compositereliabilitycalculator.i
+	@echo ... src/core/compositereliabilitycalculator.s
 	@echo ... src/core/matrixbuilder.obj
 	@echo ... src/core/matrixbuilder.i
 	@echo ... src/core/matrixbuilder.s

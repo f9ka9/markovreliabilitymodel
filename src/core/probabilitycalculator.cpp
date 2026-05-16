@@ -1,5 +1,24 @@
 #include "probabilitycalculator.h"
 
+#include <cmath>
+
+namespace
+{
+constexpr double maxUniformizationMean = 16.0;
+constexpr double poissonTolerance = 1.0e-14;
+constexpr int maxUniformizationIterations = 10000;
+
+int squaringCountForMean(double mean)
+{
+    int count = 0;
+    while (mean > maxUniformizationMean && count < 60)
+    {
+        mean *= 0.5;
+        ++count;
+    }
+    return count;
+}
+}
 
 ReliabilityMatrix ProbabilityCalculator::buildTransitionMatrix(const ReliabilityMatrix& intensityMatrix,  double duration) const
 {
@@ -9,6 +28,18 @@ ReliabilityMatrix ProbabilityCalculator::buildTransitionMatrix(const Reliability
 
     const double rate = maxExitRate(intensityMatrix);
     if (qFuzzyIsNull(rate)) return identityMatrix(size);
+
+    const double mean = rate * duration;
+    if (!std::isfinite(mean)) return {};
+
+    const int squaringCount = squaringCountForMean(mean);
+    if (squaringCount > 0)
+    {
+        ReliabilityMatrix result = buildTransitionMatrix(intensityMatrix, std::ldexp(duration, -squaringCount));
+        for (int i = 0; i < squaringCount; ++i)
+            result = multiplyMatrices(result, result);
+        return result;
+    }
 
     ReliabilityMatrix embedded = identityMatrix(size);
     for (int row = 0; row < size; ++row)
@@ -22,20 +53,16 @@ ReliabilityMatrix ProbabilityCalculator::buildTransitionMatrix(const Reliability
         row = QVector<double>(size, 0.0);
 
     ReliabilityMatrix power = identityMatrix(size);
-    const double mean = rate * duration;
     double poissonWeight = qExp(-mean);
     addScaledMatrix(result, power, poissonWeight);
 
-    constexpr int maxIterations = 10000;
-    constexpr double tolerance = 1.0e-14;
-
-    for (int iteration = 1; iteration <= maxIterations; ++iteration)
+    for (int iteration = 1; iteration <= maxUniformizationIterations; ++iteration)
     {
         power = multiplyMatrices(power, embedded);
         poissonWeight *= mean / iteration;
         addScaledMatrix(result, power, poissonWeight);
 
-        if (poissonWeight < tolerance)
+        if (iteration > mean && poissonWeight < poissonTolerance)
             break;
     }
 

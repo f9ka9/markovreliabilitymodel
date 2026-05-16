@@ -12,7 +12,7 @@
 class StateGenerator
 {
 public:
-    QList<ReliabilityState> generate(const QList<SchemaNodeData>& nodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements) const;
+    QList<ReliabilityState> generate(const QList<SchemaNodeData>& nodes, const QList<SchemaConnectionData>& connections, StructureType structureType, int requiredElements, int maxStateCount = 0) const;
 
 private:
     QList<SchemaNodeData> reliabilityNodes(const QList<SchemaNodeData>& nodes) const ;
