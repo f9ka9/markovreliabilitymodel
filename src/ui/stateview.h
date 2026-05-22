@@ -2,6 +2,8 @@
 #define STATEVIEW_H
 
 #include <QGraphicsView>
+#include <QMouseEvent>
+#include <QPoint>
 
 class QWheelEvent;
 
@@ -12,7 +14,17 @@ public:
     ~StateView();
 
 protected:
+    void scrollContentsBy(int dx, int dy) override;
+    void mousePressEvent(QMouseEvent* event) override;
+    void mouseMoveEvent(QMouseEvent* event) override;
+    void mouseReleaseEvent(QMouseEvent* event) override;
     void wheelEvent(QWheelEvent* event) override;
+
+private:
+    void expandSceneIfNeeded();
+
+    bool panning{false};
+    QPoint lastPanPoint;
 };
 
 #endif // STATEVIEW_H
