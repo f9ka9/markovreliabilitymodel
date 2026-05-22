@@ -7,17 +7,12 @@
 #include <QPoint>
 #include <QResizeEvent>
 
-
 class StructureView : public QGraphicsView
 {
 public:
     explicit StructureView(QWidget* parent = nullptr);
     ~StructureView();
 
-    void setupCoordLabel();
-    void updateCoordLabelPosition();
-    void updateCursorCoordinatesLabel();
-    void expandSceneIfNeeded();
     void setPanningEnabled(bool enabled);
 
 protected:
@@ -29,11 +24,15 @@ protected:
     void wheelEvent(QWheelEvent* event) override;
 
 private:
+    void setupCoordLabel();
+    void updateCoordLabelPosition();
+    void updateCursorCoordinatesLabel();
+    void expandSceneIfNeeded();
+
     QLabel* coord{nullptr};
     bool panningEnabled{true};
     bool panning{false};
     QPoint lastPanPoint;
 };
-
 
 #endif // STRUCTUREVIEW_H

@@ -32,6 +32,8 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 
 }
 
+MainWindow::~MainWindow() = default;
+
 void MainWindow::setupCentralWidgets()
 {
     structureScene = new ReliabilityScene(this);
@@ -146,6 +148,7 @@ void MainWindow::setupDockWidgets()
     syncTopLevelStructureControlsFromScene();
     addCyclogramStage(OperationMode::Functioning, 1.0);
 }
+
 void MainWindow::createActions()
 {
     configNodeAction = new QAction("Конфигурация", this);
@@ -207,6 +210,7 @@ void MainWindow::createActions()
     aboutAction = new QAction("О программе", this);
     aboutAction->setStatusTip("Сведения о программе");
 }
+
 void MainWindow::setupToolBar()
 {
     mainToolBar = new QToolBar("Основная панель", this);
@@ -229,6 +233,7 @@ void MainWindow::setupToolBar()
 
     mainToolBar->addWidget(breadcrumbLabel);
 }
+
 void MainWindow::setupMenu()
 {
     fileMenu = new QMenu("Файл", this);
@@ -264,10 +269,12 @@ void MainWindow::setupMenu()
 
     helpMenu->addAction(aboutAction);
 }
-void MainWindow::setupStatusBar ()
+
+void MainWindow::setupStatusBar()
 {
     statusBar()->showMessage("Готово", 5000);
 }
+
 void MainWindow::showNodeConfiguration()
 {
     showNodeConfiguration(structureScene->selectedNode());
@@ -444,10 +451,10 @@ void MainWindow::resetEditorModes()
 void MainWindow::updateStructureViewInteractionMode()
 {
     const bool selectionMode = selectAction->isChecked();
-    const bool editorModeActive = addNodeAction->isChecked() || deleteItemAction->isChecked() || configNodeAction->isChecked() || selectionMode || connectAction->isChecked();
+    const bool sceneEditingModeActive = addNodeAction->isChecked() || deleteItemAction->isChecked() || selectionMode || connectAction->isChecked();
 
     structureView->setDragMode(selectionMode ? QGraphicsView::RubberBandDrag : QGraphicsView::NoDrag);
-    structureView->setPanningEnabled(!editorModeActive);
+    structureView->setPanningEnabled(!sceneEditingModeActive);
     structureView->setCursor(Qt::ArrowCursor);
     structureView->viewport()->setCursor(Qt::ArrowCursor);
 }
@@ -922,5 +929,3 @@ void MainWindow::syncTopLevelStructureControlsFromScene()
     topLevelRequiredElementsSpinBox->setValue(structureScene->getTopLevelRequiredElements());
     topLevelRequiredElementsSpinBox->setEnabled(structureScene->getTopLevelStructureType() == StructureType::KOutOfN);
 }
-
-MainWindow::~MainWindow() = default;

@@ -4,14 +4,10 @@
 #include <QHash>
 #include <QList>
 #include <QString>
-#include <cmath>
-#include <QtMath>
-#include <QSet>
 
 #include "calculationresult.h"
 #include "editorschemamodel.h"
 #include "schemamodel.h"
-#include "reliabilitycore.h"
 
 class CompositeReliabilityCalculator
 {
@@ -27,7 +23,9 @@ private:
     FailureRates effectiveFailureRates(const EditorSchemaModel& editorModel, int parentId, const QHash<int, EditorSchemaNodeData>& nodesById, const QHash<int, QList<EditorSchemaNodeData>>& childrenByParentId) const;
     double effectiveFailureRate(const EditorSchemaModel& editorModel, int parentId, OperationMode mode, const QHash<int, EditorSchemaNodeData>& nodesById, const QHash<int, QList<EditorSchemaNodeData>>& childrenByParentId) const;
     double workProbability(const CalculationResult& result) const;
+
     bool hasChildren(int nodeId, const QHash<int, QList<EditorSchemaNodeData>>& childrenByParentId) const;
+
     StructureType structureTypeForParent(const EditorSchemaModel& editorModel, int parentId, const QHash<int, EditorSchemaNodeData>& nodesById) const;
     int requiredElementsForParent(const EditorSchemaModel& editorModel, int parentId, const QHash<int, EditorSchemaNodeData>& nodesById) const;
 

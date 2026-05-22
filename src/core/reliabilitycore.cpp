@@ -18,6 +18,50 @@ int chunkCountForMean(double mean)
 }
 }
 
+CalculationResult ReliabilityCore::calculateCurrentLevel(const SchemaModel& model, StructureType structureType, int requiredElements, OperationMode mode) const
+{
+    Cyclogram cyclogram;
+    cyclogram.append({"Functioning", mode, 1.0});
+    return calculateCyclogram(model, structureType, requiredElements, cyclogram);
+}
+
+CalculationResult ReliabilityCore::calculateCyclogram(const SchemaModel& model, StructureType structureType, int requiredElements, const Cyclogram& cyclogram, const ProbabilityVector& initialProbabilities) const
+{
+    CalculationResult result;
+
+    result.nodes = model.nodes;
+    result.states = stateGenerator.generate(model.nodes, model.connections, structureType, requiredElements);
+    result.transitions = transitionBuilder.build(result.states);
+    result.initialProbabilities = probabilityCalculator.normalizedInitialProbabilities(initialProbabilities, result.states.size());
+
+    ProbabilityVector currentProbabilities = result.initialProbabilities;
+    for (const CyclogramStage& stage : cyclogram)
+    {
+        StageCalculationResult stageResult;
+        stageResult.stage = stage;
+        if (result.states.size() <= maxDenseMatrixStateCount)
+        {
+            stageResult.intensityMatrix = matrixBuilder.buildIntensityMatrix(result.states, result.transitions, model.nodes, stage.mode);
+            stageResult.transitionMatrix = probabilityCalculator.buildTransitionMatrix(stageResult.intensityMatrix, stage.duration);
+            currentProbabilities = probabilityCalculator.multiply(currentProbabilities, stageResult.transitionMatrix);
+        }
+        else
+        {
+            currentProbabilities = advanceProbabilitiesSparse(currentProbabilities, result.transitions, model.nodes, stage.mode, stage.duration);
+        }
+        stageResult.probabilities = currentProbabilities;
+        result.stages.append(stageResult);
+    }
+
+    if (!result.stages.isEmpty())
+    {
+        result.intensityMatrix = result.stages.first().intensityMatrix;
+        result.transitionMatrix = result.stages.first().transitionMatrix;
+    }
+
+    return result;
+}
+
 QHash<int, FailureRates> ReliabilityCore::createFailureRatesByNodeId(const QList<SchemaNodeData>& nodes)
 {
     QHash<int, FailureRates> result;
@@ -125,50 +169,6 @@ ProbabilityVector ReliabilityCore::advanceProbabilitiesSparse(const ProbabilityV
 
         if (iteration > mean && poissonWeight < poissonTolerance)
             break;
-    }
-
-    return result;
-}
-
-CalculationResult ReliabilityCore::calculateCurrentLevel(const SchemaModel& model, StructureType structureType, int requiredElements, OperationMode mode) const
-{
-    Cyclogram cyclogram;
-    cyclogram.append({"Functioning", mode, 1.0});
-    return calculateCyclogram(model, structureType, requiredElements, cyclogram);
-}
-
-CalculationResult ReliabilityCore::calculateCyclogram(const SchemaModel& model, StructureType structureType, int requiredElements, const Cyclogram& cyclogram, const ProbabilityVector& initialProbabilities) const
-{
-    CalculationResult result;
-
-    result.nodes = model.nodes;
-    result.states = stateGenerator.generate(model.nodes, model.connections, structureType, requiredElements);
-    result.transitions = transitionBuilder.build(result.states);
-    result.initialProbabilities = probabilityCalculator.normalizedInitialProbabilities(initialProbabilities, result.states.size());
-
-    ProbabilityVector currentProbabilities = result.initialProbabilities;
-    for (const CyclogramStage& stage : cyclogram)
-    {
-        StageCalculationResult stageResult;
-        stageResult.stage = stage;
-        if (result.states.size() <= maxDenseMatrixStateCount)
-        {
-            stageResult.intensityMatrix = matrixBuilder.buildIntensityMatrix(result.states, result.transitions, model.nodes, stage.mode);
-            stageResult.transitionMatrix = probabilityCalculator.buildTransitionMatrix(stageResult.intensityMatrix, stage.duration);
-            currentProbabilities = probabilityCalculator.multiply(currentProbabilities, stageResult.transitionMatrix);
-        }
-        else
-        {
-            currentProbabilities = advanceProbabilitiesSparse(currentProbabilities, result.transitions, model.nodes, stage.mode, stage.duration);
-        }
-        stageResult.probabilities = currentProbabilities;
-        result.stages.append(stageResult);
-    }
-
-    if (!result.stages.isEmpty())
-    {
-        result.intensityMatrix = result.stages.first().intensityMatrix;
-        result.transitionMatrix = result.stages.first().transitionMatrix;
     }
 
     return result;

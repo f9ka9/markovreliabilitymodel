@@ -87,13 +87,16 @@ public:
     void setRequiredElements(int value);
 
 private:
-    static int nextId;
     static int modeIndex(OperationMode mode);
     static double resolveLambda(const LambdaDefinitions& definitions, OperationMode mode, std::array<bool, 4>& resolving);
 
+    static int nextId;
+
     int id{0};
     Node* parent{nullptr};
+
     QList<Node*> children;
+
     NodeConfiguration configuration;
 };
 

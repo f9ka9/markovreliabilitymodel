@@ -1,5 +1,6 @@
 #ifndef RELIABILITYCORE_H
 #define RELIABILITYCORE_H
+
 #include <QHash>
 #include <QtMath>
 
@@ -26,6 +27,7 @@ private:
     static double maxExitRate(const QVector<double>& exitRates);
     static ProbabilityVector multiplyByEmbeddedMatrix(const ProbabilityVector& probabilities, const QList<ReliabilityTransition>& transitions, const QVector<double>& transitionRates, const QVector<double>& exitRates, double uniformizationRate);
     static ProbabilityVector advanceProbabilitiesSparse(const ProbabilityVector& probabilities, const QList<ReliabilityTransition>& transitions, const QList<SchemaNodeData>& nodes, OperationMode mode, double duration);
+
     StateGenerator stateGenerator;
     TransitionBuilder transitionBuilder;
     MatrixBuilder matrixBuilder;

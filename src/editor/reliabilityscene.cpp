@@ -263,6 +263,31 @@ void ReliabilityScene::clearSchema()
     emit currentLevelChanged(currentLevelPath());
 }
 
+void ReliabilityScene::removeNodeChildren(Node* node)
+{
+    if (!node) return;
+
+    const bool currentLevelInsideRemovedSubtree = selectedParentNode && selectedParentNode != node && nodeContains(node, selectedParentNode);
+    const QList<Node*> children = node->getChildren();
+    for (Node* child : children)
+        removeConnectionsForNode(child);
+
+    for (Node* child : children)
+    {
+        emitNodeAboutToBeRemovedForSubtree(child);
+        removeNodeGraphicsForSubtree(child);
+        node->removeChild(child);
+        delete child;
+    }
+
+    if (currentLevelInsideRemovedSubtree)
+    {
+        selectedParentNode = node;
+        refreshCurrentLevel();
+        emit currentLevelChanged(currentLevelPath());
+    }
+}
+
 void ReliabilityScene::onUpLevel()
 {
     resetEditorModes();
@@ -305,8 +330,11 @@ void ReliabilityScene::mousePressEvent(QGraphicsSceneMouseEvent* event)
         QGraphicsItem* item = itemAt(event->scenePos(), QTransform());
         if (NodeGraphics* nodeItem = dynamic_cast<NodeGraphics*>(item))
         {
+            clearSelection();
+            nodeItem->setSelected(true);
+            nodeItem->update();
             emit nodeConfigurationRequested(nodeItem->getModelNode());
-            event->accept();
+            QGraphicsScene::mousePressEvent(event);
             return;
         }
     }
@@ -573,31 +601,6 @@ void ReliabilityScene::removeConnectionsForNode(Node* node)
 
     for (LineConnection* connection : toDelete)
         removeConnection(connection);
-}
-
-void ReliabilityScene::removeNodeChildren(Node* node)
-{
-    if (!node) return;
-
-    const bool currentLevelInsideRemovedSubtree = selectedParentNode && selectedParentNode != node && nodeContains(node, selectedParentNode);
-    const QList<Node*> children = node->getChildren();
-    for (Node* child : children)
-        removeConnectionsForNode(child);
-
-    for (Node* child : children)
-    {
-        emitNodeAboutToBeRemovedForSubtree(child);
-        removeNodeGraphicsForSubtree(child);
-        node->removeChild(child);
-        delete child;
-    }
-
-    if (currentLevelInsideRemovedSubtree)
-    {
-        selectedParentNode = node;
-        refreshCurrentLevel();
-        emit currentLevelChanged(currentLevelPath());
-    }
 }
 
 void ReliabilityScene::removeNode(NodeGraphics* nodeGraphics)

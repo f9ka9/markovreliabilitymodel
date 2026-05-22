@@ -1,13 +1,12 @@
 #ifndef SCHEMASERIALIZER_H
 #define SCHEMASERIALIZER_H
 
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QString>
 #include <QJsonArray>
+#include <QJsonDocument>
 #include <QJsonObject>
 #include <QList>
 #include <QPair>
+#include <QString>
 
 #include "editorschemamodel.h"
 

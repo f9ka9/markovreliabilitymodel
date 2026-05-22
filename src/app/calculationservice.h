@@ -32,11 +32,11 @@ public:
     CalculationRun calculate(const CalculationPreparation& preparation, const ProbabilityVector& initialProbabilities) const;
 
 private:
-    int maxStateCountForCalculation{0};
-
     static int reliabilityNodeCount(const QList<SchemaNodeData>& nodes);
     bool validateModelAndCyclogram(const SchemaModel& model, const Cyclogram& cyclogram, int& stateCount, QString& errorMessage) const;
     static bool validateInitialProbabilities(const ProbabilityVector& probabilities, int stateCount, QString& errorMessage);
+
+    int maxStateCountForCalculation{0};
 };
 
 #endif // CALCULATIONSERVICE_H

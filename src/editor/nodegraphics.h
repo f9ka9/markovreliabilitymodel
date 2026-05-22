@@ -2,13 +2,13 @@
 #define NODEGRAPHICS_H
 
 #include <QGraphicsObject>
-#include <QGraphicsSceneMouseEvent>
-#include <QPainter>
-#include <QPointF>
 #include <QCursor>
 #include <QFontMetrics>
+#include <QGraphicsSceneMouseEvent>
 #include <QGraphicsScene>
 #include <QHash>
+#include <QPainter>
+#include <QPointF>
 
 #include "gridsettings.h"
 #include "node.h"
@@ -26,6 +26,10 @@ public:
     Node* getModelNode() const;
     QRectF connectionRect() const;
 
+signals:
+    void nodeDoubleClicked(Node* node);
+    void positionChanged();
+
 protected:
     QRectF boundingRect() const override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*) override;
@@ -33,10 +37,6 @@ protected:
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent* event) override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* event) override;
     QVariant itemChange(GraphicsItemChange change, const QVariant& value) override;
-
-signals:
-    void nodeDoubleClicked(Node* node);
-    void positionChanged();
 
 private:
     Node* modelNode{nullptr};

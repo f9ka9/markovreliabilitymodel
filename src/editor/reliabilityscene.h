@@ -7,15 +7,15 @@
 #include <QHash>
 #include <QList>
 #include <QPainterPath>
+#include <QPen>
 #include <QPointF>
 #include <QString>
-#include <QPen>
 #include <QStringList>
 #include <QTransform>
 #include <QtMath>
 
-#include "gridsettings.h"
 #include "editorschemamodel.h"
+#include "gridsettings.h"
 #include "lineconnectiongraphics.h"
 #include "nodegraphics.h"
 #include "schemamodel.h"
@@ -32,24 +32,26 @@ public:
     void setConnectionMode(bool enabled);
     void setDeleteMode(bool enabled);
     void setConfigurationMode(bool enabled);
+
     void setDefaultNodeConfiguration(const NodeConfiguration& configuration);
     NodeConfiguration getDefaultNodeConfiguration() const;
+
     void setTopLevelStructureConfiguration(StructureType structureType, int requiredElements);
     StructureType getTopLevelStructureType() const;
     int getTopLevelRequiredElements() const;
+
     Node* selectedNode() const;
     void updateNodeGraphics(Node* node);
+
     QString currentLevelPath() const;
     int currentDepth() const;
+
     SchemaModel exportCurrentLevelModel() const;
     EditorSchemaModel exportEditorSchemaModel() const;
     bool importEditorSchemaModel(const EditorSchemaModel& model, QString& errorMessage);
-    void removeNodeChildren(Node* node);
-    void clearSchema();
 
-public slots:
-    void onUpLevel();
-    void onNodeDoubleClicked(Node* node);
+    void clearSchema();
+    void removeNodeChildren(Node* node);
 
 signals:
     void editorModesResetRequested();
@@ -57,36 +59,23 @@ signals:
     void nodeConfigurationRequested(Node* node);
     void currentLevelChanged(const QString& path);
 
+public slots:
+    void onUpLevel();
+    void onNodeDoubleClicked(Node* node);
+
 protected:
     void drawBackground(QPainter* painter, const QRectF& rect) override;
     void mousePressEvent(QGraphicsSceneMouseEvent* event) override;
     void mouseMoveEvent(QGraphicsSceneMouseEvent* event) override;
 
 private:
-    bool modelsAddMode{false};
-    bool connectionMode{false};
-    bool deleteMode{false};
-    bool configurationMode{false};
-    bool connectionDrawingActive{false};
-
-    QPointF lastCursorScenePos;
-    NodeGraphics* connectionStartNodeGraphics{nullptr};
-    Node* selectedParentNode{nullptr};
-    QList<Node*> rootNodes;
-    QList<LineConnection*> connections;
-    QList<QPointF> draftConnectionPoints;
-    QHash<Node*, NodeGraphics*> nodeGraphicsByNode;
-    QHash<LineConnection*, LineConnectionGraphics*> connectionGraphicsByConnection;
-    QGraphicsPathItem* tempConnectionPath{nullptr};
-    NodeConfiguration defaultNodeConfiguration;
-    StructureType topLevelStructureType{StructureType::Series};
-    int topLevelRequiredElements{1};
-
     void addRootNode(Node* node);
     NodeGraphics* addNodeToScene(Node* node);
     LineConnectionGraphics* addConnectionToScene(LineConnection* connection);
+
     NodeGraphics* createNodeGraphics(Node* node);
     LineConnectionGraphics* createConnectionGraphics(LineConnection* connection, const QList<QPointF>& bendPoints);
+
     void clearSceneItems();
     void deleteAllEditorObjects();
     void refreshCurrentLevel();
@@ -111,10 +100,34 @@ private:
     bool canPlaceNodeAt(const QPointF& scenePos) const;
     bool isNodeInCurrentLevel(Node* node) const;
     bool nodeContains(Node* root, Node* candidate) const;
+
     void appendNodeToSchemaModel(Node* node, SchemaModel& model, int depth) const;
     SchemaNodeData createNodeData(Node* node, int depth) const;
     SchemaConnectionData createConnectionData(LineConnection* connection) const;
     void appendNodeToEditorSchemaModel(Node* node, EditorSchemaModel& model) const;
+
+    bool modelsAddMode{false};
+    bool connectionMode{false};
+    bool deleteMode{false};
+    bool configurationMode{false};
+    bool connectionDrawingActive{false};
+
+    QPointF lastCursorScenePos;
+    NodeGraphics* connectionStartNodeGraphics{nullptr};
+    Node* selectedParentNode{nullptr};
+
+    QList<Node*> rootNodes;
+    QList<LineConnection*> connections;
+    QList<QPointF> draftConnectionPoints;
+
+    QHash<Node*, NodeGraphics*> nodeGraphicsByNode;
+    QHash<LineConnection*, LineConnectionGraphics*> connectionGraphicsByConnection;
+
+    QGraphicsPathItem* tempConnectionPath{nullptr};
+
+    NodeConfiguration defaultNodeConfiguration;
+    StructureType topLevelStructureType{StructureType::Series};
+    int topLevelRequiredElements{1};
 };
 
 #endif // RELIABILITYSCENE_H

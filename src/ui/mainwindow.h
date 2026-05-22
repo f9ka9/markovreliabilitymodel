@@ -40,18 +40,62 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    void setupCentralWidgets();
-    void setupDockWidgets();
+signals:
+    void upLevelSignal();
 
-    void setupToolBar();
+private slots:
+    void showNodeConfiguration();
+    void showNodeConfiguration(Node* node);
+    void toggleNodeConfigurationMode(bool checked);
+    void applyNodeConfiguration(Node* node, const NodeConfiguration& configuration);
+    void onConfiguredNodeAboutToBeRemoved(Node* node);
 
-    void setupMenu();
+    void toggleModelsAddMode(bool checked);
+    void toggleSelectionMode(bool checked);
+    void toggleConnectionMode(bool checked);
+    void toggleDeleteMode(bool checked);
 
-    void createActions();
+    void upLevel();
+    void resetEditorModes();
 
-    void setupStatusBar();
+    void newSchema();
+    void openSchema();
+    void saveSchema();
+    void calculate();
+    void exportResults();
 
 private:
+    static constexpr int maxStateCountForCalculation = 4096;
+
+    void setupCentralWidgets();
+    void setupDockWidgets();
+    void createActions();
+    void setupToolBar();
+    void setupMenu();
+    void setupStatusBar();
+
+    void updateStructureViewInteractionMode();
+
+    void showIntensityMatrix(const CalculationResult& result);
+    void updateMatrixTable();
+    void showProbabilityTable(const CalculationResult& result);
+    void showStatesTable(const CalculationResult& result);
+    void showInitialProbabilitiesTable(const CalculationResult& result);
+    void clearCalculationResultViews();
+
+    QString systemStateToString(ReliabilitySystemState state) const;
+    QHash<int, QString> createNodeNamesById(const QList<SchemaNodeData>& nodes) const;
+    QString failedNodesToString(const ReliabilityState& state, const QHash<int, QString>& nodeNamesById) const;
+
+    ProbabilityVector initialProbabilitiesFromTable(int stateCount) const;
+
+    void addCyclogramStage(OperationMode mode = OperationMode::Functioning, double duration = 1.0);
+    void removeSelectedCyclogramStage();
+    Cyclogram cyclogramFromTable() const;
+    void setCyclogramTable(const Cyclogram& cyclogram);
+    void applyTopLevelStructureConfiguration();
+    void syncTopLevelStructureControlsFromScene();
+
     ReliabilityScene* structureScene{nullptr};
     StateScene* stateScene{nullptr};
 
@@ -62,26 +106,26 @@ private:
 
     QDockWidget* matrixDock{nullptr};
     QDockWidget* probabilityDock{nullptr};
-    QDockWidget* nodeConfigurationDock{nullptr};
-    QDockWidget* cyclogramDock{nullptr};
     QDockWidget* statesDock{nullptr};
     QDockWidget* initialProbabilitiesDock{nullptr};
+    QDockWidget* nodeConfigurationDock{nullptr};
+    QDockWidget* cyclogramDock{nullptr};
 
     QTableWidget* matrixTable{nullptr};
-    QTableWidget* probabilityTable {nullptr};
-    QTableWidget* cyclogramTable{nullptr};
+    QTableWidget* probabilityTable{nullptr};
     QTableWidget* statesTable{nullptr};
     QTableWidget* initialProbabilitiesTable{nullptr};
+    QTableWidget* cyclogramTable{nullptr};
+
     QComboBox* matrixStageComboBox{nullptr};
     QComboBox* matrixTypeComboBox{nullptr};
     QComboBox* topLevelStructureTypeComboBox{nullptr};
+
     QSpinBox* topLevelRequiredElementsSpinBox{nullptr};
+
     NodeConfigurationWidget* nodeConfigurationWidget{nullptr};
-    CalculationResult lastCalculationResult;
-    ProbabilityVector savedInitialProbabilities;
 
     QToolBar* mainToolBar{nullptr};
-
     QLabel* breadcrumbLabel{nullptr};
 
     QAction* configNodeAction{nullptr};
@@ -102,47 +146,8 @@ private:
     QMenu* viewMenu{nullptr};
     QMenu* helpMenu{nullptr};
 
-private slots:
-    void showNodeConfiguration();
-    void showNodeConfiguration(Node* node);
-    void applyNodeConfiguration(Node* node, const NodeConfiguration& configuration);
-    void onConfiguredNodeAboutToBeRemoved(Node* node);
-    void toggleNodeConfigurationMode(bool checked);
-    void toggleModelsAddMode(bool checked);
-    void toggleSelectionMode(bool checked);
-    void upLevel();
-    void toggleConnectionMode(bool checked);
-    void toggleDeleteMode(bool checked);
-    void resetEditorModes();
-    void newSchema();
-    void openSchema();
-    void saveSchema();
-    void calculate();
-    void exportResults();
-
-private:
-    static constexpr int maxStateCountForCalculation = 4096;
-
-    void updateStructureViewInteractionMode();
-    void showIntensityMatrix(const CalculationResult& result);
-    void updateMatrixTable();
-    void showProbabilityTable(const CalculationResult& result);
-    void showStatesTable(const CalculationResult& result);
-    void showInitialProbabilitiesTable(const CalculationResult& result);
-    void clearCalculationResultViews();
-    QString systemStateToString(ReliabilitySystemState state) const;
-    QHash<int, QString> createNodeNamesById(const QList<SchemaNodeData>& nodes) const;
-    QString failedNodesToString(const ReliabilityState& state, const QHash<int, QString>& nodeNamesById) const;
-    ProbabilityVector initialProbabilitiesFromTable(int stateCount) const;
-    void addCyclogramStage(OperationMode mode = OperationMode::Functioning, double duration = 1.0);
-    void removeSelectedCyclogramStage();
-    Cyclogram cyclogramFromTable() const;
-    void setCyclogramTable(const Cyclogram& cyclogram);
-    void applyTopLevelStructureConfiguration();
-    void syncTopLevelStructureControlsFromScene();
-
-signals:
-    void upLevelSignal();
+    CalculationResult lastCalculationResult;
+    ProbabilityVector savedInitialProbabilities;
 
 };
 #endif // MAINWINDOW_H

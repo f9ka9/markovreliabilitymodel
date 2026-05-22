@@ -2,18 +2,18 @@
 #define LINECONNECTIONGRAPHICS_H
 
 #include <QGraphicsObject>
+#include <QCursor>
 #include <QList>
 #include <QPainter>
 #include <QPainterPath>
+#include <QPainterPathStroker>
 #include <QPointF>
 #include <QStyleOptionGraphicsItem>
-#include <limits>
-#include <QCursor>
-#include <QPainterPathStroker>
 #include <QtMath>
+#include <limits>
 
-#include "nodegraphics.h"
 #include "lineconnection.h"
+#include "nodegraphics.h"
 
 class LineConnectionGraphics : public QGraphicsObject
 {
@@ -33,16 +33,19 @@ protected:
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
 
 private:
+    QList<QPointF> buildPathPoints() const;
+    QPointF nodeBoundaryPoint(NodeGraphics* node, const QPointF& toward) const;
+
     LineConnection* connection{nullptr};
     NodeGraphics* firstNode{nullptr};
     NodeGraphics* secondNode{nullptr};
+
     QList<QPointF> bendPoints{};
+
     bool firstSegmentHorizontal{true};
     bool lastSegmentHorizontal{true};
-    QPainterPath cachedPath{};
 
-    QList<QPointF> buildPathPoints() const;
-    QPointF nodeBoundaryPoint(NodeGraphics* node, const QPointF& toward) const;
+    QPainterPath cachedPath{};
 };
 
 #endif // LINECONNECTIONGRAPHICS_H
