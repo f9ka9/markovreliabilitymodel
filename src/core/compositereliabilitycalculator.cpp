@@ -1,12 +1,5 @@
 #include "compositereliabilitycalculator.h"
 
-#include <cmath>
-
-#include <QtMath>
-#include <QSet>
-
-#include "reliabilitycore.h"
-
 SchemaModel CompositeReliabilityCalculator::buildEffectiveModel(const EditorSchemaModel& editorModel, int parentId) const
 {
     effectiveFailureRateCache.clear();

@@ -4,10 +4,14 @@
 #include <QHash>
 #include <QList>
 #include <QString>
+#include <cmath>
+#include <QtMath>
+#include <QSet>
 
 #include "calculationresult.h"
 #include "editorschemamodel.h"
 #include "schemamodel.h"
+#include "reliabilitycore.h"
 
 class CompositeReliabilityCalculator
 {

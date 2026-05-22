@@ -223,6 +223,54 @@ markovreliabilitymodel_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compilation.cpp.s
 .PHONY : markovreliabilitymodel_autogen/mocs_compilation.cpp.s
 
+src/app/calculationresultexporter.obj: src/app/calculationresultexporter.cpp.obj
+.PHONY : src/app/calculationresultexporter.obj
+
+# target to build an object file
+src/app/calculationresultexporter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/app/calculationresultexporter.cpp.obj
+.PHONY : src/app/calculationresultexporter.cpp.obj
+
+src/app/calculationresultexporter.i: src/app/calculationresultexporter.cpp.i
+.PHONY : src/app/calculationresultexporter.i
+
+# target to preprocess a source file
+src/app/calculationresultexporter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/app/calculationresultexporter.cpp.i
+.PHONY : src/app/calculationresultexporter.cpp.i
+
+src/app/calculationresultexporter.s: src/app/calculationresultexporter.cpp.s
+.PHONY : src/app/calculationresultexporter.s
+
+# target to generate assembly for a file
+src/app/calculationresultexporter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/app/calculationresultexporter.cpp.s
+.PHONY : src/app/calculationresultexporter.cpp.s
+
+src/app/calculationservice.obj: src/app/calculationservice.cpp.obj
+.PHONY : src/app/calculationservice.obj
+
+# target to build an object file
+src/app/calculationservice.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/app/calculationservice.cpp.obj
+.PHONY : src/app/calculationservice.cpp.obj
+
+src/app/calculationservice.i: src/app/calculationservice.cpp.i
+.PHONY : src/app/calculationservice.i
+
+# target to preprocess a source file
+src/app/calculationservice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/app/calculationservice.cpp.i
+.PHONY : src/app/calculationservice.cpp.i
+
+src/app/calculationservice.s: src/app/calculationservice.cpp.s
+.PHONY : src/app/calculationservice.s
+
+# target to generate assembly for a file
+src/app/calculationservice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\markovreliabilitymodel.dir\build.make CMakeFiles/markovreliabilitymodel.dir/src/app/calculationservice.cpp.s
+.PHONY : src/app/calculationservice.cpp.s
+
 src/core/compositereliabilitycalculator.obj: src/core/compositereliabilitycalculator.cpp.obj
 .PHONY : src/core/compositereliabilitycalculator.obj
 
@@ -673,6 +721,12 @@ help:
 	@echo ... markovreliabilitymodel_autogen/mocs_compilation.obj
 	@echo ... markovreliabilitymodel_autogen/mocs_compilation.i
 	@echo ... markovreliabilitymodel_autogen/mocs_compilation.s
+	@echo ... src/app/calculationresultexporter.obj
+	@echo ... src/app/calculationresultexporter.i
+	@echo ... src/app/calculationresultexporter.s
+	@echo ... src/app/calculationservice.obj
+	@echo ... src/app/calculationservice.i
+	@echo ... src/app/calculationservice.s
 	@echo ... src/core/compositereliabilitycalculator.obj
 	@echo ... src/core/compositereliabilitycalculator.i
 	@echo ... src/core/compositereliabilitycalculator.s

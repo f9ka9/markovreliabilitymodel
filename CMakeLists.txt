@@ -9,6 +9,10 @@ qt_standard_project_setup()
 qt_add_executable(markovreliabilitymodel
     WIN32 MACOSX_BUNDLE
     src/main.cpp
+    src/app/calculationservice.cpp
+    src/app/calculationservice.h
+    src/app/calculationresultexporter.cpp
+    src/app/calculationresultexporter.h
     src/ui/mainwindow.cpp
     src/ui/mainwindow.h
     src/ui/nodeconfigurationwidget.cpp
@@ -54,6 +58,7 @@ qt_add_executable(markovreliabilitymodel
 target_include_directories(markovreliabilitymodel
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/ui
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/app
         ${CMAKE_CURRENT_SOURCE_DIR}/src/editor
         ${CMAKE_CURRENT_SOURCE_DIR}/src/model
         ${CMAKE_CURRENT_SOURCE_DIR}/src/core

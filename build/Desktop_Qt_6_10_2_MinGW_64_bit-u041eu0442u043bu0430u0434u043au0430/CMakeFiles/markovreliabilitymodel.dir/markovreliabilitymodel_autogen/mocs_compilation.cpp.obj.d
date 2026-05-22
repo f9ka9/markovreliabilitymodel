@@ -551,14 +551,6 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtCore/qfileinfo.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qtimezone.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonArray \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonarray.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
- D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonParseError \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  D:/Qt/6.10.2/mingw_64/include/QtWidgets/QMessageBox \
@@ -616,14 +608,19 @@ CMakeFiles/markovreliabilitymodel.dir/markovreliabilitymodel_autogen/mocs_compil
  D:/Qt/6.10.2/mingw_64/include/QtGui/qtextformat.h \
  D:/Qt/6.10.2/mingw_64/include/QtGui/QShortcut \
  D:/Qt/6.10.2/mingw_64/include/QtGui/qshortcut.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/reliabilitycore.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/calculationresult.h \
- C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/stategenerator.h \
  C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/serialization/schemaserializer.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonDocument \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonparseerror.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonObject \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonobject.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonvalue.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcborvalue.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qcborcommon.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/quuid.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsondocument.h \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/QJsonArray \
+ D:/Qt/6.10.2/mingw_64/include/QtCore/qjsonarray.h \
  D:/Qt/6.10.2/mingw_64/include/QtCore/QPair \
  D:/Qt/6.10.2/mingw_64/include/QtCore/qpair.h \
  C:\Users\f9ka9\Desktop\programmingprojects\markovreliabilitymodel\build\Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430\markovreliabilitymodel_autogen\YPKJ5OE7LN/moc_nodeconfigurationwidget.cpp \

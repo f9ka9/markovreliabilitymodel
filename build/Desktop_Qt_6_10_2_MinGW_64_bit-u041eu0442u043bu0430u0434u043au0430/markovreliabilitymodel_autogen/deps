@@ -10,6 +10,10 @@ markovreliabilitymodel_autogen/timestamp: \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/_deps/eigen-build/Eigen3ConfigVersion.cmake \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/_deps/eigen-build/Eigen3Targets.cmake \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/markovreliabilitymodel_autogen/moc_predefs.h \
+	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/app/calculationresultexporter.cpp \
+	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/app/calculationresultexporter.h \
+	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/app/calculationservice.cpp \
+	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/app/calculationservice.h \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/calculationresult.h \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/compositereliabilitycalculator.cpp \
 	C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/compositereliabilitycalculator.h \

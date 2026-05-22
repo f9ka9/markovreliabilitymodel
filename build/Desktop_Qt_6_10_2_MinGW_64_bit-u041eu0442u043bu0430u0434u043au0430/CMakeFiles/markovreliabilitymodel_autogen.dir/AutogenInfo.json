@@ -328,6 +328,18 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/app/calculationresultexporter.h",
+			"MU",
+			"ISMKEKEPX5/moc_calculationresultexporter.cpp",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/app/calculationservice.h",
+			"MU",
+			"ISMKEKEPX5/moc_calculationservice.cpp",
+			null
+		],
+		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/calculationresult.h",
 			"MU",
 			"PRMOGMWJPH/moc_calculationresult.cpp",
@@ -495,6 +507,7 @@
 	"MOC_INCLUDES" : 
 	[
 		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/ui",
+		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/app",
 		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/editor",
 		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/model",
 		"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core",
@@ -544,6 +557,16 @@
 	"SETTINGS_FILE" : "C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/build/Desktop_Qt_6_10_2_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/CMakeFiles/markovreliabilitymodel_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/app/calculationresultexporter.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/app/calculationservice.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/f9ka9/Desktop/programmingprojects/markovreliabilitymodel/src/core/compositereliabilitycalculator.cpp",
 			"MU",

@@ -20,7 +20,6 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QHash>
-#include <QJsonArray>
 #include <QJsonParseError>
 #include <QMessageBox>
 #include <QSignalBlocker>
@@ -30,7 +29,7 @@
 #include "stateview.h"
 #include "structureview.h"
 #include "nodeconfigurationwidget.h"
-#include "reliabilitycore.h"
+#include "calculationresult.h"
 #include "schemaserializer.h"
 
 class MainWindow : public QMainWindow
@@ -124,12 +123,6 @@ private slots:
 private:
     static constexpr int maxStateCountForCalculation = 4096;
 
-    static QJsonArray matrixToJson(const ReliabilityMatrix& matrix);
-    static QJsonArray vectorToJson(const ProbabilityVector& vector);
-    static QString operationModeName(OperationMode mode);
-    static QString resultSystemStateName(ReliabilitySystemState state);
-    static int reliabilityNodeCount(const QList<SchemaNodeData>& nodes);
-
     void updateStructureViewInteractionMode();
     void showIntensityMatrix(const CalculationResult& result);
     void updateMatrixTable();
@@ -140,8 +133,6 @@ private:
     QString systemStateToString(ReliabilitySystemState state) const;
     QHash<int, QString> createNodeNamesById(const QList<SchemaNodeData>& nodes) const;
     QString failedNodesToString(const ReliabilityState& state, const QHash<int, QString>& nodeNamesById) const;
-    bool validateCalculationInput(const SchemaModel& model, const Cyclogram& cyclogram, QString& errorMessage) const;
-    bool validateInitialProbabilities(const ProbabilityVector& probabilities, int stateCount, QString& errorMessage) const;
     ProbabilityVector initialProbabilitiesFromTable(int stateCount) const;
     void addCyclogramStage(OperationMode mode = OperationMode::Functioning, double duration = 1.0);
     void removeSelectedCyclogramStage();

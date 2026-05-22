@@ -1,78 +1,11 @@
 #include "mainwindow.h"
 
-#include <cmath>
 #include <limits>
 
-#include <QJsonArray>
 #include <QJsonDocument>
-#include <QJsonObject>
 
-#include "compositereliabilitycalculator.h"
-#include "stategenerator.h"
-
-QJsonArray MainWindow::matrixToJson(const ReliabilityMatrix& matrix)
-{
-    QJsonArray rows;
-    for (const QVector<double>& row : matrix)
-    {
-        QJsonArray values;
-        for (double value : row)
-            values.append(value);
-        rows.append(values);
-    }
-    return rows;
-}
-
-QJsonArray MainWindow::vectorToJson(const ProbabilityVector& vector)
-{
-    QJsonArray values;
-    for (double value : vector)
-        values.append(value);
-    return values;
-}
-
-QString MainWindow::operationModeName(OperationMode mode)
-{
-    switch (mode)
-    {
-    case OperationMode::Transportation:
-        return "transportation";
-    case OperationMode::Storage:
-        return "storage";
-    case OperationMode::Functioning:
-        return "functioning";
-    case OperationMode::Off:
-        return "off";
-    }
-
-    return "functioning";
-}
-
-QString MainWindow::resultSystemStateName(ReliabilitySystemState state)
-{
-    switch (state)
-    {
-    case ReliabilitySystemState::Working:
-        return "working";
-    case ReliabilitySystemState::PartialFailure:
-        return "partialFailure";
-    case ReliabilitySystemState::Failure:
-        return "failure";
-    }
-
-    return "unknown";
-}
-
-int MainWindow::reliabilityNodeCount(const QList<SchemaNodeData>& nodes)
-{
-    int count = 0;
-    for (const SchemaNodeData& node : nodes)
-    {
-        if (node.nodeKind == NodeKind::Normal)
-            ++count;
-    }
-    return count;
-}
+#include "calculationresultexporter.h"
+#include "calculationservice.h"
 
 MainWindow::MainWindow(QWidget *parent): QMainWindow(parent)
 {
@@ -598,27 +531,25 @@ void MainWindow::calculate()
 {
     applyTopLevelStructureConfiguration();
     const EditorSchemaModel editorModel = structureScene->exportEditorSchemaModel();
-    CompositeReliabilityCalculator compositeCalculator;
-    const SchemaModel model = compositeCalculator.buildEffectiveModel(editorModel, editorModel.currentParentId);
     const Cyclogram cyclogram = cyclogramFromTable();
+    const CalculationService calculationService(maxStateCountForCalculation);
+    const CalculationPreparation preparation = calculationService.prepare(editorModel, cyclogram);
 
-    QString errorMessage;
-    if (!validateCalculationInput(model, cyclogram, errorMessage))
+    if (!preparation.ok)
     {
-        QMessageBox::warning(this, "Расчет", errorMessage);
-        return;
-    }
-    StateGenerator stateGenerator;
-    const int stateCount = stateGenerator.generate(model.nodes, model.connections, model.structureType, model.requiredElements).size();
-    const ProbabilityVector initialProbabilities = initialProbabilitiesFromTable(stateCount);
-    if (!validateInitialProbabilities(initialProbabilities, stateCount, errorMessage))
-    {
-        QMessageBox::warning(this, "Расчет", errorMessage);
+        QMessageBox::warning(this, "Расчет", preparation.errorMessage);
         return;
     }
 
-    ReliabilityCore core;
-    const CalculationResult result = core.calculateCyclogram(model, model.structureType, model.requiredElements, cyclogram, initialProbabilities);
+    const ProbabilityVector initialProbabilities = initialProbabilitiesFromTable(preparation.stateCount);
+    const CalculationRun run = calculationService.calculate(preparation, initialProbabilities);
+    if (!run.ok)
+    {
+        QMessageBox::warning(this, "Расчет", run.errorMessage);
+        return;
+    }
+
+    const CalculationResult& result = run.result;
     savedInitialProbabilities = result.initialProbabilities;
 
     showIntensityMatrix(result);
@@ -640,64 +571,7 @@ void MainWindow::exportResults()
     const QString fileName = QFileDialog::getSaveFileName(this, "Экспорт результатов", "calculation_results.json", "JSON (*.json)");
     if (fileName.isEmpty()) return;
 
-    QJsonObject root;
-    root["version"] = 1;
-
-    QJsonArray nodes;
-    for (const SchemaNodeData& node : lastCalculationResult.nodes)
-    {
-        QJsonObject object;
-        object["id"] = node.id;
-        object["name"] = node.name;
-        object["groupName"] = node.groupName;
-        nodes.append(object);
-    }
-    root["nodes"] = nodes;
-
-    QJsonArray states;
-    for (const ReliabilityState& state : lastCalculationResult.states)
-    {
-        QJsonObject object;
-        object["id"] = state.id;
-        object["name"] = state.name;
-        object["systemState"] = resultSystemStateName(state.systemState);
-
-        QJsonArray failedNodeIds;
-        for (int nodeId : state.failedNodeIds)
-            failedNodeIds.append(nodeId);
-        object["failedNodeIds"] = failedNodeIds;
-        states.append(object);
-    }
-    root["states"] = states;
-
-    QJsonArray transitions;
-    for (const ReliabilityTransition& transition : lastCalculationResult.transitions)
-    {
-        QJsonObject object;
-        object["sourceStateId"] = transition.sourceStateId;
-        object["targetStateId"] = transition.targetStateId;
-        object["changedNodeId"] = transition.changedNodeId;
-        object["fromState"] = "working";
-        object["toState"] = "failed";
-        transitions.append(object);
-    }
-    root["transitions"] = transitions;
-
-    root["initialProbabilities"] = vectorToJson(lastCalculationResult.initialProbabilities);
-
-    QJsonArray stages;
-    for (const StageCalculationResult& stageResult : lastCalculationResult.stages)
-    {
-        QJsonObject object;
-        object["name"] = stageResult.stage.name;
-        object["mode"] = operationModeName(stageResult.stage.mode);
-        object["duration"] = stageResult.stage.duration;
-        object["Q"] = matrixToJson(stageResult.intensityMatrix);
-        object["P"] = matrixToJson(stageResult.transitionMatrix);
-        object["probabilities"] = vectorToJson(stageResult.probabilities);
-        stages.append(object);
-    }
-    root["stages"] = stages;
+    const QJsonDocument document = CalculationResultExporter::toJson(lastCalculationResult);
 
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly | QIODevice::Truncate))
@@ -706,7 +580,7 @@ void MainWindow::exportResults()
         return;
     }
 
-    file.write(QJsonDocument(root).toJson(QJsonDocument::Indented));
+    file.write(document.toJson(QJsonDocument::Indented));
     statusBar()->showMessage("Результаты экспортированы: " + fileName, 5000);
 }
 
@@ -929,93 +803,6 @@ QString MainWindow::failedNodesToString(const ReliabilityState& state, const QHa
     }
 
     return names.join(", ");
-}
-
-bool MainWindow::validateCalculationInput(const SchemaModel& model, const Cyclogram& cyclogram, QString& errorMessage) const
-{
-    if (model.nodes.isEmpty())
-    {
-        errorMessage = "На текущем уровне нет узлов.";
-        return false;
-    }
-
-    StateGenerator stateGenerator;
-    const int reliableNodes = reliabilityNodeCount(model.nodes);
-    const int stateCount = stateGenerator.generate(model.nodes, model.connections, model.structureType, model.requiredElements, maxStateCountForCalculation).size();
-    if (stateCount > maxStateCountForCalculation)
-    {
-        errorMessage = QString("На текущем уровне слишком много расчетных узлов: %1. Двоичный граф состояний содержит больше %2 состояний. Откройте вложенный блок и рассчитайте меньший уровень.").arg(reliableNodes).arg(maxStateCountForCalculation);
-        return false;
-    }
-
-    if (model.connections.isEmpty() && model.structureType == StructureType::KOutOfN && model.requiredElements > reliableNodes)
-    {
-        errorMessage = QString("Для структуры k из n значение k должно быть <= n. Сейчас k=%1, n=%2.").arg(model.requiredElements).arg(reliableNodes);
-        return false;
-    }
-
-    if (cyclogram.isEmpty())
-    {
-        errorMessage = "Циклограмма не содержит этапов.";
-        return false;
-    }
-
-    for (int i = 0; i < cyclogram.size(); ++i)
-    {
-        if (cyclogram[i].duration <= 0.0 || !std::isfinite(cyclogram[i].duration))
-        {
-            errorMessage = QString("У этапа %1 некорректная длительность. Длительность должна быть > 0.").arg(i + 1);
-            return false;
-        }
-    }
-
-    for (const SchemaNodeData& node : model.nodes)
-    {
-        if (node.nodeKind != NodeKind::Normal)
-            continue;
-
-        for (double lambda : node.failureRates)
-        {
-            if (lambda < 0.0 || !std::isfinite(lambda))
-            {
-                errorMessage = QString("Узел %1 содержит некорректную интенсивность отказа.").arg(node.name.isEmpty() ? QString("#%1").arg(node.id) : node.name);
-                return false;
-            }
-        }
-    }
-
-    return true;
-}
-
-bool MainWindow::validateInitialProbabilities(const ProbabilityVector& probabilities, int stateCount, QString& errorMessage) const
-{
-    if (probabilities.isEmpty())
-        return true;
-
-    if (probabilities.size() != stateCount)
-    {
-        errorMessage = "Вектор начальных вероятностей имеет неверный размер.";
-        return false;
-    }
-
-    double sum = 0.0;
-    for (double probability : probabilities)
-    {
-        if (probability < 0.0 || !std::isfinite(probability))
-        {
-            errorMessage = "Начальные вероятности должны быть конечными и неотрицательными.";
-            return false;
-        }
-        sum += probability;
-    }
-
-    if (std::abs(sum - 1.0) > 1.0e-6)
-    {
-        errorMessage = QString("Сумма начальных вероятностей должна быть равна 1. Сейчас сумма = %1.").arg(sum, 0, 'g', 10);
-        return false;
-    }
-
-    return true;
 }
 
 ProbabilityVector MainWindow::initialProbabilitiesFromTable(int stateCount) const
