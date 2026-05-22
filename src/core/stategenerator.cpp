@@ -59,9 +59,11 @@ QList<ReliabilityState> StateGenerator::generate(const QList<SchemaNodeData>& no
                 continue;
 
             const int targetStateId = states.size();
-            states.append(createState(targetStateId, targetKey, stateNodes, nodes, connections, structureType, requiredElements));
-            if (maxStateCount > 0 && states.size() > maxStateCount)
+
+            if (maxStateCount > 0 && targetStateId >= maxStateCount)
                 return states;
+
+            states.append(createState(targetStateId, targetKey, stateNodes, nodes, connections, structureType, requiredElements));
 
             stateIdByKey.insert(targetKey, targetStateId);
             queue.append(targetKey);
